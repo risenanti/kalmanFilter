@@ -10,12 +10,15 @@ line( img, Point( center.x + d, center.y - d ), Point( center.x - d, center.y + 
 using namespace std;
 using namespace cv;
 
+
 void CallBackFunc(int event, int x, int y, int flags, void* userdata)
 {
      if ( event == EVENT_MOUSEMOVE )
      {
-          cout << "Mouse move over the window - position (" << x << ", " << y << ")" << endl;
-
+    Point*p = (Point*)userdata;
+    p->x = x;
+    p->y = y;
+    cout<<*p <<endl;
      }
 }
 
@@ -31,11 +34,11 @@ int main()
     //Create a window
     namedWindow("MyWindow", 1);
 
-    setMouseCallback("MyWindow", CallBackFunc, NULL);
+    Point p;
+    setMouseCallback("MyWindow", CallBackFunc, &p);
     //show the image
     imshow("MyWindow", img);
 
-     // Wait until user press some key
      waitKey(0);
 
      return 0;
