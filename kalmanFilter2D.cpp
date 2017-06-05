@@ -40,36 +40,36 @@ int main()
     /*Kalman Filter*/
     KalmanFilter KF(4,2,0);
     KF.transitionMatrix = (Mat_<float>(4, 4) << 1,0,1,0,   0,1,0,1,  0,0,1,0,  0,0,0,1);
-	Mat_<float> measurement(2,1); measurement.setTo(Scalar(0));
+    Mat_<float> measurement(2,1); measurement.setTo(Scalar(0));
 	
-	KF.statePre.at<float>(0) = p.x;
-	KF.statePre.at<float>(1) = p.y;
-	KF.statePre.at<float>(2) = 0;
-	KF.statePre.at<float>(3) = 0;
-	setIdentity(KF.measurementMatrix);
-	setIdentity(KF.processNoiseCov, Scalar::all(1e-4));
-	setIdentity(KF.measurementNoiseCov, Scalar::all(10));
-	setIdentity(KF.errorCovPost, Scalar::all(.1));
+    KF.statePre.at<float>(0) = p.x;
+    KF.statePre.at<float>(1) = p.y;
+    KF.statePre.at<float>(2) = 0;
+    KF.statePre.at<float>(3) = 0;
+    setIdentity(KF.measurementMatrix);
+    setIdentity(KF.processNoiseCov, Scalar::all(1e-4));
+    setIdentity(KF.measurementNoiseCov, Scalar::all(10));
+    setIdentity(KF.errorCovPost, Scalar::all(.1));
 	
-	while(1)
-	{
-		// First predict, to update the internal statePre variable
-		Mat prediction = KF.predict();
-		Point predictPt(prediction.at<float>(0),prediction.at<float>(1));
+    while(1)
+    {
+	// First predict, to update the internal statePre variable
+	Mat prediction = KF.predict();
+	Point predictPt(prediction.at<float>(0),prediction.at<float>(1));
+	
+	measurement(0) = p.x;
+	measurement(1) = p.y;
+	
+	// The update phase 
+	Mat estimated = KF.correct(measurement);
 		
-		measurement(0) = p.x;
-		measurement(1) = p.y;
+	Point statePt(estimated.at<float>(0),estimated.at<float>(1));
+	Point measPt(measurement(0),measurement(1));
+	
+	imshow("MyWindow", img);
+	img = Scalar::all(0);
 		
-		// The update phase 
-		Mat estimated = KF.correct(measurement);
-		
-		Point statePt(estimated.at<float>(0),estimated.at<float>(1));
-		Point measPt(measurement(0),measurement(1));
-		
-		imshow("MyWindow", img);
-		img = Scalar::all(0);
-		
-		mousev.push_back(measPt);
+	mousev.push_back(measPt);
         kalmanv.push_back(statePt);
         drawCross( statePt, Scalar(255,255,255), 5 );
         drawCross( measPt, Scalar(0,0,255), 5 );
@@ -80,8 +80,8 @@ int main()
         for (int i = 0; i < kalmanv.size()-1; i++) 
           line(img, kalmanv[i], kalmanv[i+1], Scalar(0,155,255), 1);
 	    
-	    waitKey(10);	
-	}
+	waitKey(10);	
+    }
 
     return 0;
 }
