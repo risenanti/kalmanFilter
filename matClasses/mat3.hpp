@@ -6,10 +6,15 @@ class mat3
 {
 	public:
 	int operator=(const mat3& other);
+	int operator+(const mat3& other);
+	int operator-(const mat3& other);
+	int operator!(void);
 
 	mat3(float a1, float a2, float a3, float b1, float b2, float b3, float c1, float c2, float c3);
 	int multi(mat3 mult);
-	int divide(mat3 divide);
+	int add(mat3 add);
+	int subtract(mat3 sub);
+	int transpose(void);
 	void print(void);
 
 
@@ -37,6 +42,23 @@ int mat3::operator =(const mat3& other)
 	this->c1 = other.c1;
 	this->c2 = other.c2;
 	this->c3 = other.c3;
+	return 1;
+}
+int mat3::operator+(const mat3& other)
+{
+	this->add(other);
+	return 1;
+}
+
+int mat3::operator-(const mat3& other)
+{
+	this->subtract(other);
+	return 1;
+}
+
+int mat3::operator!(void)
+{
+	this->transpose();
 	return 1;
 }
 
@@ -82,6 +104,34 @@ int mat3::multi(mat3 mult)
 	this->print();
 #endif
 	//this->a2 = this.a1
+
+	return 1;
+}
+
+int mat3::add(mat3 add)
+{
+	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
+	this->a1 = other.a1+add.a1; this->a2 = other.a2+add.a2; this->a3 = other.a3+add.a3;
+	this->b1 = other.b1+add.b1; this->b2 = other.b2+add.b2; this->b3 = other.b3+add.b3;
+	this->c1 = other.c1+add.c1; this->c2 = other.c2+add.c2; this->c3 = other.c3+add.c3;
+	return 1;
+}
+
+int mat3::subtract(mat3 sub)
+{
+	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
+	this->a1 = other.a1-sub.a1; this->a2 = other.a2-sub.a2; this->a3 = other.a3-sub.a3;
+	this->b1 = other.b1-sub.b1; this->b2 = other.b2-sub.b2; this->b3 = other.b3-sub.b3;
+	this->c1 = other.c1-sub.c1; this->c2 = other.c2-sub.c2; this->c3 = other.c3-sub.c3;
+	return 1;
+}
+
+int mat3::transpose(void)
+{
+	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
+	this->a1 = other.a1; this->b1 = other.a2; this->c1 = other.a3;
+	this->a2 = other.b1; this->b2 = other.b2; this->c2 = other.b3;
+	this->a3 = other.c1; this->b3 = other.c2; this->c3 = other.c3;
 
 	return 1;
 }
