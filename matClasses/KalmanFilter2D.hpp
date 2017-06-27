@@ -8,7 +8,16 @@ using namespace std;
 class KF2D
 {
 public:
-
+	int predict();
+	int update();
 private:
 
 };
+
+
+int KF2D::predict()
+{
+
+}
+
+int KF2D::update();
