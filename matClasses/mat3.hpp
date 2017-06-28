@@ -9,6 +9,7 @@ class mat3
 	int operator+(const mat3& other);
 	int operator-(const mat3& other);
 	int operator!(void);
+	int operator*(const mat3& other);
 
 	mat3(float a1, float a2, float a3, float b1, float b2, float b3, float c1, float c2, float c3);
 	int multi(mat3 mult);
@@ -59,6 +60,12 @@ int mat3::operator-(const mat3& other)
 int mat3::operator!(void)
 {
 	this->transpose();
+	return 1;
+}
+
+int mat3::operator*(const mat3& other)
+{
+	this->multi(other);
 	return 1;
 }
 
