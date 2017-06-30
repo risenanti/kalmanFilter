@@ -10,12 +10,16 @@ class mat3
 	int operator-(const mat3& other);
 	int operator!(void);
 	int operator*(const mat3& other);
+	int operator/(const mat3& other);
 
 	mat3(float a1, float a2, float a3, float b1, float b2, float b3, float c1, float c2, float c3);
+	mat3();
 	int multi(mat3 mult);
+	int divide(mat3 divide);
 	int add(mat3 add);
 	int subtract(mat3 sub);
 	int transpose(void);
+	int setElements(mat3 setElem);
 	void print(void);
 
 
@@ -29,20 +33,16 @@ mat3::mat3(float a1, float a2, float a3, float b1, float b2, float b3, float c1,
 	this->b1 = b1; this->b2 = b2; this->b3 = b3;
 	this->c1 = c1; this->c2 = c2; this->c3 = c3;
 }
+mat3::mat3()
+{
+	this->a1 = 0; this->a2 = 0; this->a3 = 0;
+	this->b1 = 0; this->b2 = 0; this->b3 = 0;
+	this->c1 = 0; this->c2 = 0; this->c3 = 0;
+}
 
 int mat3::operator =(const mat3& other)
 {
-	this->a1 = other.a1;
-	this->a2 = other.a2;
-	this->a3 = other.a3;
-
-	this->b1 = other.b1;
-	this->b2 = other.b2;
-	this->b3 = other.b3;
-
-	this->c1 = other.c1;
-	this->c2 = other.c2;
-	this->c3 = other.c3;
+	this->setElements(other);
 	return 1;
 }
 int mat3::operator+(const mat3& other)
@@ -66,6 +66,13 @@ int mat3::operator!(void)
 int mat3::operator*(const mat3& other)
 {
 	this->multi(other);
+	return 1;
+}
+
+//TODO FINISH DIVIDE FUNCTION
+int mat3::operator/(const mat3& other)
+{
+	//this->divide(other);
 	return 1;
 }
 
@@ -115,6 +122,13 @@ int mat3::multi(mat3 mult)
 	return 1;
 }
 
+//TODO ADD MATRIX DIVISION
+int divide(mat3 divide)
+{
+
+	return 1;
+}
+
 int mat3::add(mat3 add)
 {
 	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
@@ -143,4 +157,19 @@ int mat3::transpose(void)
 	return 1;
 }
 
+int mat3::setElements(mat3 setElem)
+{
+	this->a1 = setElem.a1;
+	this->a2 = setElem.a2;
+	this->a3 = setElem.a3;
 
+	this->b1 = setElem.b1;
+	this->b2 = setElem.b2;
+	this->b3 = setElem.b3;
+
+	this->c1 = setElem.c1;
+	this->c2 = setElem.c2;
+	this->c3 = setElem.c3;
+
+	return 1;
+}

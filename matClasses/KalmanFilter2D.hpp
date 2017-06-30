@@ -12,12 +12,20 @@ public:
 	int update();
 private:
 
+	mat3 P;
+	mat3 A;
+	mat3 Q;
+
 };
 
 
 int KF2D::predict()
 {
 
+	return 1;
 }
 
-int KF2D::update();
+int KF2D::update()
+{
+	return 1;
+}
