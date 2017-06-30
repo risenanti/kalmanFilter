@@ -5,21 +5,21 @@ using namespace std;
 class mat2
 {
 	public:
-	int operator=(const mat2& other);
-	int operator+(const mat2& other);
-	int operator-(const mat2& other);
-	int operator!(void);
-	int operator*(const mat2& other);
-	int operator/(const mat2& other);
+	bool operator=(const mat2& other);
+	mat2 operator+(const mat2& other);
+	mat2 operator-(const mat2& other);
+	mat2 operator!(void);
+	mat2 operator*(const mat2& other);
+	mat2 operator/(const mat2& other);
 
 
 	mat2(float a1, float a2, float b1, float b2);
 	mat2();
-	int multi(mat2 mult);
-	int divide(mat2 divide);
-	int add(mat2 add);
-	int subtract(mat2 sub);
-	int transpose(void);
+	mat2 multi(mat2 mult);
+	mat2 divide(mat2 divide);
+	mat2 add(mat2 add);
+	mat2 subtract(mat2 sub);
+	mat2 transpose(void);
 	mat2 inverse(void);
 	int setElements(mat2 setElem);
 	void print(void);
@@ -41,78 +41,73 @@ mat2::mat2()
 	this->b1 = 0; this->b2 = 0;
 }
 
-int mat2::operator =(const mat2& other)
+bool mat2::operator =(const mat2& other)
 {
 	this->setElements(other);
 
-	return 1;
+	return true;
 }
 
-int mat2::operator+(const mat2& other)
+mat2 mat2::operator+(const mat2& other)
 {
-	this->add(other);
-	return 1;
+	return this->add(other);
 }
 
-int mat2::operator-(const mat2& other)
+mat2 mat2::operator-(const mat2& other)
 {
-	this->subtract(other);
-	return 1;
+	return this->subtract(other);
 }
-int mat2::operator!(void)
+mat2 mat2::operator!(void)
 {
-	this->transpose();
-	return 1;
+	return this->transpose();
 }
 
-int mat2::operator*(const mat2& other)
+mat2 mat2::operator*(const mat2& other)
 {
-	this->multi(other);
-	return 1;
+	return this->multi(other);
+
 }
 
-//int mat2::operator/(const mat2& other)
-//{
-//	this->divide(other);
-//	return 1;
-//}
+mat2 mat2::operator/(const mat2& other)
+{
+	return this->divide(other);
+}
 
-int mat2::multi(mat2 mult)
+mat2 mat2::multi(mat2 mult)
 {
 	mat2 other(this->a1,this->a2, this->b1,this->b2);
-	this->a1 = other.a1*mult.a1 + other.a2*mult.b1;
-	this->a2 = other.a1*mult.a2 + other.a2*mult.b2;
+	mat2 tempMult;
+	tempMult.a1 = other.a1*mult.a1 + other.a2*mult.b1;
+	tempMult.a2 = other.a1*mult.a2 + other.a2*mult.b2;
 
-	this->b1 = other.b1*mult.a1 + other.b2*mult.b1;
-	this->b2 = other.b1*mult.a2 + other.b2*mult.b2;
+	tempMult.b1 = other.b1*mult.a1 + other.b2*mult.b1;
+	tempMult.b2 = other.b1*mult.a2 + other.b2*mult.b2;
 
-	return 1;
+	return tempMult;
 }
 
-//TODO create inverse function then finish
-/*int mat2::divide(mat2 divide)
+mat2 mat2::divide(mat2 divide)
 {
 	//find inverse of matrix divide
-	mat2 temp = divide;
-	divide.a1= divide.b2*(1/(divide.a1*divide.b2-(divide.a2*divide.b1));
-
-
-	return 1;
-}*/
-
-int mat2::add(mat2 add)
-{
 	mat2 other(this->a1,this->a2,this->b1,this->b2);
-	this->a1 = other.a1+add.a1; this->a2 = other.a2+add.a2;
-	this->b1 = other.b1+add.b1; this->b2 = other.b2+add.b2;
-	return 1;
+	return other*divide.inverse();
 }
-int mat2::subtract(mat2 sub)
+
+mat2 mat2::add(mat2 add)
 {
 	mat2 other(this->a1,this->a2,this->b1,this->b2);
-	this->a1 = other.a1-sub.a1; this->a2 = other.a2-sub.a2;
-	this->b1 = other.b1-sub.b1; this->b2 = other.b2-sub.b2;
-	return 1;
+	mat2 tempAdd;
+	tempAdd.a1 = other.a1+add.a1; tempAdd.a2 = other.a2+add.a2;
+	tempAdd.b1 = other.b1+add.b1; tempAdd.b2 = other.b2+add.b2;
+	return tempAdd;
+}
+mat2 mat2::subtract(mat2 sub)
+{
+	mat2 other(this->a1,this->a2,this->b1,this->b2);
+	mat2 tempSub;
+	tempSub.a1 = other.a1-sub.a1; tempSub.a2 = other.a2-sub.a2;
+	tempSub.b1 = other.b1-sub.b1; tempSub.b2 = other.b2-sub.b2;
+	return tempSub;
 }
 
 #ifdef desktop
@@ -123,14 +118,15 @@ void mat2::print(void)
 }
 #endif
 
-int mat2::transpose(void)
+mat2 mat2::transpose(void)
 {
 	mat2 other(this->a1,this->a2, this->b1,this->b2);
+	mat2 tempInv;
 
-	this->a1 = other.a1; this->a2 = other.b1;
-	this->b1 = other.a2; this->b2 = other.b2;
+	tempInv.a1 = other.a1; tempInv.a2 = other.b1;
+	tempInv.b1 = other.a2; tempInv.b2 = other.b2;
 
-	return 1;
+	return tempInv;
 }
 
 mat2 mat2::inverse(void)
@@ -139,6 +135,9 @@ mat2 mat2::inverse(void)
 	mat2 inv;
 	float scalar = (1/(other.a1*other.b2-other.a2*other.b1));
 	inv.a1 = other.b2*scalar;
+	inv.a2 = (-1)*other.a2*scalar;
+	inv.b1 = (-1)*other.b1*scalar;
+	inv.b2 = other.a1*scalar;
 	return inv;
 }
 
