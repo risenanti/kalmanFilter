@@ -19,11 +19,11 @@ class mat3
 	mat3 add(mat3 add);
 	mat3 subtract(mat3 sub);
 	mat3 transpose(void);
+	mat3 inverse(void);
 	int setElements(mat3 setElem);
 	void print(void);
 
 
-	private:
 	float a1, a2, a3, b1, b2, b3, c1, c2, c3;
 };
 
@@ -122,22 +122,7 @@ mat3 mat3::multi(mat3 mult)
 mat3 mat3::divide(mat3 divide)
 {
 	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
-	mat3 tempDiv;
-	float dA1 = (other.b2*other.c3)-(other.b3*other.c2);
-	float dA2 = (other.b1*other.c3)-(other.b3*other.c1);
-	float dA3 = (other.b1*other.c2)-(other.b2*other.c1);
-
-	float dB1 = (other.a2*other.c3)-(other.a3*other.c2);
-	float dB2 = (other.a1*other.c3)-(other.a3*other.c1);
-	float dB3 = (other.a1*other.c2)-(other.a2*other.c1);
-
-	float dC1 = (other.a2*other.b3)-(other.a3*other.b2);
-	float dC2 = (other.a1*other.b3)-(other.a3*other.b1);
-	float dC3 = (other.a1*other.b2)-(other.a2*other.b1);
-
-	mat3 detMat(dA1,dA2,dA3,dB1,dB2,dB3,dC1,dC2,dC3);
-
-	return tempDiv;
+	return other*divide.inverse();
 }
 
 mat3 mat3::add(mat3 add)
@@ -169,6 +154,44 @@ mat3 mat3::transpose(void)
 	tempTrans.a3 = other.c1; tempTrans.b3 = other.c2; tempTrans.c3 = other.c3;
 
 	return tempTrans;
+}
+
+mat3 mat3::inverse(void)
+{
+	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);
+	mat3 tempDiv;
+
+	//matrix of determinants
+	float dA1 = (other.b2*other.c3)-(other.b3*other.c2);
+	float dA2 = (other.b1*other.c3)-(other.b3*other.c1);
+	float dA3 = (other.b1*other.c2)-(other.b2*other.c1);
+
+	float dB1 = (other.a2*other.c3)-(other.a3*other.c2);
+	float dB2 = (other.a1*other.c3)-(other.a3*other.c1);
+	float dB3 = (other.a1*other.c2)-(other.a2*other.c1);
+
+	float dC1 = (other.a2*other.b3)-(other.a3*other.b2);
+	float dC2 = (other.a1*other.b3)-(other.a3*other.b1);
+	float dC3 = (other.a1*other.b2)-(other.a2*other.b1);
+
+	//matrix of minors
+	dA2=dA2*-1;
+	dB1=dB1*-1;
+	dB3=dB3*-1;
+	dC2=dC2*-1;
+
+	//abjugate matrix
+	mat3 abjMat(dA1, dB1, dC1, dA2, dB2, dC2, dA3, dB3, dC3);
+
+	//main determinant
+	float originalDeterminant = ((other.b2*other.c3-other.b3*other.c2)*other.a1) - ((other.b1*other.c3 - other.c1*other.b3)*other.a2) + ((other.b1*other.c2 - other.b2*other.c1)*other.a3);
+
+	float invDet = 1/originalDeterminant;
+	mat3 invMat(abjMat.a1*invDet, abjMat.a2*invDet,abjMat.a3*invDet,
+			abjMat.b1*invDet,abjMat.b2*invDet,abjMat.b3*invDet
+			,abjMat.c1*invDet,abjMat.c2*invDet,abjMat.c3*invDet);
+
+	return invMat;
 }
 
 int mat3::setElements(mat3 setElem)
