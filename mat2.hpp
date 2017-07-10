@@ -1,5 +1,6 @@
+#ifndef mat2_HPP
+#define mat2_HPP
 #include <stdio.h>
-
 using namespace std;
 
 class mat2
@@ -147,3 +148,4 @@ int mat2::setElements(mat2 setElem)
 	this->b1 = setElem.b1; this->b2 = setElem.b2;
 	return 1;
 }
+#endif

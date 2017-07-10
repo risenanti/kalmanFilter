@@ -1,10 +1,12 @@
+#ifndef KalmanFilter2D_HPP
+#define KalmanFilter2D_HPP
 #include <stdio.h>
 #include "mat3.hpp"
 #include "mat2.hpp"
 #include "math.h"
 
 using namespace std;
-
+//TODO SETUP CLASS CONSTRUCTOR FOR KF2D to allow testing
 class KF2D
 {
 public:
@@ -18,8 +20,10 @@ public:
 	int task6();
 	int task7();
 	int task8();
+	KF2D();
+	KF2D(mat3 p, mat3 a, mat3 q, float*m);
 
-private:
+//private:
 
 	float M[3]; //Nx1 state estimation after prediction step
 	mat3 P;     //NxN state covariance after prediction step
@@ -27,7 +31,26 @@ private:
 	mat3 Q;
 	float MU;
 	float H[3];
+	float S;
 };
+
+KF2D::KF2D()
+{
+	this->MU=0;
+	this->H[0]=0; this->H[1]=0; this->H[2]=0;
+	this->S = 0;
+}
+KF2D::KF2D(mat3 p, mat3 a, mat3 q,float*m)
+{
+	P = p;
+	A = a;
+	Q = q;
+	M[0] = *m;
+	M[1] = *(m+1);
+	M[2] = *(m+2);
+	MU=0;
+	S = 0;
+}
 
 
 int KF2D::predict()
@@ -76,7 +99,7 @@ int KF2D::task4()
 
 int KF2D::task5()
 {
-
+	//S = 1+H*P*(H);
 	return 1;
 }
 
@@ -97,4 +120,4 @@ int KF2D::task8()
 
 	return 1;
 }
-
+#endif

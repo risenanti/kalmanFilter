@@ -1,5 +1,7 @@
-#include <stdio.h>
+#ifndef mat3_HPP
+#define mat3_HPP
 
+#include <stdio.h>
 using namespace std;
 
 class mat3
@@ -65,7 +67,7 @@ mat3 mat3::operator*(const mat3& other)
 	return this->multi(other);
 }
 
-//TODO FINISH DIVIDE FUNCTION
+
 mat3 mat3::operator/(const mat3& other)
 {
 	return this->divide(other);
@@ -210,3 +212,4 @@ int mat3::setElements(mat3 setElem)
 
 	return 1;
 }
+#endif
