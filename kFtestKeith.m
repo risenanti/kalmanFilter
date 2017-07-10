@@ -21,3 +21,7 @@ MU = m(3,1) * sin(m(1,1));
 %begin task 4 testing
 H = [m(3,1)*cos(m(1,1)) , 0, sin(m(1,1))];
 %end task 4 testing
+
+%begin task 5 test
+S = H*p*H'+1
+%end task 5 test
