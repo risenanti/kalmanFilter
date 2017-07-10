@@ -55,5 +55,10 @@ int main()
 	cout<<endl <<"END OF TASK 4 Testing " <<endl<<endl;
 	/*End Task 4 Testing*/
 
+	cout<<"Begin Task 5 Test"<<endl;
+	myFilter.task5();
+	cout<<myFilter.S<<endl;
+	cout<<"END Task 5 Test" <<endl<<endl;
+
 	return 0;
 }

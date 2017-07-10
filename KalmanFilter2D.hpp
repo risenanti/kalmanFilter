@@ -100,6 +100,15 @@ int KF2D::task4()
 int KF2D::task5()
 {
 	//S = 1+H*P*(H);
+
+	/*H*P Begin*/
+	float temp[3];
+	temp[0] = H[0]*P.a1+H[1]*P.b1+H[2]*P.c1;
+	temp[1] = H[0]*P.a2+H[1]*P.b2+H[2]*P.c2;
+	temp[2] = H[0]*P.a3+H[1]*P.b3+H[2]*P.c3;
+	S = temp[0]*H[0]+temp[1]*H[1]+temp[2]*H[2];
+	S+=1;
+
 	return 1;
 }
 
