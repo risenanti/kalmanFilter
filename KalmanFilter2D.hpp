@@ -12,6 +12,7 @@ class KF2D
 public:
 	int predict();
 	int update();
+	int takeMeasurement(float measurement);
 	int task1();
 	int task2();
 	int task3();
@@ -32,6 +33,8 @@ public:
 	float MU;
 	float H[3];
 	float S;
+	float K[3];
+	float Y; //Y is new measurement
 };
 
 KF2D::KF2D()
@@ -39,6 +42,7 @@ KF2D::KF2D()
 	this->MU=0;
 	this->H[0]=0; this->H[1]=0; this->H[2]=0;
 	this->S = 0;
+	Y = 0;
 }
 KF2D::KF2D(mat3 p, mat3 a, mat3 q,float*m)
 {
@@ -50,17 +54,31 @@ KF2D::KF2D(mat3 p, mat3 a, mat3 q,float*m)
 	M[2] = *(m+2);
 	MU=0;
 	S = 0;
+	Y = 0;
 }
 
 
 int KF2D::predict()
 {
-
+	this->task1();
+	this->task2();
 	return 1;
 }
 
 int KF2D::update()
 {
+	task3();
+	task4();
+	task5();
+	task6();
+	task7();
+	task8();
+	return 1;
+}
+
+int KF2D::takeMeasurement(float measurement)
+{
+	Y = measurement;
 	return 1;
 }
 
@@ -99,7 +117,7 @@ int KF2D::task4()
 
 int KF2D::task5()
 {
-	//S = 1+H*P*(H);
+	//S = 1+H*P*(H');
 
 	/*H*P Begin*/
 	float temp[3];
@@ -114,19 +132,39 @@ int KF2D::task5()
 
 int KF2D::task6()
 {
+	float temp[3];
+	temp[0] = (P.a1*H[0]+P.b1*H[1]+P.c1*H[2]);
+	temp[1] = (P.a2*H[0]+P.b2*H[1]+P.c2*H[2]);
+	temp[2] = (P.a3*H[0]+P.b3*H[1]+P.c3*H[2]);
+	K[0] = temp[0];
+	K[1] = temp[1];
+	K[2] = temp[2];
 
 	return 1;
 }
 
 int KF2D::task7()
 {
-
+	M[0] = M[0]+K[0]*(Y-MU);
+	M[1] = M[0]+K[1]*(Y-MU);
+	M[2] = M[0]+K[2]*(Y-MU);
 	return 1;
 }
 
 int KF2D::task8()
 {
+	/*P = P-K*S*K'*/
+	float temp[3];
+	/*K*S*/
+	temp[0] = K[0]*S;
+	temp[1] = K[1]*S;
+	temp[2] = K[2]*S;
 
+	/*(K*S) * K'*/
+	mat3 tempMat(temp[0] * K[0], temp[0] * K[1], temp[0] * K[2], temp[1] * K[0],
+			temp[1] * K[1], temp[1] * K[2], temp[2] * K[0], temp[2] * K[1], temp[2] * K[2]);
+	/*P- (K*S*K')*/
+	P = P-tempMat;
 	return 1;
 }
 #endif

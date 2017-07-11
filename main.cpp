@@ -60,5 +60,7 @@ int main()
 	cout<<myFilter.S<<endl;
 	cout<<"END Task 5 Test" <<endl<<endl;
 
+	myFilter.task6();
+
 	return 0;
 }
