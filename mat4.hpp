@@ -1,4 +1,3 @@
-/*http://www.calcul.com/show/calculator/matrix-multiplication_;3;1;1;3?matrix1=[[%221%22,%222%22,%223%22,%224%22],[%225%22,%226%22,%227%22,%228%22],[%229%22,%2210%22,%2211%22,%2212%22],[%2213%22,%2214%22,%2215%22,%2216%22]]&matrix2=[[%221%22,%222%22,%223%22,%224%22],[%225%22,%226%22,%227%22,%228%22],[%229%22,%2210%22,%2211%22,%2212%22],[%2213%22,%2214%22,%2215%22,%2216%22]]&operator=**/
 #ifndef mat4_HPP
 #define mat4_HPP
 #include <stdio.h>
@@ -41,7 +40,7 @@ mat4::mat4()
 }
 
 mat4::mat4(float a1, float a2, float a3, float a4, float b1, float b2, float b3, float b4,
-			 float c1, float c2, float c3, float c4, float d1, float d2, float d3, float d4)
+	   float c1, float c2, float c3, float c4, float d1, float d2, float d3, float d4)
 {
 	this->a1=a1;this->a2=a2; this->a3=a3;this->a4=a4;
 	this->b1=b1;this->b2=b2; this->b3=b3;this->b4=b4;
@@ -78,7 +77,7 @@ mat4 mat4::operator!(void)
 mat4 mat4::multi(mat4 mult)
 {
 	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
-			   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+		   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
 	mat4 tempMult;
 
 	tempMult.a1 = other.a1*mult.a1 + other.a2*mult.b1 + other.a3*mult.c1 + other.a4*mult.d1;
@@ -106,7 +105,7 @@ mat4 mat4::multi(mat4 mult)
 mat4 mat4::add(mat4 add)
 {
 	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
-				   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+		   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
 	mat4 tempAdd;
 	tempAdd.a1=other.a1+add.a1;
 	tempAdd.a2=other.a2+add.a2;
@@ -133,9 +132,9 @@ mat4 mat4::add(mat4 add)
 
 mat4 mat4::subtract(mat4 sub)
 {
-	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
-				   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
-	mat4 tempSub;
+    mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
+	       this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+    mat4 tempSub;
     tempSub.a1=other.a1-sub.a1;
     tempSub.a2=other.a2-sub.a2;
     tempSub.a3=other.a3-sub.a3;
@@ -192,6 +191,31 @@ mat4 mat4::transpose(void)
 	return tempTransMatrix;
 }
 
+mat4 mat4::inverse(void)
+{
+	//http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche23.html
+	mat4 inverseMat;
+	float detAdd     = ( a1*b2*c3*d4 + a1*b3*c4*d2 + a1*b4*c2*d3
+			   + a2*b1*c4*d3 + a2*b3*c1*d4 + a2*b4*c3*d1
+			   + a3*b1*c2*d4 + a3*b2*c4*d1 + a3*b4*c1*d2
+			   + a4*b1*c3*d2 + a4*b2*c1*d3 + a4*b3*c2*d1);
+
+
+	float detSub     = ( a1*b2*c4*d3 + a1*b3*c2*d4 + a1*b4*c3*d2
+                           + a2*b1*c3*d4 + a2*b3*c4*d1 + a2*b4*c1*d3
+                           + a3*b1*c4*d2 + a3*b2*c1*d4 + a3*b4*c2*d1
+                           + a4*b1*c2*d3 + a4*b2*c3*d1 + a4*b3*c1*d2);
+
+	float determinant = detAdd-detSub;
+
+	inverseMat.a1 = (b2*c3*d4 + b3*c4*d2 + b4*c2*d3 - b2*c4*d3 - b3*c2*d4 - b4*c3*d2);
+        inverseMat.a1 = inverseMat.a1*determinant;
+        inverseMat.a2 = ();
+
+	return inverseMat;
+}
+
+#ifdef desktop
 void mat4::print(void)
 {
 	cout<< a1 <<" " << a2 << " " << a3 << " " <<a4 << std::endl;
@@ -199,3 +223,4 @@ void mat4::print(void)
 	cout<< c1 <<" " << c2 << " " << c3 << " " <<c4 << std::endl;
 	cout<< d1 <<" " << d2 << " " << d3 << " " <<d4 << std::endl;
 }
+#endif
