@@ -60,10 +60,25 @@ mat4 mat4::operator*(const mat4& other)
 	return this->multi(other);
 }
 
+mat4 mat4::operator+(const mat4& other)
+{
+	return this->add(other);
+}
+
+mat4 mat4::operator-(const mat4& other)
+{
+	return this->subtract(other);
+}
+
+mat4 mat4::operator!(void)
+{
+	return this->transpose();
+}
+
 mat4 mat4::multi(mat4 mult)
 {
 	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
-			   this->c1,this->c1=2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+			   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
 	mat4 tempMult;
 
 	tempMult.a1 = other.a1*mult.a1 + other.a2*mult.b1 + other.a3*mult.c1 + other.a4*mult.d1;
@@ -88,6 +103,62 @@ mat4 mat4::multi(mat4 mult)
 	return tempMult;
 }
 
+mat4 mat4::add(mat4 add)
+{
+	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
+				   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+	mat4 tempAdd;
+	tempAdd.a1=other.a1+add.a1;
+	tempAdd.a2=other.a2+add.a2;
+	tempAdd.a3=other.a3+add.a3;
+	tempAdd.a4=other.a4+add.a4;
+
+	tempAdd.b1=other.b1+add.b1;
+	tempAdd.b2=other.b2+add.b2;
+	tempAdd.b3=other.b3+add.b3;
+	tempAdd.b4=other.b4+add.b4;
+
+	tempAdd.c1=other.c1+add.c1;
+	tempAdd.c2=other.c2+add.c2;
+	tempAdd.c3=other.c3+add.c3;
+	tempAdd.c4=other.c4+add.c4;
+
+	tempAdd.d1=other.d1+add.d1;
+	tempAdd.d2=other.d2+add.d2;
+	tempAdd.d3=other.d3+add.d3;
+	tempAdd.d4=other.d4+add.d4;
+
+	return tempAdd;
+}
+
+mat4 mat4::subtract(mat4 sub)
+{
+	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
+				   this->c1,this->c2,this->c3,this->c4,this->d1,this->d2,this->d3,this->d4);
+	mat4 tempSub;
+    tempSub.a1=other.a1-sub.a1;
+    tempSub.a2=other.a2-sub.a2;
+    tempSub.a3=other.a3-sub.a3;
+    tempSub.a4=other.a4-sub.a4;
+
+    tempSub.b1=other.b1-sub.b1;
+    tempSub.b2=other.b2-sub.b2;
+    tempSub.b3=other.b3-sub.b3;
+    tempSub.b4=other.b4-sub.b4;
+
+    tempSub.c1=other.c1-sub.c1;
+    tempSub.c2=other.c2-sub.c2;
+    tempSub.c3=other.c3-sub.c3;
+    tempSub.c4=other.c4-sub.c4;
+
+    tempSub.d1=other.d1-sub.d1;
+    tempSub.d2=other.d2-sub.d2;
+    tempSub.d3=other.d3-sub.d3;
+    tempSub.d4=other.d4-sub.d4;
+
+    return tempSub;
+}
+
 int mat4::setElements(mat4 setElem)
 {
 	this->a1 = setElem.a1;
@@ -110,6 +181,15 @@ int mat4::setElements(mat4 setElem)
 	this->d3 = setElem.d3;
 	this->d4 = setElem.d4;
 	return 1;
+}
+
+mat4 mat4::transpose(void)
+{
+	mat4 tempTransMatrix(this->a1,this->b1,this->c1,this->d1,
+				    this->a2,this->b2,this->c2,this->d2,
+					this->a3,this->b3,this->c3,this->d3,
+					this->a4,this->b4,this->c4,this->d4);
+	return tempTransMatrix;
 }
 
 void mat4::print(void)
