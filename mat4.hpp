@@ -209,8 +209,16 @@ mat4 mat4::inverse(void)
 	float determinant = detAdd-detSub;
 
 	inverseMat.a1 = (b2*c3*d4 + b3*c4*d2 + b4*c2*d3 - b2*c4*d3 - b3*c2*d4 - b4*c3*d2);
-        inverseMat.a1 = inverseMat.a1*determinant;
-        inverseMat.a2 = ();
+        inverseMat.a2 = (a2*c4*d3 + a3*c2*d4 + a4*c3*d2 - a2*c3*d4 - a3*c4*d2 - a4*c2*d3);
+        inverseMat.a3 = (a2*b3*d4 + a3*b4*d2 + a4*b2*d3 - a2*b4*d3 - a3*b2*d4 - a4*b3*d2);
+	inverseMat.a4 = (a2*b4*c3 + a3*b2*c3 + a4*b3*c2 - a2*b3*c4 - a3*b4*c2 - a4*b2*c3);
+
+	inverseMat.a1 = inverseMat.a1*determinant;
+	inverseMat.a2 = inverseMat.a2*determinant;
+	inverseMat.a3 = inverseMat.a3*determinant;
+	inverseMat.a4 = inverseMat.a4*determinant;
+
+//TODO START ON NEXT ROWS
 
 	return inverseMat;
 }
