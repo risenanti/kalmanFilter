@@ -74,6 +74,17 @@ mat4 mat4::operator!(void)
 	return this->transpose();
 }
 
+mat4 mat4::operator/(const mat4& other)
+{
+	return this->divide(other);
+}
+
+mat4 mat4::divide(mat4 divide)
+{
+	mat4 tempDiv = divide.inverse();
+	return this->multi(tempDiv);
+}
+
 mat4 mat4::multi(mat4 mult)
 {
 	mat4 other(this->a1,this->a2,  this->a3,this->a4,this->b1,this->b2,this->b3,this->b4,
@@ -196,30 +207,59 @@ mat4 mat4::inverse(void)
 	//http://www.cg.info.hiroshima-cu.ac.jp/~miyazaki/knowledge/teche23.html
 	mat4 inverseMat;
 	float detAdd     = ( a1*b2*c3*d4 + a1*b3*c4*d2 + a1*b4*c2*d3
-			   + a2*b1*c4*d3 + a2*b3*c1*d4 + a2*b4*c3*d1
-			   + a3*b1*c2*d4 + a3*b2*c4*d1 + a3*b4*c1*d2
-			   + a4*b1*c3*d2 + a4*b2*c1*d3 + a4*b3*c2*d1);
+			           + a2*b1*c4*d3 + a2*b3*c1*d4 + a2*b4*c3*d1
+			           + a3*b1*c2*d4 + a3*b2*c4*d1 + a3*b4*c1*d2
+			           + a4*b1*c3*d2 + a4*b2*c1*d3 + a4*b3*c2*d1);
 
 
 	float detSub     = ( a1*b2*c4*d3 + a1*b3*c2*d4 + a1*b4*c3*d2
-                           + a2*b1*c3*d4 + a2*b3*c4*d1 + a2*b4*c1*d3
-                           + a3*b1*c4*d2 + a3*b2*c1*d4 + a3*b4*c2*d1
-                           + a4*b1*c2*d3 + a4*b2*c3*d1 + a4*b3*c1*d2);
+                       + a2*b1*c3*d4 + a2*b3*c4*d1 + a2*b4*c1*d3
+                       + a3*b1*c4*d2 + a3*b2*c1*d4 + a3*b4*c2*d1
+                       + a4*b1*c2*d3 + a4*b2*c3*d1 + a4*b3*c1*d2);
 
 	float determinant = detAdd-detSub;
 
 	inverseMat.a1 = (b2*c3*d4 + b3*c4*d2 + b4*c2*d3 - b2*c4*d3 - b3*c2*d4 - b4*c3*d2);
-        inverseMat.a2 = (a2*c4*d3 + a3*c2*d4 + a4*c3*d2 - a2*c3*d4 - a3*c4*d2 - a4*c2*d3);
-        inverseMat.a3 = (a2*b3*d4 + a3*b4*d2 + a4*b2*d3 - a2*b4*d3 - a3*b2*d4 - a4*b3*d2);
+    inverseMat.a2 = (a2*c4*d3 + a3*c2*d4 + a4*c3*d2 - a2*c3*d4 - a3*c4*d2 - a4*c2*d3);
+    inverseMat.a3 = (a2*b3*d4 + a3*b4*d2 + a4*b2*d3 - a2*b4*d3 - a3*b2*d4 - a4*b3*d2);
 	inverseMat.a4 = (a2*b4*c3 + a3*b2*c3 + a4*b3*c2 - a2*b3*c4 - a3*b4*c2 - a4*b2*c3);
+
+	inverseMat.b1 = (b1*c4*d3 + b3*c1*d4 + b4*c3*d1 - b1*c3*d4 - b3*c4*d1 - b4*c1*d3);
+	inverseMat.b2 = (a1*c3*d4 + a3*c4*d1 + a4*c1*d3 - a1*c4*d3 - a3*c1*d4 - a4*c3*d1);
+	inverseMat.b3 = (a1*b4*d3 + a3*b1*d4 + a4*b3*d1 - a1*b3*d4 - a3*b4*d1 - a4*c3*d1);
+	inverseMat.b4 = (a1*b3*c4 + a3*b4*c1 + a4*b1*c3 - a1*b4*c3 - a3*b4*d1 - a4*b3*c1);
+
+	inverseMat.c1 = (b1*c2*d4 + b2*c4*d1 + b4*c4*d1 - b1*c4*d2 - b2*c1*d4 - b4*c2*d1);
+	inverseMat.c2 = (a1*c4*d2 + a2*c1*d4 + a4*c2*d1 - a1*c2*d1 - a2*c4*d1 - a4*c1*d2);
+	inverseMat.c3 = (a1*b2*d4 + a2*b4*d1 + a4*b1*d2 - a1*b4*d2 - a2*b1*d4 - a4*c1*d2);
+	inverseMat.c4 = (a1*b4*c2 + a2*b4*d1 + a4*b2*d2 - a1*b2*c4 - a2*b4*c1 - a4*b1*c2);
+
+	inverseMat.d1 = (b1*c3*d2 + b2*c1*d3 + b3*c2*d1 - b1*c2*d3 - b2*c3*d1 - b3*c1*d2);
+	inverseMat.d2 = (a1*c2*d3 + a2*c3*d1 + a3*c1*d2 - a1*c3*d2 - a2*c1*d3 - a3*c2*d1);
+	inverseMat.d3 = (a1*b3*d2 + a2*b1*d3 + a3*b2*d1 - a1*b2*d3 - a2*b3*d1 - a3*b1*d2);
+	inverseMat.d4 = (a1*b2*c3 + a2*b3*c1 + a3*b1*c2 - a1*b3*c2 - a2*b1*c3 - a3*b2*c1);
+
+
 
 	inverseMat.a1 = inverseMat.a1*determinant;
 	inverseMat.a2 = inverseMat.a2*determinant;
 	inverseMat.a3 = inverseMat.a3*determinant;
 	inverseMat.a4 = inverseMat.a4*determinant;
 
-//TODO START ON NEXT ROWS
+	inverseMat.b1 = inverseMat.b1*determinant;
+	inverseMat.b2 = inverseMat.b2*determinant;
+	inverseMat.b3 = inverseMat.b3*determinant;
+	inverseMat.b4 = inverseMat.b4*determinant;
 
+	inverseMat.c1 = inverseMat.c1*determinant;
+	inverseMat.c2 = inverseMat.c2*determinant;
+	inverseMat.c3 = inverseMat.c3*determinant;
+	inverseMat.c4 = inverseMat.c4*determinant;
+
+	inverseMat.d1 = inverseMat.d1*determinant;
+	inverseMat.d2 = inverseMat.d2*determinant;
+	inverseMat.d3 = inverseMat.d3*determinant;
+	inverseMat.d4 = inverseMat.d4*determinant;
 	return inverseMat;
 }
 

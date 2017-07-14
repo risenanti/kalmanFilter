@@ -136,9 +136,9 @@ int KF2D::task6()
 	temp[0] = (P.a1*H[0]+P.b1*H[1]+P.c1*H[2]);
 	temp[1] = (P.a2*H[0]+P.b2*H[1]+P.c2*H[2]);
 	temp[2] = (P.a3*H[0]+P.b3*H[1]+P.c3*H[2]);
-	K[0] = temp[0]/S;
-	K[1] = temp[1]/S;
-	K[2] = temp[2]/S;
+	K[0] = temp[0];
+	K[1] = temp[1];
+	K[2] = temp[2];
 
 	return 1;
 }
