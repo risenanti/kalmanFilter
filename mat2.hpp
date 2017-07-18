@@ -23,6 +23,12 @@ class mat2
 	mat2 transpose(void);
 	mat2 inverse(void);
 	int setElements(mat2 setElem);
+
+	float getA1(void);
+	float getA2(void);
+	float getB1(void);
+	float getB2(void);
+
 	void print(void);
 
 
@@ -140,6 +146,25 @@ mat2 mat2::inverse(void)
 	inv.b1 = (-1)*other.b1*scalar;
 	inv.b2 = other.a1*scalar;
 	return inv;
+}
+
+float mat2::getA1(void)
+{
+	return a1;
+}
+
+float mat2::getA2(void)
+{
+	return a2;
+}
+
+float mat2::getB1(void)
+{
+	return b1;
+}
+float mat2::getB2(void)
+{
+	return b2;
 }
 
 int mat2::setElements(mat2 setElem)

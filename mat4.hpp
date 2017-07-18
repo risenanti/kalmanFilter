@@ -25,11 +25,30 @@ class mat4
 	int setElements(mat4 setElem);
 	void print(void);
 
+	float getA1(void);
+	float getA2(void);
+	float getA3(void);
+	float getA4(void);
+
+	float getB1(void);
+	float getB2(void);
+	float getB3(void);
+	float getB4(void);
+
+	float getC1(void);
+	float getC2(void);
+	float getC3(void);
+	float getC4(void);
+
+	float getD1(void);
+	float getD2(void);
+	float getD3(void);
+	float getD4(void);
 
 	float a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, c4, d1, d2 ,d3 ,d4;
 };
 
-#endif
+
 
 mat4::mat4()
 {
@@ -74,6 +93,7 @@ mat4 mat4::operator!(void)
 	return this->transpose();
 }
 
+/*division is wrong*/
 mat4 mat4::operator/(const mat4& other)
 {
 	return this->divide(other);
@@ -263,6 +283,74 @@ mat4 mat4::inverse(void)
 	return inverseMat;
 }
 
+float mat4::getA1(void)
+{
+	return a1;
+}
+float mat4::getA2(void)
+{
+	return a2;
+}
+float mat4::getA3(void)
+{
+	return a3;
+}
+float mat4::getA4(void)
+{
+	return a4;
+}
+
+float mat4::getB1(void)
+{
+	return b1;
+}
+float mat4::getB2(void)
+{
+	return b2;
+}
+float mat4::getB3(void)
+{
+	return b3;
+}
+float mat4::getB4(void)
+{
+	return b4;
+}
+
+float mat4::getC1(void)
+{
+	return c1;
+}
+float mat4::getC2(void)
+{
+	return c2;
+}
+float mat4::getC3(void)
+{
+	return c3;
+}
+float mat4::getC4(void)
+{
+	return c4;
+}
+
+float mat4::getD1(void)
+{
+	return d1;
+}
+float mat4::getD2(void)
+{
+	return d2;
+}
+float mat4::getD3(void)
+{
+	return d3;
+}
+float mat4::getD4(void)
+{
+	return d4;
+}
+
 #ifdef desktop
 void mat4::print(void)
 {
@@ -271,4 +359,6 @@ void mat4::print(void)
 	cout<< c1 <<" " << c2 << " " << c3 << " " <<c4 << std::endl;
 	cout<< d1 <<" " << d2 << " " << d3 << " " <<d4 << std::endl;
 }
+#endif
+
 #endif
