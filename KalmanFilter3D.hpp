@@ -95,12 +95,45 @@ int KF3D::task4(void)
 
 	H[4] = -(M[1] - S.getB2()) / F2;
 
-	H[5] = M[0] - S.getA2() / F2;
+	H[5] = (M[0] - S.getA2()) / F2;
 
 	H[6] = 0;
 	H[7] = 0;
 
+	//cout<<H[0] <<", "<<H[1] <<", "<<H[2] <<", "<<H[3] <<","<<endl;
+	//cout<<H[4] <<", "<<H[5] <<", "<<H[6] <<", "<<H[7] <<","<<endl;
+
 	return 1;
 }
+
+int KF3D::task5(void)
+{
+	//S = R + H X P X H'
+
+	/*H * P*/
+	float tempH[8];
+	tempH[0] = H[0]*P.getA1() + H[1]*P.getB1() + H[2]*P.getC1() + H[3]*P.getD1();
+	tempH[1] = H[0]*P.getA2() + H[1]*P.getB2() + H[2]*P.getC2() + H[3]*P.getD2();
+	tempH[2] = H[0]*P.getA3() + H[1]*P.getB3() + H[2]*P.getC3() + H[3]*P.getD3();
+	tempH[3] = H[0]*P.getA4() + H[1]*P.getB4() + H[2]*P.getC4() + H[3]*P.getD4();
+
+	tempH[4] = H[4]*P.getA1() + H[5]*P.getB1() + H[6]*P.getC1() + H[7]*P.getD1();
+	tempH[5] = H[4]*P.getA2() + H[5]*P.getB2() + H[6]*P.getC2() + H[7]*P.getD2();
+	tempH[6] = H[4]*P.getA3() + H[5]*P.getB3() + H[6]*P.getC3() + H[7]*P.getD3();
+	tempH[7] = H[4]*P.getA4() + H[5]*P.getB4() + H[6]*P.getC4() + H[7]*P.getD4();
+
+	/*H * P * H'*/
+	float tempMat[4];
+	tempMat[0] = tempH[0]*H[0] + tempH[1]*H[1] + tempH[2]*H[2] + tempH[3]*H[3];
+	tempMat[1] = tempH[0]*H[4] + tempH[1]*H[5] + tempH[2]*H[6] + tempH[3]*H[7];
+
+	tempMat[2] = tempH[4]*H[0] + tempH[5]*H[1] + tempH[6]*H[2] + tempH[7]*H[3];
+	tempMat[3] = tempH[4]*H[4] + tempH[5]*H[5] + tempH[6]*H[6] + tempH[7]*H[7];
+	//mat2 tempHPH()
+
+	return 1;
+}
+
+
 
 #endif
