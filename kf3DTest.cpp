@@ -29,6 +29,12 @@ int main()
 	myFilter.task3();
 
 	myFilter.task4();
+	myFilter.task5();
+	myFilter.task6();
+
+	myFilter.setMeasurement(1.01, 0.042);
+	myFilter.task7();
+	myFilter.task8();
 
 	return 0;
 }

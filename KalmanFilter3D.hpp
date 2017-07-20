@@ -13,6 +13,7 @@ class KF3D
 
 	int predict(void);
 	int update(void);
+	int setMeasurement(float measurementX,float measurementY);
 
 	KF3D();
 	KF3D(mat4 p, mat4 a, mat4 q, mat2 s, mat2 r, float *m);
@@ -29,17 +30,20 @@ class KF3D
 	float M[4]; //4x1 array
 	float MU[2]; //2x1 array
 	float H[8]; //2x4 array
+	float K[8]; //4x2 array
 	mat4 P;
 	mat4 A;
 	mat4 Q;
 	mat2 S;
 	mat2 R;
+	float Y[2]; // x y measurement
 
 };
 
 KF3D::KF3D()
 {
 	M[0] = 0; M[1]=0.0; M[2]=0.0; M[3]=0.0;
+	Y[0]=(float)0.00; Y[1]=(float)0.00;
 }
 
 KF3D::KF3D(mat4 p, mat4 a, mat4 q, mat2 s, mat2 r, float *m)
@@ -53,6 +57,14 @@ KF3D::KF3D(mat4 p, mat4 a, mat4 q, mat2 s, mat2 r, float *m)
 	M[1] = *(m+1);
 	M[2] = *(m+2);
 	M[3] = *(m+3);
+	Y[0] = (float)0.00; Y[1]=(float)0.00;
+}
+
+int KF3D::setMeasurement(float measurementX,float measurementY)
+{
+	Y[0] = measurementX;
+	Y[1] = measurementY;
+	return 1;
 }
 
 int KF3D::task1(void)
@@ -129,11 +141,115 @@ int KF3D::task5(void)
 
 	tempMat[2] = tempH[4]*H[0] + tempH[5]*H[1] + tempH[6]*H[2] + tempH[7]*H[3];
 	tempMat[3] = tempH[4]*H[4] + tempH[5]*H[5] + tempH[6]*H[6] + tempH[7]*H[7];
-	//mat2 tempHPH()
+
+	mat2 tempHPH(tempMat[0],tempMat[1], tempMat[2], tempMat[3]);
+
+	S = R+tempHPH;
 
 	return 1;
 }
 
+int KF3D::task6(void)
+{
+	/*Task 6: [4 X 2] K = P X H' X inv(S)*/
+	//H[8 = 2 x 4
+	float tempK[8];
+	/*Begin P * H'*/
+	tempK[0] = P.getA1()*H[0] + P.getA2()*H[1] + P.getA3()*H[2] + P.getA4()*H[3];
+	tempK[1] = P.getA1()*H[4] + P.getA2()*H[5] + P.getA3()*H[6] + P.getA4()*H[7];
 
+	tempK[2] = P.getB1()*H[0] + P.getB2()*H[1] + P.getB3()*H[2] + P.getB4()*H[3];
+	tempK[3] = P.getB1()*H[4] + P.getB2()*H[5] + P.getB3()*H[6] + P.getB4()*H[7];
+
+	tempK[4] = P.getC1()*H[0] + P.getC2()*H[1] + P.getC3()*H[2] + P.getC4()*H[3];
+	tempK[5] = P.getC1()*H[4] + P.getC2()*H[5] + P.getC3()*H[6] + P.getC4()*H[7];
+
+	tempK[6] = P.getD1()*H[0] + P.getD2()*H[1] + P.getD3()*H[2] + P.getD4()*H[3];
+	tempK[7] = P.getD1()*H[4] + P.getD2()*H[5] + P.getD3()*H[6] + P.getD4()*H[7];
+	/*ENDc = p*h' P * H'*/
+	mat2 tempS = S.inverse();
+
+	//Testing Failed due to inverse operation on 2x2 matrix being wrong
+	K[0] = tempK[0]*tempS.getA1() + tempK[1]*tempS.getB1();
+	K[1] = tempK[0]*tempS.getA2() + tempK[1]*tempS.getB2();
+
+	K[2] = tempK[2]*tempS.getA1() + tempK[3]*tempS.getB1();
+	K[3] = tempK[2]*tempS.getA2() + tempK[3]*tempS.getB2();
+
+	K[4] = tempK[4]*tempS.getA1() + tempK[5]*tempS.getB1();
+	K[5] = tempK[4]*tempS.getA2() + tempK[5]*tempS.getB2();
+
+	K[6] = tempK[6]*tempS.getA1() + tempK[7]*tempS.getB1();
+	K[7] = tempK[6]*tempS.getA2() + tempK[7]*tempS.getB2();
+
+	return 1;
+}
+
+int KF3D::task7(void)
+{
+	/*M = M + K * (Y-MU) */
+
+	float tempHold[2];
+	tempHold[0] = Y[0] - MU[0];
+	tempHold[1] = Y[1] - MU[1];
+	float tempK[4];
+
+	tempK[0] = K[0]*tempHold[0] + K[1]*tempHold[0];
+
+	tempK[1] = K[2]*tempHold[0] + K[3]*tempHold[0];
+	tempK[2] = K[4]*tempHold[0] + K[5]*tempHold[0];
+	tempK[3] = K[6]*tempHold[0] + K[7]*tempHold[0];
+
+	M[0] = M[0] + tempK[0];
+	M[1] = M[1] + tempK[1];
+	M[2] = M[2] + tempK[2];
+	M[3] = M[3] + tempK[3];
+
+    return 1;
+}
+
+int KF3D::task8(void)
+{
+	/*Task 8: P = P – K X S X K'*/
+	float tempKS[8];
+	tempKS[0] = K[0]*S.getA1() + K[1]*S.getB1();
+	tempKS[1] = K[0]*S.getA2() + K[1]*S.getB2();
+
+	tempKS[2] = K[2]*S.getA1() + K[3]*S.getB1();
+	tempKS[3] = K[2]*S.getA2() + K[3]*S.getB2();
+
+	tempKS[4] = K[4]*S.getA1() + K[5]*S.getB1();
+	tempKS[5] = K[4]*S.getA2() + K[5]*S.getB2();
+
+	tempKS[6] = K[6]*S.getA1() + K[7]*S.getB1();
+	tempKS[7] = K[6]*S.getA2() + K[7]*S.getB2();
+
+	mat4 tempKSK;
+
+	tempKSK.a1 = tempKS[0]* K[0] + tempKS[1]*K[1];
+	tempKSK.a2 = tempKS[0]* K[2] + tempKS[1]*K[3];
+	tempKSK.a3 = tempKS[0]* K[4] + tempKS[1]*K[5];
+	tempKSK.a4 = tempKS[0]* K[6] + tempKS[1]*K[7];
+
+	tempKSK.b1 = tempKS[2]* K[0] + tempKS[3]*K[1];
+	tempKSK.b2 = tempKS[2]* K[2] + tempKS[3]*K[3];
+	tempKSK.b3 = tempKS[2]* K[4] + tempKS[3]*K[5];
+	tempKSK.b4 = tempKS[2]* K[6] + tempKS[3]*K[7];
+
+	tempKSK.c1 = tempKS[4]* K[0] + tempKS[5]*K[1];
+	tempKSK.c2 = tempKS[4]* K[2] + tempKS[5]*K[3];
+	tempKSK.c3 = tempKS[4]* K[4] + tempKS[5]*K[5];
+	tempKSK.c4 = tempKS[4]* K[6] + tempKS[5]*K[7];
+
+	tempKSK.d1 = tempKS[6]* K[0] + tempKS[7]*K[1];
+	tempKSK.d2 = tempKS[6]* K[2] + tempKS[7]*K[3];
+	tempKSK.d3 = tempKS[6]* K[4] + tempKS[7]*K[5];
+	tempKSK.d4 = tempKS[6]* K[6] + tempKS[7]*K[7];
+
+	P = P - tempKSK;
+	P.print();
+
+	return 1;
+}
 
 #endif
