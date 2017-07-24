@@ -82,6 +82,22 @@ void mat3::print(void)
 }
 #endif
 
+#ifdef zybo
+#include "xparameters.h"
+void mat3::print(void)
+		{
+			char buffer[30];
+			sprintf(buffer,"%f, %f, %f\n", a1, a2, a3);
+			xil_printf("%s",buffer);
+
+			sprintf(buffer,"%f, %f, %f\n", b1, b2, b3);
+			xil_printf("%s",buffer);
+
+			sprintf(buffer,"%f, %f, %f\n", c1, c2, c3);
+			xil_printf("%s",buffer);
+		}
+#endif
+
 mat3 mat3::multi(mat3 mult)
 {
 	mat3 other(this->a1,this->a2,this->a3,this->b1,this->b2,this->b3,this->c1,this->c2,this->c3);

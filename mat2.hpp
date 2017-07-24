@@ -125,6 +125,19 @@ void mat2::print(void)
 }
 #endif
 
+#ifdef zybo
+#include "xparameters.h"
+void mat2::print(void)
+		{
+			char buffer[30];
+			sprintf(buffer,"%f, %f\n", a1, a2);
+			xil_printf("%s",buffer);
+
+			sprintf(buffer,"%f, %f\n", b1, b2);
+			xil_printf("%s",buffer);
+		}
+#endif
+
 mat2 mat2::transpose(void)
 {
 	mat2 other(this->a1,this->a2, this->b1,this->b2);

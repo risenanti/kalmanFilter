@@ -287,14 +287,38 @@ float mat5::getE3(void) {return e3;}
 float mat5::getE4(void) {return e4;}
 float mat5::getE5(void) {return e5;}
 
-#ifdef desktop
-void mat5::print(void)
-{
-	cout <<a1 <<", "<<a2<<", " <<a3<<", " <<a4<<", " <<a5<<endl;
-	cout <<b1 <<", "<<b2<<", " <<b3<<", " <<b4<<", " <<b5<<endl;
-	cout <<c1 <<", "<<c2<<", " <<c3<<", " <<c4<<", " <<c5<<endl;
-	cout <<d1 <<", "<<d2<<", " <<d3<<", " <<d4<<", " <<d5<<endl;
-	cout <<e1 <<", "<<e2<<", " <<e3<<", " <<e4<<", " <<e5<<endl;
-}
-#endif
+	#ifdef desktop
+	void mat5::print(void)
+	{
+		cout <<a1 <<", "<<a2<<", " <<a3<<", " <<a4<<", " <<a5<<endl;
+		cout <<b1 <<", "<<b2<<", " <<b3<<", " <<b4<<", " <<b5<<endl;
+		cout <<c1 <<", "<<c2<<", " <<c3<<", " <<c4<<", " <<c5<<endl;
+		cout <<d1 <<", "<<d2<<", " <<d3<<", " <<d4<<", " <<d5<<endl;
+		cout <<e1 <<", "<<e2<<", " <<e3<<", " <<e4<<", " <<e5<<endl;
+	}
+	#endif
+
+	#ifdef zybo
+	#include "xparameters.h"
+	void mat5::print(void)
+	{
+
+		char buffer[30];
+		sprintf(buffer,"%f, %f, %f, %f, %f\n", a1, a2, a3, a4, a5);
+		xil_printf("%s",buffer);
+
+		sprintf(buffer,"%f, %f, %f, %f, %f\n", b1, b2, b3, b4, b5);
+		xil_printf("%s",buffer);
+
+		sprintf(buffer,"%f, %f, %f, %f, %f\n", c1, c2, c3, c4, c5);
+		xil_printf("%s",buffer);
+
+		sprintf(buffer,"%f, %f, %f, %f, %f\n", d1, d2, d3, d4, d5);
+		xil_printf("%s",buffer);
+
+		sprintf(buffer,"%f, %f, %f, %f, %f\n", e1, e2, e3, e4, e5);
+		xil_printf("%s",buffer);
+	}
+	#endif
+
 #endif
