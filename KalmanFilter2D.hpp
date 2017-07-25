@@ -4,6 +4,7 @@
 #include "mat3.hpp"
 #include "mat2.hpp"
 #include "math.h"
+#include "algorithm"
 
 using namespace std;
 //TODO SETUP CLASS CONSTRUCTOR FOR KF2D to allow testing
@@ -85,8 +86,9 @@ int KF2D::takeMeasurement(float measurement)
 int KF2D::task1()
 {
 	//M=A*M
-	float tempM[3];
-	copy(M, M+3, tempM);
+	//float tempM[3];
+	//copy(M, M+3, tempM);
+	float tempM[3] = {M[0], M[1], M[2]};
 	M[0] = A.a1*tempM[0]+A.a2*tempM[1] + A.a3*tempM[2];
 	M[1] = A.b1*tempM[0]+A.b2*tempM[1] + A.b3*tempM[2];
 	M[2] = A.c1*tempM[0]+A.c2*tempM[1] + A.c3*tempM[2];
@@ -96,7 +98,7 @@ int KF2D::task1()
 
 int KF2D::task2()
 {
-	P=A*P*A.inverse()+Q;
+	P=A*P*A.transpose()+Q;
 	return 1;
 }
 
@@ -132,13 +134,13 @@ int KF2D::task5()
 
 int KF2D::task6()
 {
-	float temp[3];
-	temp[0] = (P.a1*H[0]+P.b1*H[1]+P.c1*H[2]);
-	temp[1] = (P.a2*H[0]+P.b2*H[1]+P.c2*H[2]);
-	temp[2] = (P.a3*H[0]+P.b3*H[1]+P.c3*H[2]);
-	K[0] = temp[0];
-	K[1] = temp[1];
-	K[2] = temp[2];
+	//float temp[3];
+	K[0] = (P.a1*H[0]+P.b1*H[1]+P.c1*H[2]);
+	K[1] = (P.a2*H[0]+P.b2*H[1]+P.c2*H[2]);
+	K[2] = (P.a3*H[0]+P.b3*H[1]+P.c3*H[2]);
+	//K[0] = temp[0];
+	//K[1] = temp[1];
+	//K[2] = temp[2];
 
 	return 1;
 }

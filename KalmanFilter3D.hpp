@@ -247,7 +247,7 @@ int KF3D::task8(void)
 	tempKSK.d4 = tempKS[6]* K[6] + tempKS[7]*K[7];
 
 	P = P - tempKSK;
-	P.print();
+	//P.print();
 
 	return 1;
 }

@@ -365,20 +365,19 @@ void mat4::print(void)
 #include "xparameters.h"
 void mat4::print(void)
 		{
-		char buffer[30];
-		sprintf(buffer,"%f, %f, %f, %f\n", a1, a2, a3, a4);
-		xil_printf("%s",buffer);
+			char buffer[30];
+			sprintf(buffer,"%f, %f, %f, %f\n", a1, a2, a3, a4);
+			xil_printf("%s",buffer);
 
-		sprintf(buffer,"%f, %f, %f, %f\n", b1, b2, b3, b4);
-		xil_printf("%s",buffer);
+			sprintf(buffer,"%f, %f, %f, %f\n", b1, b2, b3, b4);
+			xil_printf("%s",buffer);
 
-		sprintf(buffer,"%f, %f, %f, %f\n", c1, c2, c3, c4);
-		xil_printf("%s",buffer);
+			sprintf(buffer,"%f, %f, %f, %f\n", c1, c2, c3, c4);
+			xil_printf("%s",buffer);
 
-		sprintf(buffer,"%f, %f, %f, %f\n", d1, d2, d3, d4);
-		xil_printf("%s",buffer);
+			sprintf(buffer,"%f, %f, %f, %f\n", d1, d2, d3, d4);
+			xil_printf("%s",buffer);
 		}
-
 #endif
 
 #endif
