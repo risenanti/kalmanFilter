@@ -12,6 +12,7 @@
 #include "mat4.hpp"
 #include "mat5.hpp"
 #include "KalmanFilter3D.hpp"
+#include "KalmanFilterReEntry.hpp"
 
 using namespace std;
 
@@ -21,6 +22,7 @@ int main()
 	mat5 test2(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25);
 	test=test*test2;
 	test.print();
+	KFRENTER kk;
 
 	return 0;
 }
