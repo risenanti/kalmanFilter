@@ -64,26 +64,14 @@ KFRENTER::KFRENTER(mat5 p, mat5 q, mat2 s, mat2 r, float *m, float *param)
 
 int KFRENTER::task0(void)
 {
-	float R1, V1, G;
+	float R1, V1, G, D;
 	float b;
-
 
 	R1 = sqrt((pow(M[0], 2)+ pow(M[1],2)));
 	V1 = sqrt(pow(M[2],2)+pow(M[3],2));
 	b  = Param[1] * exp(M[4]);
-
-	//D = b .* exp((param(5,1)-r)/param(3,1)) * V1
-
-	float tempPara[4] = {(Param[4]-R.getA1())/Param[2], (Param[4]-R.getA2())/Param[2],
-			             (Param[4]-R.getB1())/Param[2], (Param[4]-R.getB2())/Param[2]};
-	tempPara[0] = exp(tempPara[0]); tempPara[1] = exp(tempPara[1]);
-	tempPara[2] = exp(tempPara[2]); tempPara[3] = exp(tempPara[3]);
-
-	tempPara[0] = b*tempPara[0]*V1; tempPara[1] = b*tempPara[1]*V1;
-	tempPara[2] = b*tempPara[2]*V1; tempPara[3] = b*tempPara[3]*V1;
-
-	mat2 D(tempPara[0],tempPara[1],tempPara[2],tempPara[3]);
-	G = Param[4]/(pow(R1,3));
+	D = b * exp((Param[4]-R1)/Param[2]) * V1;
+	G = -Param[3]/(pow(R1,3));
 
 	float dR_dx1 = M[0]/R1;
 	float dR_dx2 = M[1]/R1;
@@ -91,11 +79,39 @@ int KFRENTER::task0(void)
 	float dV_dx4 = M[3]/V1;
 	float db_dx5 = b;
 
-	float dD_dx1 = b * (-dR_dx1/Param[2]) * exp(R.getA1()-R1) * V1; //TODO VERIFY R0-R1;
-	float dD_dx2 = b * (-dR_dx2/Param[2]) * exp(R.getA1()-R1) * V1; //TODO VERIFY R0-R1;
-	float dD_dx3 = b
-	float dD_dx4
-	float dD_dx5
+	float dD_dx1 = b * (-dR_dx1/Param[2]) * exp((Param[4]-R1)/Param[2]) * V1;
+	float dD_dx2 = b * (-dR_dx2/Param[2]) * exp((Param[4]-R1)/Param[2]) * V1;
+	float dD_dx3 = b * (exp((Param[4]-R1)/Param[2]) * dV_dx3);
+	float dD_dx4 = b * (exp((Param[4]-R1)/Param[2]) * dV_dx4);
+	float dD_dx5 = db_dx5 * exp((Param[4]-R1)/Param[2]) * V1;
+	float dG_dx1 = -Param[3]*(-3*dR_dx1/pow(R1,4));
+	float dG_dx2 = -Param[3]*(-3*dR_dx2/pow(R1,4));
+
+	float tempDFc1 = dD_dx1 * M[2] + dG_dx1 * M[0] + G;
+	float tempDFc2 = dD_dx2 * M[2] + dG_dx2 * M[0];
+	float tempDFc3 = dD_dx3 * M[2] + D;
+	float tempDFc4 = dD_dx4 * M[2];
+	float tempDFc5 = dD_dx5 * M[2];
+
+	float tempDFd1 = dD_dx1 * M[3] + dG_dx1 * M[1];
+	float tempDFd2 = dD_dx2 * M[3] + dG_dx2 * M[1] + G;
+	float tempDFd3 = dD_dx3 * M[3];
+	float tempDFd4 = dD_dx4 * M[3] + D;
+	float tempDFd5 = dD_dx5 * M[3];
+
+	mat5 df( (float) 0.0, (float) 0.0, (float) 1.0, (float) 0.0, (float) 0.0,
+			 (float) 0.0, (float) 0.0, (float) 0.0, (float) 1.0, (float) 0.0,
+			 tempDFc1, tempDFc2, tempDFc3, tempDFc4, tempDFc5,
+			 tempDFd1, tempDFd2, tempDFd3, tempDFd4, tempDFd5,
+			 (float) 0.0, (float) 0.0, (float) 0.0, (float) 0.0, (float) 0.0);
+
+	/*mat5 tempA =((df.getA1()*Param[0])+(float)1.0, df.getA2()*Param[0]+(float)1.0, df.getA3()*Param[0]+(float)1.0, df.getA4()*Param[0]+(float)1.0, df.getA5()*Param[0]+(float)1.0,
+				 df.getB1()*Param[0], df.getB2()*Param[0], df.getB3()*Param[0], df.getB4()*Param[0], df.getB5()*Param[0],
+				 df.getC1()*Param[0], df.getC2()*Param[0], df.getC3()*Param[0], df.getC4()*Param[0], df.getC5()*Param[0],
+				 df.getD1()*Param[0], df.getD2()*Param[0], df.getD3()*Param[0], df.getD4()*Param[0], df.getD5()*Param[0],
+				 df.getE1()*Param[0], df.getE2()*Param[0], df.getE3()*Param[0], df.getE4()*Param[0], df.getE5()*Param[0]
+				);
+	A=tempA;*/
 
 	return 1;
 }
