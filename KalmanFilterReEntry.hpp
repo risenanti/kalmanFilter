@@ -19,6 +19,9 @@ public:
 	mat2 R;
 	float Param[7]; //7x1 array
 	float dot_x[5]; //5x1 array
+	float MU[2];
+	float H0[5];
+	float H1[5];
 
 
 	KFRENTER(void);
@@ -27,6 +30,9 @@ public:
 	int task0(void);
 	int task1(void);
 	int task2(void);
+	int task3(void);
+	int task4(void);
+	int task5(void);
 
 };
 
@@ -105,13 +111,93 @@ int KFRENTER::task0(void)
 			 tempDFd1, tempDFd2, tempDFd3, tempDFd4, tempDFd5,
 			 (float) 0.0, (float) 0.0, (float) 0.0, (float) 0.0, (float) 0.0);
 
-	/*mat5 tempA =((df.getA1()*Param[0])+(float)1.0, df.getA2()*Param[0]+(float)1.0, df.getA3()*Param[0]+(float)1.0, df.getA4()*Param[0]+(float)1.0, df.getA5()*Param[0]+(float)1.0,
-				 df.getB1()*Param[0], df.getB2()*Param[0], df.getB3()*Param[0], df.getB4()*Param[0], df.getB5()*Param[0],
-				 df.getC1()*Param[0], df.getC2()*Param[0], df.getC3()*Param[0], df.getC4()*Param[0], df.getC5()*Param[0],
-				 df.getD1()*Param[0], df.getD2()*Param[0], df.getD3()*Param[0], df.getD4()*Param[0], df.getD5()*Param[0],
-				 df.getE1()*Param[0], df.getE2()*Param[0], df.getE3()*Param[0], df.getE4()*Param[0], df.getE5()*Param[0]
-				);
-	A=tempA;*/
+
+	float tempAa1 = (df.getA1()*Param[0])+(float)1.0;
+	float tempAa2 = (df.getA2()*Param[0])+(float)1.0;
+	float tempAa3 = (df.getA3()*Param[0])+(float)1.0;
+	float tempAa4 = (df.getA4()*Param[0])+(float)1.0;
+	float tempAa5 = (df.getA5()*Param[0])+(float)1.0;
+
+	float tempAb1 = df.getB1()*Param[0];
+	float tempAb2 = df.getB2()*Param[0];
+	float tempAb3 = df.getB3()*Param[0];
+	float tempAb4 = df.getB4()*Param[0];
+	float tempAb5 = df.getB5()*Param[0];
+
+	float tempAc1 = df.getC1()*Param[0];
+	float tempAc2 = df.getC2()*Param[0];
+	float tempAc3 = df.getC3()*Param[0];
+	float tempAc4 = df.getC4()*Param[0];
+	float tempAc5 = df.getC5()*Param[0];
+
+	float tempAd1 = df.getD1()*Param[0];
+	float tempAd2 = df.getD2()*Param[0];
+	float tempAd3 = df.getD3()*Param[0];
+	float tempAd4 = df.getD4()*Param[0];
+	float tempAd5 = df.getD5()*Param[0];
+
+	float tempAe1 = df.getE1()*Param[0];
+	float tempAe2 = df.getE2()*Param[0];
+	float tempAe3 = df.getE3()*Param[0];
+	float tempAe4 = df.getE4()*Param[0];
+	float tempAe5 = df.getE5()*Param[0];
+
+	mat5 tempA (tempAa1, tempAa2, tempAa3, tempAa4, tempAa5,
+			    tempAb1, tempAb2, tempAb3, tempAb4, tempAb5,
+				tempAc1, tempAc2, tempAc3, tempAc4, tempAc5,
+				tempAd1, tempAd2, tempAd3, tempAd4, tempAd5,
+				tempAe1, tempAe2, tempAe3, tempAe4, tempAe5
+	);
+	A = tempA;
+
+	dot_x[0] = M[2];
+	dot_x[1] = M[3];
+	dot_x[2] = D*M[2]+G*M[1];
+	dot_x[3] = D*M[3]+G*M[1];
+    dot_x[4] = (float) 0.0;
+
+	return 1;
+}
+
+int KFRENTER::task1(void)
+{
+
+	M[0] = M[0] + Param[0]*dot_x[0];
+	M[1] = M[1] + Param[0]*dot_x[1];
+	M[2] = M[2] + Param[0]*dot_x[2];
+	M[3] = M[3] + Param[0]*dot_x[3];
+	M[4] = M[4] + Param[0]*dot_x[4];
+
+	return 1;
+}
+
+int KFRENTER::task2(void)
+{
+	mat5 tempA(A.getA1(), A.getB1(), A.getC1(), A.getD1(), A.getE1(),
+			   A.getA2(), A.getB2(), A.getC2(), A.getD2(), A.getE2(),
+			   A.getA3(), A.getB3(), A.getC3(), A.getD3(), A.getE3(),
+			   A.getA4(), A.getB4(), A.getC4(), A.getD4(), A.getE4(),
+			   A.getA5(), A.getB5(), A.getC5(), A.getD5(), A.getE5());
+
+	P=A*P*tempA+Q;
+	return 1;
+}
+
+int KFRENTER::task3(void)
+{
+	MU[0] = sqrt (pow((M[0]-Param[5]),2) + pow((M[1]-Param[6]),2) );
+	MU[1] = atan2 ( (M[1] - Param[6]) , (M[0] - Param[5]) );
+
+	return 1;
+}
+
+int KFRENTER::task4(void)
+{
+	float F1 = pow( (M[0]-Param[5]) , 2 ) + pow((M[1] - Param[6]) , 2);
+	float F2 = sqrt(F1);
+
+	H0[0] = (M[0] - Param[5]) / F2; H0[1] = (M[1] - Param[6]) / F2; H0[2] = 0; H0[3] = 0; H0[4] = 0;
+	H1[0] = (M[1] - Param[6]) / F2; H1[1] = (M[0] - Param[5]) / F1; H1[2] = 0; H1[3] = 0; H1[4] = 0;
 
 	return 1;
 }

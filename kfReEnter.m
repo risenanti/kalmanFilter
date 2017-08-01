@@ -46,4 +46,30 @@ df(4,3) = dD_dx3 * m(4,1);
 df(4,4) = dD_dx4 * m(4,1) + D;
 df(4,5) = dD_dx5 * m(4,1);
 A = eye(5,1) + param(1,1) * df;
-dot_x = [m(3,1);m(4,1); D*m(3,1)+G*m(1,1); D *m(4,1) + G*m(2,1); 0];
+dot_x = [m(3,1);
+         m(4,1); 
+         D*m(3,1)+G*m(1,1); 
+         D *m(4,1) + G*m(2,1); 
+         0];
+     
+%Task 1
+m = m + param(1,1)*dot_x;
+%end task 1
+
+%task 2
+p = A*p*A'+q;
+%end task2
+
+%task 3
+MU = zeros(2,1);
+MU(1,1) = sqrt ( (m(1,1) - param(6,1))^2 + (m(2,1) - param(7,1))^2 );
+MU(2,1) = atan2 ((m(2,1) - param(7,1)) , m(1,1) - param(6,1));
+%end task 3
+
+%task 4
+F1 = [(m(1,1) - param(6,1)) ^2 + (m(2,1) - param(7,1)) ^2 ];
+F2 = sqrt (F1);
+
+H = [((m(1,1) - param(6,1) ) / F2), ((m(2,1) - param(7,1)) / F2), 0, 0, 0;
+     ((m(2,1) - param(7,1)) / F1 ), ((m(1,1) - param(6,1)) / F1), 0, 0, 0]
+%end task 4

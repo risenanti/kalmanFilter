@@ -28,6 +28,10 @@ int main()
 
 	KFRENTER kk(p,q,s,r,m,para);
 	kk.task0();
+	kk.task1();
+	kk.task2();
+	kk.task3();
+	kk.task4();
 
 	return 0;
 }
