@@ -32,6 +32,8 @@ int main()
 	kk.task2();
 	kk.task3();
 	kk.task4();
+	kk.task5();
+	kk.task6();
 
 	return 0;
 }

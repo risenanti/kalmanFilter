@@ -33,6 +33,9 @@ public:
 	int task3(void);
 	int task4(void);
 	int task5(void);
+	int task6(void);
+	int task7(void);
+	int task8(void);
 
 };
 
@@ -199,6 +202,50 @@ int KFRENTER::task4(void)
 	H0[0] = (M[0] - Param[5]) / F2; H0[1] = (M[1] - Param[6]) / F2; H0[2] = 0; H0[3] = 0; H0[4] = 0;
 	H1[0] = (M[1] - Param[6]) / F2; H1[1] = (M[0] - Param[5]) / F1; H1[2] = 0; H1[3] = 0; H1[4] = 0;
 
+	return 1;
+}
+
+int KFRENTER::task5(void)
+{
+	/* s = r+H*p*H' */
+	float tempMulti[10];
+	tempMulti[0] = H0[0] * P.getA1() + H0[1]*P.getB1() + H0[2]*P.getC1() + H0[3]*P.getD1() + H0[4]*P.getE1();
+	tempMulti[1] = H0[0] * P.getA2() + H0[1]*P.getB2() + H0[2]*P.getC2() + H0[3]*P.getD2() + H0[4]*P.getE2();
+	tempMulti[2] = H0[0] * P.getA3() + H0[1]*P.getB3() + H0[2]*P.getC3() + H0[3]*P.getD3() + H0[4]*P.getE3();
+	tempMulti[3] = H0[0] * P.getA4() + H0[1]*P.getB4() + H0[2]*P.getC4() + H0[3]*P.getD4() + H0[4]*P.getE4();
+	tempMulti[4] = H0[0] * P.getA5() + H0[1]*P.getB5() + H0[2]*P.getC5() + H0[3]*P.getD5() + H0[4]*P.getE5();
+
+	tempMulti[5] = H1[0] * P.getA1() + H1[1]*P.getB1() + H1[2]*P.getC1() + H1[3]*P.getD1() + H1[4]*P.getE1();
+	tempMulti[6] = H1[0] * P.getA2() + H1[1]*P.getB2() + H1[2]*P.getC2() + H1[3]*P.getD2() + H1[4]*P.getE2();
+	tempMulti[7] = H1[0] * P.getA3() + H1[1]*P.getB3() + H1[2]*P.getC3() + H1[3]*P.getD3() + H1[4]*P.getE3();
+	tempMulti[8] = H1[0] * P.getA4() + H1[1]*P.getB4() + H1[2]*P.getC4() + H1[3]*P.getD4() + H1[4]*P.getE4();
+	tempMulti[9] = H1[0] * P.getA5() + H1[1]*P.getB5() + H1[2]*P.getC5() + H1[3]*P.getD5() + H1[4]*P.getE5();
+
+	float tempMat2[4];
+	tempMat2[0] = tempMulti[0] * H0[0] + tempMulti[1] * H0[1] + tempMulti[2] * H0[2] + tempMulti[3] * H0[3] + tempMulti[4] * H0[4];
+	tempMat2[1] = tempMulti[0] * H1[0] + tempMulti[1] * H1[1] + tempMulti[2] * H1[2] + tempMulti[3] * H1[3] + tempMulti[4] * H1[4];
+
+	tempMat2[2] = tempMulti[5] * H0[0] + tempMulti[6] * H0[1] + tempMulti[7] * H0[2] + tempMulti[8] * H0[3] + tempMulti[9] * H0[4];
+	tempMat2[3] = tempMulti[5] * H1[0] + tempMulti[6] * H1[1] + tempMulti[7] * H1[2] + tempMulti[8] * H1[3] + tempMulti[9] * H1[4];
+
+	mat2 temp2Mat(tempMat2[0], tempMat2[1], tempMat2[2], tempMat2[3]);
+	S = R+temp2Mat;
+	S.print();
+
+	/*s =
+
+	  2×2 single matrix
+
+	  487.8000   92.3849
+	  110.2155   27.0887*/
+
+	return 1;
+}
+
+int KFRENTER::task6(void)
+{
+	mat2 temp = S.inverse();
+	//temp.print();
 	return 1;
 }
 

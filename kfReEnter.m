@@ -1,20 +1,20 @@
-q = [1,2,3,4,5; 
+q = single([1,2,3,4,5; 
      6,7,8,9,10;
      11,12,13,14,15;
      16,17,18,19,20;
-     21,22,23,24,25];
- p = q;
- s = [1,2;3,4];
- r=[1,1;2,5];
- m = [1.1; 2.2; 3.3; 4.6; 1.7];
- param = [1;2;3;4;5;6;7];
+     21,22,23,24,25]);
+ p = single(q);
+ s = single([1,2;3,4]);
+ r=single([1,1;2,5]);
+ m = single([1.1; 2.2; 3.3; 4.6; 1.7]);
+ param = single([1;2;3;4;5;6;7]);
  
- R1 = sqrt(m(1,1) ^2 + m(2,1) ^2 );
- V1 = sqrt(m(3,1) ^2 + m(4,1) ^2 );
- b = param(2,1) * exp(m(5,:));
+ R1 = single(sqrt(m(1,1) ^2 + m(2,1) ^2 ));
+ V1 = single(sqrt(m(3,1) ^2 + m(4,1) ^2 ));
+ b  = single(param(2,1) * exp(m(5,:)));
  
- D = b * exp((param(5,1)-R1)/param(3,1)) * V1;
- G = -param(4,1)/ R1^3 ;
+ D = single(b * exp((param(5,1)-R1)/param(3,1)) * V1);
+ G = single(-param(4,1)/ R1^3) ;
  
  dR_dx1 = m(1,1) / R1;
  dR_dx2 = m(2,1) / R1;
@@ -32,7 +32,7 @@ dG_dx2 = -param(4,1) * (-3 * dR_dx2 / R1 ^4 );
 
 %verified to this point
 
-df = zeros(5,5);
+df = single(zeros(5,5));
 df(1,3) = 1;
 df(2,4) = 1;
 df(3,1) = dD_dx1 * m(3,1) + dG_dx1 * m(1,1) + G;
@@ -53,7 +53,7 @@ dot_x = [m(3,1);
          0];
      
 %Task 1
-m = m + param(1,1)*dot_x;
+m = single(m + param(1,1)*dot_x);
 %end task 1
 
 %task 2
@@ -61,15 +61,20 @@ p = A*p*A'+q;
 %end task2
 
 %task 3
-MU = zeros(2,1);
+MU =  single(zeros(2,1));
 MU(1,1) = sqrt ( (m(1,1) - param(6,1))^2 + (m(2,1) - param(7,1))^2 );
 MU(2,1) = atan2 ((m(2,1) - param(7,1)) , m(1,1) - param(6,1));
 %end task 3
 
 %task 4
-F1 = [(m(1,1) - param(6,1)) ^2 + (m(2,1) - param(7,1)) ^2 ];
-F2 = sqrt (F1);
+F1 = single([(m(1,1) - param(6,1)) ^2 + (m(2,1) - param(7,1)) ^2 ]);
+F2 = single(sqrt (F1));
 
+H = single(0);
 H = [((m(1,1) - param(6,1) ) / F2), ((m(2,1) - param(7,1)) / F2), 0, 0, 0;
-     ((m(2,1) - param(7,1)) / F1 ), ((m(1,1) - param(6,1)) / F1), 0, 0, 0]
+     ((m(2,1) - param(7,1)) / F1 ), ((m(1,1) - param(6,1)) / F1), 0, 0, 0];
 %end task 4
+
+%task 5
+s = r+H*p*H'
+%end task 5
