@@ -78,3 +78,7 @@ H = [((m(1,1) - param(6,1) ) / F2), ((m(2,1) - param(7,1)) / F2), 0, 0, 0;
 %task 5
 s = r+H*p*H'
 %end task 5
+
+%task 6
+k = p*H'*inv(s)
+%end task 6

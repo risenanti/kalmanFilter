@@ -229,8 +229,9 @@ int KFRENTER::task5(void)
 	tempMat2[3] = tempMulti[5] * H1[0] + tempMulti[6] * H1[1] + tempMulti[7] * H1[2] + tempMulti[8] * H1[3] + tempMulti[9] * H1[4];
 
 	mat2 temp2Mat(tempMat2[0], tempMat2[1], tempMat2[2], tempMat2[3]);
+	temp2Mat.print();
 	S = R+temp2Mat;
-	S.print();
+	//S.print();
 
 	/*s =
 
