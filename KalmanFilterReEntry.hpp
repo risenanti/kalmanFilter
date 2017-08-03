@@ -358,7 +358,7 @@ int KFRENTER::task8(void)
 			    tempKSK[3][0], tempKSK[3][1], tempKSK[3][2], tempKSK[3][3], tempKSK[3][4],
 				tempKSK[4][0], tempKSK[4][1], tempKSK[4][2], tempKSK[4][3], tempKSK[4][4]);
 	P = P-matKSK;
-	P.print();
+	//P.print();
 	return 1;
 }
 
