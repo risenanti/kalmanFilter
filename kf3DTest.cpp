@@ -35,5 +35,11 @@ int main()
 	kk.task5();
 	kk.task6();
 
+	kk.Y[0] = (float)2.0;
+	kk.Y[1] = (float)4.0;
+
+	kk.task7();
+	kk.task8();
+
 	return 0;
 }

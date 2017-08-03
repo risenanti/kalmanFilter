@@ -19,9 +19,14 @@ public:
 	mat2 R;
 	float Param[7]; //7x1 array
 	float dot_x[5]; //5x1 array
+
 	float MU[2];
+	float Y[2];
+
 	float H0[5];
 	float H1[5];
+
+	float K[5][2];
 
 
 	KFRENTER(void);
@@ -229,10 +234,8 @@ int KFRENTER::task5(void)
 	tempMat2[3] = tempMulti[5] * H1[0] + tempMulti[6] * H1[1] + tempMulti[7] * H1[2] + tempMulti[8] * H1[3] + tempMulti[9] * H1[4];
 
 	mat2 temp2Mat(tempMat2[0], tempMat2[1], tempMat2[2], tempMat2[3]);
-	temp2Mat.print();
 	S = R+temp2Mat;
-	//S.print();
-
+	//TODO FIGURE OUT ISSUE WITH tempMulti
 	/*s =
 
 	  2×2 single matrix
@@ -246,7 +249,116 @@ int KFRENTER::task5(void)
 int KFRENTER::task6(void)
 {
 	mat2 temp = S.inverse();
+	//[4x2]K = P*H'*inv(s)
+	//http://www.calcul.com/show/calculator/matrix-multiplication_;5;5;5;2
+
+	float tempPH0[5], tempPH1[5];
+
+	tempPH0[0] = P.getA1()*H0[0] + P.getA2()*H0[1] + P.getA3()*H0[2] + P.getA4()*H0[3] + P.getA5()*H0[4];
+	tempPH0[1] = P.getB1()*H0[0] + P.getB2()*H0[1] + P.getB3()*H0[2] + P.getB4()*H0[3] + P.getB5()*H0[4];
+	tempPH0[2] = P.getC1()*H0[0] + P.getC2()*H0[1] + P.getC3()*H0[2] + P.getC4()*H0[3] + P.getC5()*H0[4];
+	tempPH0[3] = P.getD1()*H0[0] + P.getD2()*H0[1] + P.getD3()*H0[2] + P.getD4()*H0[3] + P.getD5()*H0[4];
+	tempPH0[4] = P.getE1()*H0[0] + P.getE2()*H0[1] + P.getE3()*H0[2] + P.getE4()*H0[3] + P.getE5()*H0[4];
+
+	tempPH1[0] = P.getA1()*H1[0] + P.getA2()*H1[1] + P.getA3()*H1[2] + P.getA4()*H1[3] + P.getA5()*H1[4];
+	tempPH1[1] = P.getB1()*H1[0] + P.getB2()*H1[1] + P.getB3()*H1[2] + P.getB4()*H1[3] + P.getB5()*H1[4];
+	tempPH1[2] = P.getC1()*H1[0] + P.getC2()*H1[1] + P.getC3()*H1[2] + P.getC4()*H1[3] + P.getC5()*H1[4];
+	tempPH1[3] = P.getD1()*H1[0] + P.getD2()*H1[1] + P.getD3()*H1[2] + P.getD4()*H1[3] + P.getD5()*H1[4];
+	tempPH1[4] = P.getE1()*H1[0] + P.getE2()*H1[1] + P.getE3()*H1[2] + P.getE4()*H1[3] + P.getE5()*H1[4];
+
+	K[0][0] = tempPH0[0] * temp.getA1() + tempPH1[0] * temp.getB1();
+	K[0][1] = tempPH0[0] * temp.getA2() + tempPH1[0] * temp.getB2();
+
+	K[1][0] = tempPH0[1] * temp.getA1() + tempPH1[1] * temp.getB1();
+	K[1][1] = tempPH0[1] * temp.getA2() + tempPH1[1] * temp.getB2();
+
+	K[2][0] = tempPH0[2] * temp.getA1() + tempPH1[2] * temp.getB1();
+	K[2][1] = tempPH0[2] * temp.getA2() + tempPH1[2] * temp.getB2();
+
+	K[3][0] = tempPH0[3] * temp.getA1() + tempPH1[3] * temp.getB1();
+	K[3][1] = tempPH0[3] * temp.getA2() + tempPH1[3] * temp.getB2();
+
+	K[4][0] = tempPH0[4] * temp.getA1() + tempPH1[4] * temp.getB1();
+	K[4][1] = tempPH0[4] * temp.getA2() + tempPH1[4] * temp.getB2();
+
 	//temp.print();
+	return 1;
+}
+
+int KFRENTER::task7(void)
+{
+	float tempMUy[2] = {MU[0] - Y[0], MU[1]-Y[1] };
+	float tempK[5];
+
+	tempK[0] = K[0][0] * tempMUy[0] + K[0][1]*tempMUy[1];
+	tempK[1] = K[1][0] * tempMUy[0] + K[1][1]*tempMUy[1];
+	tempK[2] = K[2][0] * tempMUy[0] + K[2][1]*tempMUy[1];
+	tempK[3] = K[3][0] * tempMUy[0] + K[3][1]*tempMUy[1];
+	tempK[4] = K[4][0] * tempMUy[0] + K[4][1]*tempMUy[1];
+
+	M[0] = M[0] + tempK[0];
+	M[1] = M[1] + tempK[1];
+	M[2] = M[2] + tempK[2];
+	M[3] = M[3] + tempK[3];
+	M[4] = M[4] + tempK[4];
+
+	return 1;
+}
+
+int KFRENTER::task8(void)
+{
+	/*  P = P - K*S*K'  */
+	float tempKS[5][2];
+	float tempKSK[5][5];
+
+	tempKS[0][0] = K[0][0]*S.getA1() + K[0][1]*S.getB1();
+	tempKS[0][1] = K[0][0]*S.getA2() + K[0][1]*S.getB2();
+	tempKS[1][0] = K[1][0]*S.getA1() + K[1][1]*S.getB1();
+	tempKS[1][1] = K[1][0]*S.getA2() + K[1][1]*S.getB2();
+	tempKS[2][0] = K[2][0]*S.getA1() + K[2][1]*S.getB1();
+	tempKS[2][1] = K[2][0]*S.getA2() + K[2][1]*S.getB2();
+	tempKS[3][0] = K[3][0]*S.getA1() + K[3][1]*S.getB1();
+	tempKS[3][1] = K[3][0]*S.getA2() + K[3][1]*S.getB2();
+	tempKS[4][0] = K[4][0]*S.getA1() + K[4][1]*S.getB1();
+	tempKS[4][1] = K[4][0]*S.getA2() + K[4][1]*S.getB2();
+
+	tempKSK[0][0] = tempKS[0][0] * K[0][0] + tempKS[0][1] * K[0][1];
+	tempKSK[1][0] = tempKS[1][0] * K[0][0] + tempKS[1][1] * K[0][1];
+	tempKSK[2][0] = tempKS[2][0] * K[0][0] + tempKS[2][1] * K[0][1];
+	tempKSK[3][0] = tempKS[3][0] * K[0][0] + tempKS[3][1] * K[0][1];
+	tempKSK[4][0] = tempKS[4][0] * K[0][0] + tempKS[4][1] * K[0][1];
+
+	tempKSK[0][1] = tempKS[0][0] * K[1][0] + tempKS[0][1] * K[1][1];
+	tempKSK[1][1] = tempKS[1][0] * K[1][0] + tempKS[1][1] * K[1][1];
+	tempKSK[2][1] = tempKS[2][0] * K[1][0] + tempKS[2][1] * K[1][1];
+	tempKSK[3][1] = tempKS[3][0] * K[1][0] + tempKS[3][1] * K[1][1];
+	tempKSK[4][1] = tempKS[4][0] * K[1][0] + tempKS[4][1] * K[1][1];
+
+	tempKSK[0][2] = tempKS[0][0] * K[2][0] + tempKS[0][1] * K[2][1];
+	tempKSK[1][2] = tempKS[1][0] * K[2][0] + tempKS[1][1] * K[2][1];
+	tempKSK[2][2] = tempKS[2][0] * K[2][0] + tempKS[2][1] * K[2][1];
+	tempKSK[3][2] = tempKS[3][0] * K[2][0] + tempKS[3][1] * K[2][1];
+	tempKSK[4][2] = tempKS[4][0] * K[2][0] + tempKS[4][1] * K[2][1];
+
+	tempKSK[0][3] = tempKS[0][0] * K[3][0] + tempKS[0][1] * K[3][1];
+	tempKSK[1][3] = tempKS[1][0] * K[3][0] + tempKS[1][1] * K[3][1];
+	tempKSK[2][3] = tempKS[2][0] * K[3][0] + tempKS[2][1] * K[3][1];
+	tempKSK[3][3] = tempKS[3][0] * K[3][0] + tempKS[3][1] * K[3][1];
+	tempKSK[4][3] = tempKS[4][0] * K[3][0] + tempKS[4][1] * K[3][1];
+
+	tempKSK[0][4] = tempKS[0][0] * K[4][0] + tempKS[0][1] * K[4][1];
+	tempKSK[1][4] = tempKS[1][0] * K[4][0] + tempKS[1][1] * K[4][1];
+	tempKSK[2][4] = tempKS[2][0] * K[4][0] + tempKS[2][1] * K[4][1];
+	tempKSK[3][4] = tempKS[3][0] * K[4][0] + tempKS[3][1] * K[4][1];
+	tempKSK[4][4] = tempKS[4][0] * K[4][0] + tempKS[4][1] * K[4][1];
+
+	mat5 matKSK(tempKSK[0][0], tempKSK[0][1], tempKSK[0][2], tempKSK[0][3], tempKSK[0][4],
+				tempKSK[1][0], tempKSK[1][1], tempKSK[1][2], tempKSK[1][3], tempKSK[1][4],
+				tempKSK[2][0], tempKSK[2][1], tempKSK[2][2], tempKSK[2][3], tempKSK[2][4],
+			    tempKSK[3][0], tempKSK[3][1], tempKSK[3][2], tempKSK[3][3], tempKSK[3][4],
+				tempKSK[4][0], tempKSK[4][1], tempKSK[4][2], tempKSK[4][3], tempKSK[4][4]);
+	P = P-matKSK;
+	P.print();
 	return 1;
 }
 
