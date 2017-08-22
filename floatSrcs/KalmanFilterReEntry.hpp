@@ -175,13 +175,13 @@ int KFRENTER::task2(void)
 	float tempAe4 = df.getE4()*Param[0];
 	float tempAe5 = df.getE5()*Param[0];
 
-	mat5 tempA (tempAa1, tempAa2, tempAa3, tempAa4, tempAa5,
+	mat5 tempiA (tempAa1, tempAa2, tempAa3, tempAa4, tempAa5,
 			    tempAb1, tempAb2, tempAb3, tempAb4, tempAb5,
 				tempAc1, tempAc2, tempAc3, tempAc4, tempAc5,
 				tempAd1, tempAd2, tempAd3, tempAd4, tempAd5,
 				tempAe1, tempAe2, tempAe3, tempAe4, tempAe5
 	);
-	A = tempA;
+	A = tempiA;
 
 	mat5 tempA(A.getA1(), A.getB1(), A.getC1(), A.getD1(), A.getE1(),
 		   A.getA2(), A.getB2(), A.getC2(), A.getD2(), A.getE2(),
