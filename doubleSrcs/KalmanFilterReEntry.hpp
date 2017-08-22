@@ -32,7 +32,6 @@ public:
 	KFRENTER(void);
 	KFRENTER(mat5 p, mat5 q, mat2 s, mat2 r, double *m, double *param);
 
-	int task0(void);
 	int task1(void);
 	int task2(void);
 	int task3(void);
@@ -76,7 +75,33 @@ KFRENTER::KFRENTER(mat5 p, mat5 q, mat2 s, mat2 r, double *m, double *param)
 	Param[6] = *(param+6);
 }
 
-int KFRENTER::task0(void)
+int KFRENTER::task1(void)
+{
+	double R1, V1, G, D;
+	double b;
+
+	R1 = sqrt((pow(M[0], 2)+ pow(M[1],2)));
+	V1 = sqrt(pow(M[2],2)+pow(M[3],2));
+	b  = Param[1] * exp(M[4]);
+	D = b * exp((Param[4]-R1)/Param[2]) * V1;
+	G = -Param[3]/(pow(R1,3));
+
+	dot_x[0] = M[2];
+	dot_x[1] = M[3];
+	dot_x[2] = D*M[2]+G*M[1];
+	dot_x[3] = D*M[3]+G*M[1];
+    dot_x[4] = (double) 0.0;
+
+	M[0] = M[0] + Param[0]*dot_x[0];
+	M[1] = M[1] + Param[0]*dot_x[1];
+	M[2] = M[2] + Param[0]*dot_x[2];
+	M[3] = M[3] + Param[0]*dot_x[3];
+	M[4] = M[4] + Param[0]*dot_x[4];
+
+	return 1;
+}
+
+int KFRENTER::task2(void)
 {
 	double R1, V1, G, D;
 	double b;
@@ -158,34 +183,11 @@ int KFRENTER::task0(void)
 	);
 	A = tempA;
 
-	dot_x[0] = M[2];
-	dot_x[1] = M[3];
-	dot_x[2] = D*M[2]+G*M[1];
-	dot_x[3] = D*M[3]+G*M[1];
-    dot_x[4] = (double) 0.0;
-
-	return 1;
-}
-
-int KFRENTER::task1(void)
-{
-
-	M[0] = M[0] + Param[0]*dot_x[0];
-	M[1] = M[1] + Param[0]*dot_x[1];
-	M[2] = M[2] + Param[0]*dot_x[2];
-	M[3] = M[3] + Param[0]*dot_x[3];
-	M[4] = M[4] + Param[0]*dot_x[4];
-
-	return 1;
-}
-
-int KFRENTER::task2(void)
-{
 	mat5 tempA(A.getA1(), A.getB1(), A.getC1(), A.getD1(), A.getE1(),
-			   A.getA2(), A.getB2(), A.getC2(), A.getD2(), A.getE2(),
-			   A.getA3(), A.getB3(), A.getC3(), A.getD3(), A.getE3(),
-			   A.getA4(), A.getB4(), A.getC4(), A.getD4(), A.getE4(),
-			   A.getA5(), A.getB5(), A.getC5(), A.getD5(), A.getE5());
+		   A.getA2(), A.getB2(), A.getC2(), A.getD2(), A.getE2(),
+		   A.getA3(), A.getB3(), A.getC3(), A.getD3(), A.getE3(),
+		   A.getA4(), A.getB4(), A.getC4(), A.getD4(), A.getE4(),
+		   A.getA5(), A.getB5(), A.getC5(), A.getD5(), A.getE5());
 
 	P=A*P*tempA+Q;
 	return 1;
