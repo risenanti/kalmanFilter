@@ -38,9 +38,6 @@ XTime tEnd[9], tCur[9];
 		myFilter.Y[1] = (float)4.0;
 
 	/*TASK ONE TEST*/
-			XTime_GetTime(&tCur[0]);
-			myFilter.task0();
-			XTime_GetTime(&tEnd[0]);
 
 			XTime_GetTime(&tCur[1]);
 			myFilter.task1();
