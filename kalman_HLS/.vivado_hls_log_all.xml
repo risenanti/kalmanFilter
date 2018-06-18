@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.800-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.788-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K0' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.782-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_S' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.777-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.770-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.764-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H0' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.756-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_MU' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.741-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.728-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.713-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.696-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.687-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.660-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.648-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.643-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.637-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.624-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.619-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.614-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.609-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.604-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.592-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.567-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.548-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.531-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.495-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.490-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.485-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.480-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.473-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.469-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.464-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.459-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.454-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.447-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.435-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.419-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.400-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.394-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.383-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.366-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.351-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.347-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.343-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.339-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.334-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.326-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.322-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.318-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.314-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.310-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.306-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.302-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.299-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.295-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.292-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a3' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.289-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a3' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.285-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.282-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.279-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.276-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.273-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M2' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.261-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_M2' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.253-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M1' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.249-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_M1' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.245-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M0' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.238-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'kalmamFilter_M0' is power-on initialization." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.236-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Y' will not be exposed as RTL port." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:42.230-0500" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos&lt;float>' to 'sin_or_cos_float_s'." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:36.836-0500" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'operator*' to 'operator_mul'." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:36.814-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'hotbm_::sin_or_cos&lt;float>' to 'sin_or_cos&lt;float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:235)" projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:36.803-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'mat3::operator*' to 'operator*' (kalman_HLS/mat3.hpp:80)" projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:35.559-0500" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee&lt;29, 1>' to 'scaled_fixed2ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:109:37)" projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:35.530-0500" type="Warning"/>
+        <logs message="WARNING: [SYNCHK 200-23] /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:296: variable-indexed range selection may cause suboptimal QoR." projectName="kalman_HLS" solutionName="solution1" date="2018-06-18T10:14:30.952-0500" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

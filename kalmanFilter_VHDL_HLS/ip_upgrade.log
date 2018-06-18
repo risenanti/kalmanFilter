@@ -1,0 +1,79 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Mon Jun 18 10:13:21 2018
+| Host         : keith-OptiPlex-790 running 64-bit Ubuntu 16.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_ap_fsub_2_full_dsp_32'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of test_ap_fsub_2_full_dsp_32 (xilinx.com:ip:floating_point:7.1) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Mon Jun 18 10:13:20 2018
+| Host         : keith-OptiPlex-790 running 64-bit Ubuntu 16.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_ap_fmul_0_max_dsp_32'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of test_ap_fmul_0_max_dsp_32 (xilinx.com:ip:floating_point:7.1) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Mon Jun 18 10:13:18 2018
+| Host         : keith-OptiPlex-790 running 64-bit Ubuntu 16.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_ap_faddfsub_2_full_dsp_32'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of test_ap_faddfsub_2_full_dsp_32 (xilinx.com:ip:floating_point:7.1) from (Rev. 5) to (Rev. 6)
+
+
+
+
+
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Mon Jun 18 10:13:16 2018
+| Host         : keith-OptiPlex-790 running 64-bit Ubuntu 16.04.4 LTS
+| Command      : upgrade_ip
+| Device       : xc7k70tfbv676-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'test_ap_fadd_2_full_dsp_32'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of test_ap_fadd_2_full_dsp_32 (xilinx.com:ip:floating_point:7.1) from (Rev. 5) to (Rev. 6)
+
