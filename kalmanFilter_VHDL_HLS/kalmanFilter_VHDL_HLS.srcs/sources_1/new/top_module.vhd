@@ -9,7 +9,12 @@ use IEEE.NUMERIC_STD.ALL;
 --use UNISIM.VComponents.all;
 
 entity top_module is
-    Port ( clock : in STD_LOGIC);
+    Port ( 
+        clock : in STD_LOGIC;
+        result_M0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        result_M1 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        result_M2 : OUT STD_LOGIC_VECTOR (31 downto 0)
+    );
 end top_module;
 
 architecture Behavioral of top_module is
@@ -132,7 +137,7 @@ begin
 	u0 : test port map 
 	(
 		ap_clk => clock, ap_start => start_signal, ap_rst => '0', ap_done => done_signal, ap_idle => idle_signal,
-			agg_result_M0 => open, agg_result_M1 => open, agg_result_M2 => open, 
+			agg_result_M0 => result_M0, agg_result_M1 => result_M1, agg_result_M2 => result_M2, 
 			agg_result_M0_ap_vld => open, agg_result_M1_ap_vld => open, agg_result_M2_ap_vld => open,
 			
 			agg_result_P_a1 => open, agg_result_P_a2 => open, agg_result_P_a3 => open,
