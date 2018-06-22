@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="KalmanFilter2D.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilter2D.hpp"/>
-    <originFiles name="KalmanFilter3D.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilter3D.hpp"/>
-    <originFiles name="KalmanFilterReEntry.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilterReEntry.hpp"/>
-    <originFiles name="main.cpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/main.cpp"/>
-    <originFiles name="mat2.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat2.hpp"/>
-    <originFiles name="mat3.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat3.hpp"/>
-    <originFiles name="mat4.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat4.hpp"/>
     <originFiles name="mat5.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat5.hpp"/>
+    <originFiles name="mat4.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat4.hpp"/>
+    <originFiles name="mat3.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat3.hpp"/>
+    <originFiles name="mat2.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/mat2.hpp"/>
+    <originFiles name="KalmanFilterReEntry.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilterReEntry.hpp"/>
+    <originFiles name="KalmanFilter3D.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilter3D.hpp"/>
+    <originFiles name="KalmanFilter2D.hpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/KalmanFilter2D.hpp"/>
+    <originFiles name="kf_hls_top.cpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/kf_hls_top.cpp"/>
   </source>
-  <testbench/>
+  <testbench>
+    <originFiles name="main_tb.cpp" path="/home/keith/Documents/github/kalmanFilter/kalman_HLS/main_tb.cpp"/>
+  </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

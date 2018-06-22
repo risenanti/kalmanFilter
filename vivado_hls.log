@@ -1,378 +1,239 @@
 INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/vivado_hls'
-INFO: [HLS 200-10] For user 'keith' on host 'keith-OptiPlex-790' (Linux_x86_64 version 4.13.0-45-generic) on Mon Jun 18 10:45:41 CDT 2018
+INFO: [HLS 200-10] For user 'keith' on host 'keith-OptiPlex-790' (Linux_x86_64 version 4.13.0-45-generic) on Fri Jun 22 12:37:28 CDT 2018
 INFO: [HLS 200-10] On os Ubuntu 16.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/keith/Documents/github/kalmanFilter'
 INFO: [HLS 200-10] Opening project '/home/keith/Documents/github/kalmanFilter/kalman_HLS'.
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/KalmanFilter2D.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/KalmanFilter3D.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/KalmanFilterReEntry.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/main.cpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/mat2.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/mat3.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/mat4.hpp' to the project
-INFO: [HLS 200-10] Adding design file 'kalman_HLS/mat5.hpp' to the project
 INFO: [HLS 200-10] Opening solution '/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xcku5p-ffvb676-2-e'
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
-INFO: [HLS 200-10] Analyzing design file 'kalman_HLS/main.cpp' ...
-INFO: [HLS 200-10] Validating synthesis directives ...
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:08 . Memory (MB): peak = 351.754 ; gain = 0.289 ; free physical = 501 ; free virtual = 25527
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 351.754 ; gain = 0.289 ; free physical = 472 ; free virtual = 25526
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<58, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:529).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<29, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:531).
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<29, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<29, 0, false, (ap_q_mode)0, (ap_o_mode)0, 0>::ap_fixed_base<32, 32, true, (ap_q_mode)5, (ap_o_mode)3, 0>.1' ().
-INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<29, 1, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:314).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 547.625 ; gain = 196.160 ; free physical = 355 ; free virtual = 25435
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kalman_HLS/mat3.hpp:82) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kalman_HLS/mat3.hpp:67) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'KF2D::task2' (kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'KF2D::task2' (kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'KF2D::task2' (kalman_HLS/mat3.hpp:62->kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task1' into 'KF2D::predict' (kalman_HLS/KalmanFilter2D.hpp:71) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
-INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<23, 29>' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
-INFO: [XFORM 203-602] Inlining function 'clz<29, 58, 0>' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:311) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:332) automatically.
-INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:306) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::set_mantissa' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:339) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:341) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::value_list<float>::sin_or_cos_approximation<29, 29>' into 'hotbm_::sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:276) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'hotbm_::sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:313) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::sin' into 'sinf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c/sincosfloat.cpp:6) automatically.
-INFO: [XFORM 203-602] Inlining function 'sinf' into 'KF2D::task3' (kalman_HLS/KalmanFilter2D.hpp:112) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::cos' into 'cosf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c/sincosfloat.cpp:10) automatically.
-INFO: [XFORM 203-602] Inlining function 'cosf' into 'KF2D::task4' (kalman_HLS/KalmanFilter2D.hpp:118) automatically.
-INFO: [XFORM 203-602] Inlining function 'sinf' into 'KF2D::task4' (kalman_HLS/KalmanFilter2D.hpp:120) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kalman_HLS/mat3.hpp:72) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'KF2D::task8' (kalman_HLS/KalmanFilter2D.hpp:170) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'KF2D::task8' (kalman_HLS/mat3.hpp:62->kalman_HLS/KalmanFilter2D.hpp:170) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task3' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:78) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task4' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:79) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task5' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:80) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task6' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:81) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task7' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:82) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::takeMeasurement' into 'test' (kalman_HLS/main.cpp:9) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::predict' into 'test' (kalman_HLS/main.cpp:10) automatically.
-WARNING: [SYNCHK 200-23] /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:296: variable-indexed range selection may cause suboptimal QoR.
-INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:18 ; elapsed = 00:00:16 . Memory (MB): peak = 547.625 ; gain = 196.160 ; free physical = 310 ; free virtual = 25395
-INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:294) in function 'scaled_fixed2ieee<29, 1>' automatically.
-INFO: [XFORM 203-501] Unrolling loop 'Loop-1' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:294) in function 'scaled_fixed2ieee<29, 1>' completely.
-INFO: [XFORM 203-102] Automatically partitioning small array 'out_bits.V' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:293) completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'c' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:304) completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'swap_table.1'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'swap_table'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'neg_sin_table'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'neg_cos_table'  in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'out_bits.V' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:293) in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'c' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:304) in dimension 1 completely.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:97) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:98) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task1' (kalman_HLS/KalmanFilter2D.hpp:99) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kalman_HLS/mat3.hpp:82) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kalman_HLS/mat3.hpp:67) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'KF2D::task2' (kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'KF2D::task2' (kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'KF2D::task2' (kalman_HLS/mat3.hpp:62->kalman_HLS/KalmanFilter2D.hpp:106) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task1' into 'KF2D::predict' (kalman_HLS/KalmanFilter2D.hpp:71) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
-INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<23, 29>' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
-INFO: [XFORM 203-602] Inlining function 'clz<29, 58, 0>' into 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:311) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:332) automatically.
-INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:306) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::set_mantissa' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:339) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'scaled_fixed2ieee<29, 1>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:341) automatically.
-INFO: [XFORM 203-602] Inlining function 'range_redux_payne_hanek_hotbm<29, float, 29, 29>' into 'hotbm_::sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:265) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::value_list<float>::sin_or_cos_approximation<29, 29>' into 'hotbm_::sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:276) automatically.
-INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'hotbm_::sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:313) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::sin' into 'sinf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c/sincosfloat.cpp:6) automatically.
-INFO: [XFORM 203-602] Inlining function 'sinf' into 'KF2D::task3' (kalman_HLS/KalmanFilter2D.hpp:112) automatically.
-INFO: [XFORM 203-602] Inlining function 'hotbm_::cos' into 'cosf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c/sincosfloat.cpp:10) automatically.
-INFO: [XFORM 203-602] Inlining function 'cosf' into 'KF2D::task4' (kalman_HLS/KalmanFilter2D.hpp:118) automatically.
-INFO: [XFORM 203-602] Inlining function 'sinf' into 'KF2D::task4' (kalman_HLS/KalmanFilter2D.hpp:120) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:131) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:132) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task5' (kalman_HLS/KalmanFilter2D.hpp:133) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:142) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:143) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'KF2D::task6' (kalman_HLS/KalmanFilter2D.hpp:144) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kalman_HLS/mat3.hpp:72) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'KF2D::task8' (kalman_HLS/KalmanFilter2D.hpp:170) automatically.
-INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'KF2D::task8' (kalman_HLS/mat3.hpp:62->kalman_HLS/KalmanFilter2D.hpp:170) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task3' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:78) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task4' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:79) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task5' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:80) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task6' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:81) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task7' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:82) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task8' into 'KF2D::update' (kalman_HLS/KalmanFilter2D.hpp:83) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::takeMeasurement' into 'test' (kalman_HLS/main.cpp:9) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::predict' into 'test' (kalman_HLS/main.cpp:10) automatically.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:323:50) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:342:1) in function 'scaled_fixed2ieee<29, 1>'... converting 3 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:235:18) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:313:12) in function 'hotbm_::sin_or_cos<float>'... converting 11 basic blocks.
-INFO: [XFORM 203-602] Inlining function 'KF2D::task2' into 'test' (kalman_HLS/KalmanFilter2D.hpp:72->kalman_HLS/main.cpp:10) automatically.
-INFO: [XFORM 203-602] Inlining function 'KF2D::update' into 'test' (kalman_HLS/main.cpp:11) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:21 ; elapsed = 00:00:20 . Memory (MB): peak = 547.625 ; gain = 196.160 ; free physical = 188 ; free virtual = 25312
-WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee<29, 1>' to 'scaled_fixed2ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:109:37)
-WARNING: [XFORM 203-631] Renaming function 'mat3::operator*' to 'operator*' (kalman_HLS/mat3.hpp:80)
-WARNING: [XFORM 203-631] Renaming function 'hotbm_::sin_or_cos<float>' to 'sin_or_cos<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_hotbm.h:235)
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 674.188 ; gain = 322.723 ; free physical = 181 ; free virtual = 25268
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'test' ...
-WARNING: [SYN 201-103] Legalizing function name 'operator*' to 'operator_mul'.
-WARNING: [SYN 201-103] Legalizing function name 'sin_or_cos<float>' to 'sin_or_cos_float_s'.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'operator_mul'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 22 seconds; current allocated memory: 287.004 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 287.561 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'scaled_fixed2ieee'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 287.812 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 288.099 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'sin_or_cos_float_s'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 288.765 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 289.329 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'test'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 1.01 seconds; current allocated memory: 290.288 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.52 seconds; current allocated memory: 291.551 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'operator_mul'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'test_fadd_32ns_32ns_32_4_full_dsp_1' to 'test_fadd_32ns_32bkb' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'test_fmul_32ns_32ns_32_2_max_dsp_1' to 'test_fmul_32ns_32cud' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'test_fadd_32ns_32bkb': 9 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_fmul_32ns_32cud': 18 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'operator_mul'.
-INFO: [HLS 200-111]  Elapsed time: 0.7 seconds; current allocated memory: 292.615 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'scaled_fixed2ieee'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Finished creating RTL model for 'scaled_fixed2ieee'.
-INFO: [HLS 200-111]  Elapsed time: 0.64 seconds; current allocated memory: 294.813 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'sin_or_cos_float_s'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SYN 201-210] Renamed object name 'sin_or_cos_float_s_ref_4oPi_table_100_V' to 'sin_or_cos_float_dEe' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'sin_or_cos_float_s_second_order_float_2' to 'sin_or_cos_float_eOg' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'sin_or_cos_float_s_second_order_float_3' to 'sin_or_cos_float_fYi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'sin_or_cos_float_s_second_order_float_s' to 'sin_or_cos_float_g8j' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'test_mul_mul_15ns_15ns_30_1_1' to 'test_mul_mul_15nshbi' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'test_mul_mul_15ns_15s_30_1_1' to 'test_mul_mul_15nsibs' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_15nshbi': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_mul_mul_15nsibs': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_mux_164_1_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_mux_83_1_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'sin_or_cos_float_s'.
-INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 296.907 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'test'
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_M0' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_M1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_M2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_a1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_a2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_a3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_b1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_b2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_b3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_c1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_c2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_P_c3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_a1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_a2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_a3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_b1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_b2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_b3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_c1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_c2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_A_c3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_a1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_a2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_a3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_b1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_b2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_b3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_c1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_c2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Q_c3' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_MU' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_H0' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_H1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_H2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_S' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_K0' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_K1' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_K2' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/agg_result_Y' to 'ap_vld'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'test/measurement' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'test' to 'ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Y' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_M0' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M0' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_M1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_M2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_M2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_a3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_a3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_b3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_b3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_A_c3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_A_c3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_a3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_a3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_b3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_b3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_P_c3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_P_c3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_a3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_a3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_b3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_b3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c1' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c2' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Register 'kalmamFilter_Q_c3' is power-on initialization.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_Q_c3' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_MU' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H0' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_H2' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_S' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K0' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K1' will not be exposed as RTL port.
-WARNING: [RTGEN 206-101] Global scalar 'kalmamFilter_K2' will not be exposed as RTL port.
-INFO: [SYN 201-210] Renamed object name 'test_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'test_faddfsub_32njbC' due to the length limit 20
-INFO: [SYN 201-210] Renamed object name 'test_fsub_32ns_32ns_32_4_full_dsp_1' to 'test_fsub_32ns_32kbM' due to the length limit 20
-INFO: [RTGEN 206-100] Generating core module 'test_faddfsub_32njbC': 4 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_fmul_32ns_32cud': 9 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'test_fsub_32ns_32kbM': 5 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'test'.
-INFO: [HLS 200-111]  Elapsed time: 0.93 seconds; current allocated memory: 300.796 MB.
-INFO: [RTMG 210-279] Implementing memory 'sin_or_cos_float_dEe_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'sin_or_cos_float_eOg_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'sin_or_cos_float_fYi_rom' using distributed ROMs.
-INFO: [RTMG 210-279] Implementing memory 'sin_or_cos_float_g8j_rom' using distributed ROMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 674.188 ; gain = 322.723 ; free physical = 157 ; free virtual = 25208
-INFO: [SYSC 207-301] Generating SystemC RTL for test.
-INFO: [VHDL 208-304] Generating VHDL RTL for test.
-INFO: [VLOG 209-307] Generating Verilog RTL for test.
-INFO: [HLS 200-112] Total elapsed time: 29.62 seconds; peak allocated memory: 300.796 MB.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../main_tb.cpp in debug mode
+   Compiling ../../../kf_hls_top.cpp in debug mode
+   Generating csim.exe
+Makefile.rules:374: recipe for target 'csim.exe' failed
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `mat3::mat3(float, float, float, float, float, float, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:53: multiple definition of `mat3::mat3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:53: first defined here
+obj/kf_hls_top.o: In function `mat3::operator=(mat3 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:61: multiple definition of `mat3::operator=(mat3 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:61: first defined here
+obj/kf_hls_top.o: In function `mat3::setElements(mat3)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:231: multiple definition of `mat3::setElements(mat3)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:231: first defined here
+obj/kf_hls_top.o: In function `mat3::operator+(mat3 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:66: multiple definition of `mat3::operator+(mat3 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:66: first defined here
+obj/kf_hls_top.o: In function `mat3::add(mat3)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:162: multiple definition of `mat3::add(mat3)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:162: first defined here
+obj/kf_hls_top.o: In function `mat3::operator-(mat3 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:71: multiple definition of `mat3::operator-(mat3 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:71: first defined here
+obj/kf_hls_top.o: In function `mat3::subtract(mat3)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:172: multiple definition of `mat3::subtract(mat3)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:172: first defined here
+obj/kf_hls_top.o: In function `mat3::operator!()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:76: multiple definition of `mat3::operator!()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:76: first defined here
+obj/kf_hls_top.o: In function `mat3::transpose()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:182: multiple definition of `mat3::transpose()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:182: first defined here
+obj/kf_hls_top.o: In function `mat3::operator*(mat3 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:81: multiple definition of `mat3::operator*(mat3 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:81: first defined here
+obj/kf_hls_top.o: In function `mat3::multi(mat3)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:117: multiple definition of `mat3::multi(mat3)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:117: first defined here
+obj/kf_hls_top.o: In function `mat3::operator/(mat3 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:87: multiple definition of `mat3::operator/(mat3 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:87: first defined here
+obj/kf_hls_top.o: In function `mat3::divide(mat3)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:156: multiple definition of `mat3::divide(mat3)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:156: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `mat3::mat3(float, float, float, float, float, float, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:53: multiple definition of `mat3::mat3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:53: first defined here
+obj/kf_hls_top.o: In function `mat3::inverse()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:193: multiple definition of `mat3::inverse()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:193: first defined here
+obj/kf_hls_top.o: In function `mat3::getA1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:248: multiple definition of `mat3::getA1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:248: first defined here
+obj/kf_hls_top.o: In function `mat3::getA2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:252: multiple definition of `mat3::getA2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:252: first defined here
+obj/kf_hls_top.o: In function `mat3::getA3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:256: multiple definition of `mat3::getA3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:256: first defined here
+obj/kf_hls_top.o: In function `mat3::getB1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:261: multiple definition of `mat3::getB1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:261: first defined here
+obj/kf_hls_top.o: In function `mat3::getB2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:265: multiple definition of `mat3::getB2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:265: first defined here
+obj/kf_hls_top.o: In function `mat3::getB3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:269: multiple definition of `mat3::getB3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:269: first defined here
+obj/kf_hls_top.o: In function `mat3::getC1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:274: multiple definition of `mat3::getC1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:274: first defined here
+obj/kf_hls_top.o: In function `mat3::getC2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:278: multiple definition of `mat3::getC2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:278: first defined here
+obj/kf_hls_top.o: In function `mat3::getC3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:282: multiple definition of `mat3::getC3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:282: first defined here
+obj/kf_hls_top.o: In function `mat2::mat2(float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:43: multiple definition of `mat2::mat2(float, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:43: first defined here
+obj/kf_hls_top.o: In function `mat2::mat2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:48: multiple definition of `mat2::mat2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:48: first defined here
+obj/kf_hls_top.o: In function `mat2::operator=(mat2 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:55: multiple definition of `mat2::operator=(mat2 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:55: first defined here
+obj/kf_hls_top.o: In function `mat2::setElements(mat2)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:187: multiple definition of `mat2::setElements(mat2)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:187: first defined here
+obj/kf_hls_top.o: In function `mat2::operator+(mat2 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:62: multiple definition of `mat2::operator+(mat2 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:62: first defined here
+obj/kf_hls_top.o: In function `mat2::add(mat2)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:107: multiple definition of `mat2::add(mat2)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:107: first defined here
+obj/kf_hls_top.o: In function `mat2::operator-(mat2 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:67: multiple definition of `mat2::operator-(mat2 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:67: first defined here
+obj/kf_hls_top.o: In function `mat2::subtract(mat2)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:115: multiple definition of `mat2::subtract(mat2)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:115: first defined here
+obj/kf_hls_top.o: In function `mat2::operator!()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:71: multiple definition of `mat2::operator!()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:71: first defined here
+obj/kf_hls_top.o: In function `mat2::transpose()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:145: multiple definition of `mat2::transpose()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:145: first defined here
+obj/kf_hls_top.o: In function `mat2::operator*(mat2 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:76: multiple definition of `mat2::operator*(mat2 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:76: first defined here
+obj/kf_hls_top.o: In function `mat2::multi(mat2)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:87: multiple definition of `mat2::multi(mat2)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:87: first defined here
+obj/kf_hls_top.o: In function `mat2::operator/(mat2 const&)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:82: multiple definition of `mat2::operator/(mat2 const&)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:82: first defined here
+obj/kf_hls_top.o: In function `mat2::divide(mat2)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:100: multiple definition of `mat2::divide(mat2)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:100: first defined here
+obj/kf_hls_top.o: In function `mat2::mat2(float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:43: multiple definition of `mat2::mat2(float, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:43: first defined here
+obj/kf_hls_top.o: In function `mat2::mat2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:48: multiple definition of `mat2::mat2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:48: first defined here
+obj/kf_hls_top.o: In function `mat2::inverse()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:156: multiple definition of `mat2::inverse()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:156: first defined here
+obj/kf_hls_top.o: In function `mat2::getA1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:168: multiple definition of `mat2::getA1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:168: first defined here
+obj/kf_hls_top.o: In function `mat2::getA2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:173: multiple definition of `mat2::getA2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:173: first defined here
+obj/kf_hls_top.o: In function `mat2::getB1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:178: multiple definition of `mat2::getB1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:178: first defined here
+obj/kf_hls_top.o: In function `mat2::getB2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:182: multiple definition of `mat2::getB2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat2.hpp:182: first defined here
+obj/kf_hls_top.o: In function `KF2D::KF2D()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:44: multiple definition of `KF2D::KF2D()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:44: first defined here
+obj/kf_hls_top.o: In function `KF2D::KF2D(mat3, mat3, mat3, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:54: multiple definition of `KF2D::KF2D(mat3, mat3, mat3, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:54: first defined here
+obj/kf_hls_top.o: In function `KF2D::predict()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:70: multiple definition of `KF2D::predict()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:70: first defined here
+obj/kf_hls_top.o: In function `KF2D::task1()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:94: multiple definition of `KF2D::task1()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:94: first defined here
+obj/kf_hls_top.o: In function `KF2D::task2()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:105: multiple definition of `KF2D::task2()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:105: first defined here
+obj/kf_hls_top.o: In function `KF2D::update()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:77: multiple definition of `KF2D::update()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:77: first defined here
+obj/kf_hls_top.o: In function `KF2D::task3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:111: multiple definition of `KF2D::task3()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:111: first defined here
+obj/kf_hls_top.o: In function `KF2D::task4()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:117: multiple definition of `KF2D::task4()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:117: first defined here
+obj/kf_hls_top.o: In function `KF2D::task5()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:126: multiple definition of `KF2D::task5()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:126: first defined here
+obj/kf_hls_top.o: In function `KF2D::task6()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:141: multiple definition of `KF2D::task6()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:141: first defined here
+obj/kf_hls_top.o: In function `KF2D::task7()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:150: multiple definition of `KF2D::task7()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:150: first defined here
+obj/kf_hls_top.o: In function `KF2D::task8()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:158: multiple definition of `KF2D::task8()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:158: first defined here
+obj/kf_hls_top.o: In function `KF2D::takeMeasurement(float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:88: multiple definition of `KF2D::takeMeasurement(float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:88: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `p'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:49: multiple definition of `a'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:49: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:51: multiple definition of `q'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:51: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `m0'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `m1'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3(float, float, float, float, float, float, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: multiple definition of `m2'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:47: first defined here
+obj/kf_hls_top.o: In function `mat3::mat3()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:56: multiple definition of `kalmamFilter'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../mat3.hpp:56: first defined here
+obj/kf_hls_top.o: In function `test(float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../kf_hls_top.cpp:8: multiple definition of `test(float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../main_tb.cpp:8: first defined here
+obj/kf_hls_top.o: In function `KF2D::KF2D(mat3, mat3, mat3, float, float, float)':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:54: multiple definition of `KF2D::KF2D(mat3, mat3, mat3, float, float, float)'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:54: first defined here
+obj/kf_hls_top.o: In function `KF2D::KF2D()':
+/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:44: multiple definition of `KF2D::KF2D()'
+obj/main_tb.o:/home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim/build/../../../KalmanFilter2D.hpp:44: first defined here
+collect2: ld returned 1 exit status
+make: *** [csim.exe] Error 1
+ERROR: [SIM 211-100] CSim file generation failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+5
+    while executing
+"source /home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim.tcl"
+    invoked from within
+"hls::main /home/keith/Documents/github/kalmanFilter/kalman_HLS/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
