@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Port 'filter/value_K2' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="kalman_class" solutionName="solution1" date="2018-07-14T21:40:46.804-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'filter/value_K1' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="kalman_class" solutionName="solution1" date="2018-07-14T21:40:46.796-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'filter/value_K0' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="kalman_class" solutionName="solution1" date="2018-07-14T21:40:46.795-0500" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Port 'filter/value_S' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="kalman_class" solutionName="solution1" date="2018-07-14T21:40:46.793-0500" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

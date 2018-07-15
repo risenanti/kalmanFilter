@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="KalmanFilter2D.hpp" path="/home/risen/Documents/hls_ws/kalman_class/KalmanFilter2D.hpp"/>
+    <originFiles name="mat2.hpp" path="/home/risen/Documents/hls_ws/kalman_class/mat2.hpp"/>
+    <originFiles name="mat3.hpp" path="/home/risen/Documents/hls_ws/kalman_class/mat3.hpp"/>
+    <originFiles name="mat4.hpp" path="/home/risen/Documents/hls_ws/kalman_class/mat4.hpp"/>
+    <originFiles name="mat5.hpp" path="/home/risen/Documents/hls_ws/kalman_class/mat5.hpp"/>
+    <originFiles name="kf_top.cpp" path="/home/risen/Documents/hls_ws/kalman_class/kf_top.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="main_tb.cpp" path="/home/risen/Documents/hls_ws/kalman_class/main_tb.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
