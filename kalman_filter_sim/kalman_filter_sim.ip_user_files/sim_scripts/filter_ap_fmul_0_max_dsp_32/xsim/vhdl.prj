@@ -1,4 +1,0 @@
-vhdl xil_defaultlib  \
-"../../../../kalman_filter_sim.srcs/sources_1/ip/filter_ap_fmul_0_max_dsp_32/sim/filter_ap_fmul_0_max_dsp_32.vhd" \
-
-nosort
