@@ -1,4 +1,5 @@
 kalman_HLS/solution1
+/doubles/kf_filter_double/solution1
 kalman_filter_sim/kalman_filter_sim.cache
 kalman_filter_sim/kalman_filter_sim.runs
 kalman_filter_sim/kalman_filter_sim.ip_user_files
