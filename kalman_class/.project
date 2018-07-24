@@ -29,67 +29,67 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/.apc/.src</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/.apc/.tb</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/solution1/.tcls</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/KalmanFilter2D.hpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/KalmanFilter2D.hpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/KalmanFilter2D.hpp</location>
 		</link>
 		<link>
 			<name>source/kf_top.cpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/kf_top.cpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/kf_top.cpp</location>
 		</link>
 		<link>
 			<name>source/mat2.hpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/mat2.hpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/mat2.hpp</location>
 		</link>
 		<link>
 			<name>source/mat3.hpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/mat3.hpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/mat3.hpp</location>
 		</link>
 		<link>
 			<name>source/mat4.hpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/mat4.hpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/mat4.hpp</location>
 		</link>
 		<link>
 			<name>source/mat5.hpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/mat5.hpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/mat5.hpp</location>
 		</link>
 		<link>
 			<name>testbench/main_tb.cpp</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/main_tb.cpp</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/main_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/solution1/solution1.directive</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/solution1/directives.tcl</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/home/risen/Documents/hls_ws/kalman_class/solution1/script.tcl</location>
+			<location>/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

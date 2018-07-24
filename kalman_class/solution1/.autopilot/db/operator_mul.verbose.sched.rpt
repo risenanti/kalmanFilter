@@ -1,0 +1,341 @@
+
+
+================================================================
+== Vivado HLS Report for 'operator_mul'
+================================================================
+* Date:           Tue Jul 24 13:54:46 2018
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        kalman_class
+* Solution:       solution1
+* Product family: kintexuplus
+* Target device:  xcku5p-ffvb676-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    9|    9|    9|    9|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+
+* FSM state operations: 
+
+ <State 1> : 8.42ns
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%other_b3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_b3_read)"
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%other_b2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_b2_read)"
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%other_b1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_b1_read)"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%other_a3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_a3_read)"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%other_a2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_a2_read)"
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%other_a1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_a1_read)"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%mat3_c2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_c2_read)"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%mat3_c1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_c1_read)"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%mat3_b2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_b2_read)"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%mat3_b1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_b1_read)"
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%mat3_a2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_a2_read)"
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%mat3_a1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_a1_read)"
+ST_1 : Operation 23 [2/2] (8.41ns)   --->   "%tmp_i = fmul float %mat3_a1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [2/2] (8.41ns)   --->   "%tmp_i_30 = fmul float %mat3_a2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 25 [2/2] (8.41ns)   --->   "%tmp_28_i = fmul float %mat3_a1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [2/2] (8.41ns)   --->   "%tmp_29_i = fmul float %mat3_a2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [2/2] (8.41ns)   --->   "%tmp_32_i = fmul float %mat3_a1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [2/2] (8.41ns)   --->   "%tmp_33_i = fmul float %mat3_a2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [2/2] (8.41ns)   --->   "%tmp_36_i = fmul float %mat3_b1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [2/2] (8.41ns)   --->   "%tmp_37_i = fmul float %mat3_b2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 31 [2/2] (8.41ns)   --->   "%tmp_40_i = fmul float %mat3_b1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [2/2] (8.41ns)   --->   "%tmp_41_i = fmul float %mat3_b2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [2/2] (8.41ns)   --->   "%tmp_44_i = fmul float %mat3_b1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [2/2] (8.41ns)   --->   "%tmp_45_i = fmul float %mat3_b2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [2/2] (8.41ns)   --->   "%tmp_48_i = fmul float %mat3_c1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [2/2] (8.41ns)   --->   "%tmp_49_i = fmul float %mat3_c2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [2/2] (8.41ns)   --->   "%tmp_52_i = fmul float %mat3_c1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [2/2] (8.41ns)   --->   "%tmp_53_i = fmul float %mat3_c2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 39 [2/2] (8.41ns)   --->   "%tmp_56_i = fmul float %mat3_c1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [2/2] (8.41ns)   --->   "%tmp_57_i = fmul float %mat3_c2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 8.42ns
+ST_2 : Operation 41 [1/2] (8.41ns)   --->   "%tmp_i = fmul float %mat3_a1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 42 [1/2] (8.41ns)   --->   "%tmp_i_30 = fmul float %mat3_a2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/2] (8.41ns)   --->   "%tmp_28_i = fmul float %mat3_a1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 44 [1/2] (8.41ns)   --->   "%tmp_29_i = fmul float %mat3_a2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/2] (8.41ns)   --->   "%tmp_32_i = fmul float %mat3_a1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/2] (8.41ns)   --->   "%tmp_33_i = fmul float %mat3_a2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 47 [1/2] (8.41ns)   --->   "%tmp_36_i = fmul float %mat3_b1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/2] (8.41ns)   --->   "%tmp_37_i = fmul float %mat3_b2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 49 [1/2] (8.41ns)   --->   "%tmp_40_i = fmul float %mat3_b1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/2] (8.41ns)   --->   "%tmp_41_i = fmul float %mat3_b2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 51 [1/2] (8.41ns)   --->   "%tmp_44_i = fmul float %mat3_b1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/2] (8.41ns)   --->   "%tmp_45_i = fmul float %mat3_b2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 53 [1/2] (8.41ns)   --->   "%tmp_48_i = fmul float %mat3_c1_read_1, %other_a1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 54 [1/2] (8.41ns)   --->   "%tmp_49_i = fmul float %mat3_c2_read_1, %other_b1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/2] (8.41ns)   --->   "%tmp_52_i = fmul float %mat3_c1_read_1, %other_a2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 56 [1/2] (8.41ns)   --->   "%tmp_53_i = fmul float %mat3_c2_read_1, %other_b2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 57 [1/2] (8.41ns)   --->   "%tmp_56_i = fmul float %mat3_c1_read_1, %other_a3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 58 [1/2] (8.41ns)   --->   "%tmp_57_i = fmul float %mat3_c2_read_1, %other_b3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 3> : 6.44ns
+ST_3 : Operation 59 [4/4] (6.43ns)   --->   "%tmp_26_i = fadd float %tmp_i, %tmp_i_30" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 60 [4/4] (6.43ns)   --->   "%tmp_30_i = fadd float %tmp_28_i, %tmp_29_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 61 [4/4] (6.43ns)   --->   "%tmp_34_i = fadd float %tmp_32_i, %tmp_33_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [4/4] (6.43ns)   --->   "%tmp_38_i = fadd float %tmp_36_i, %tmp_37_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 63 [4/4] (6.43ns)   --->   "%tmp_42_i = fadd float %tmp_40_i, %tmp_41_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 64 [4/4] (6.43ns)   --->   "%tmp_46_i = fadd float %tmp_44_i, %tmp_45_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 65 [4/4] (6.43ns)   --->   "%tmp_50_i = fadd float %tmp_48_i, %tmp_49_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [4/4] (6.43ns)   --->   "%tmp_54_i = fadd float %tmp_52_i, %tmp_53_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 67 [4/4] (6.43ns)   --->   "%tmp_58_i = fadd float %tmp_56_i, %tmp_57_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 4> : 6.44ns
+ST_4 : Operation 68 [3/4] (6.43ns)   --->   "%tmp_26_i = fadd float %tmp_i, %tmp_i_30" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 69 [3/4] (6.43ns)   --->   "%tmp_30_i = fadd float %tmp_28_i, %tmp_29_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 70 [3/4] (6.43ns)   --->   "%tmp_34_i = fadd float %tmp_32_i, %tmp_33_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 71 [3/4] (6.43ns)   --->   "%tmp_38_i = fadd float %tmp_36_i, %tmp_37_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [3/4] (6.43ns)   --->   "%tmp_42_i = fadd float %tmp_40_i, %tmp_41_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 73 [3/4] (6.43ns)   --->   "%tmp_46_i = fadd float %tmp_44_i, %tmp_45_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 74 [3/4] (6.43ns)   --->   "%tmp_50_i = fadd float %tmp_48_i, %tmp_49_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 75 [3/4] (6.43ns)   --->   "%tmp_54_i = fadd float %tmp_52_i, %tmp_53_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 76 [3/4] (6.43ns)   --->   "%tmp_58_i = fadd float %tmp_56_i, %tmp_57_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 8.42ns
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%other_c3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_c3_read)"
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%other_c2_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_c2_read)"
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%other_c1_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %other_c1_read)"
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%mat3_c3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_c3_read)"
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%mat3_b3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_b3_read)"
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%mat3_a3_read_1 = call float @_ssdm_op_Read.ap_auto.float(float %mat3_a3_read)"
+ST_5 : Operation 83 [2/4] (6.43ns)   --->   "%tmp_26_i = fadd float %tmp_i, %tmp_i_30" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 84 [2/2] (8.41ns)   --->   "%tmp_27_i = fmul float %mat3_a3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 85 [2/4] (6.43ns)   --->   "%tmp_30_i = fadd float %tmp_28_i, %tmp_29_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 86 [2/2] (8.41ns)   --->   "%tmp_31_i = fmul float %mat3_a3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 87 [2/4] (6.43ns)   --->   "%tmp_34_i = fadd float %tmp_32_i, %tmp_33_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 88 [2/2] (8.41ns)   --->   "%tmp_35_i = fmul float %mat3_a3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 89 [2/4] (6.43ns)   --->   "%tmp_38_i = fadd float %tmp_36_i, %tmp_37_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 90 [2/2] (8.41ns)   --->   "%tmp_39_i = fmul float %mat3_b3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 91 [2/4] (6.43ns)   --->   "%tmp_42_i = fadd float %tmp_40_i, %tmp_41_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 92 [2/2] (8.41ns)   --->   "%tmp_43_i = fmul float %mat3_b3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 93 [2/4] (6.43ns)   --->   "%tmp_46_i = fadd float %tmp_44_i, %tmp_45_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 94 [2/2] (8.41ns)   --->   "%tmp_47_i = fmul float %mat3_b3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 95 [2/4] (6.43ns)   --->   "%tmp_50_i = fadd float %tmp_48_i, %tmp_49_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 96 [2/2] (8.41ns)   --->   "%tmp_51_i = fmul float %mat3_c3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 97 [2/4] (6.43ns)   --->   "%tmp_54_i = fadd float %tmp_52_i, %tmp_53_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 98 [2/2] (8.41ns)   --->   "%tmp_55_i = fmul float %mat3_c3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 99 [2/4] (6.43ns)   --->   "%tmp_58_i = fadd float %tmp_56_i, %tmp_57_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 100 [2/2] (8.41ns)   --->   "%tmp_59_i = fmul float %mat3_c3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 8.42ns
+ST_6 : Operation 101 [1/4] (6.43ns)   --->   "%tmp_26_i = fadd float %tmp_i, %tmp_i_30" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 102 [1/2] (8.41ns)   --->   "%tmp_27_i = fmul float %mat3_a3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 103 [1/4] (6.43ns)   --->   "%tmp_30_i = fadd float %tmp_28_i, %tmp_29_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 104 [1/2] (8.41ns)   --->   "%tmp_31_i = fmul float %mat3_a3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 105 [1/4] (6.43ns)   --->   "%tmp_34_i = fadd float %tmp_32_i, %tmp_33_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 106 [1/2] (8.41ns)   --->   "%tmp_35_i = fmul float %mat3_a3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 107 [1/4] (6.43ns)   --->   "%tmp_38_i = fadd float %tmp_36_i, %tmp_37_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 108 [1/2] (8.41ns)   --->   "%tmp_39_i = fmul float %mat3_b3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [1/4] (6.43ns)   --->   "%tmp_42_i = fadd float %tmp_40_i, %tmp_41_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 110 [1/2] (8.41ns)   --->   "%tmp_43_i = fmul float %mat3_b3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 111 [1/4] (6.43ns)   --->   "%tmp_46_i = fadd float %tmp_44_i, %tmp_45_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 112 [1/2] (8.41ns)   --->   "%tmp_47_i = fmul float %mat3_b3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 113 [1/4] (6.43ns)   --->   "%tmp_50_i = fadd float %tmp_48_i, %tmp_49_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 114 [1/2] (8.41ns)   --->   "%tmp_51_i = fmul float %mat3_c3_read_1, %other_c1_read_1" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 115 [1/4] (6.43ns)   --->   "%tmp_54_i = fadd float %tmp_52_i, %tmp_53_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 116 [1/2] (8.41ns)   --->   "%tmp_55_i = fmul float %mat3_c3_read_1, %other_c2_read_1" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 117 [1/4] (6.43ns)   --->   "%tmp_58_i = fadd float %tmp_56_i, %tmp_57_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 118 [1/2] (8.41ns)   --->   "%tmp_59_i = fmul float %mat3_c3_read_1, %other_c3_read_1" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 6.44ns
+ST_7 : Operation 119 [4/4] (6.43ns)   --->   "%tempMulti_a1 = fadd float %tmp_26_i, %tmp_27_i" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 120 [4/4] (6.43ns)   --->   "%tempMulti_a2 = fadd float %tmp_30_i, %tmp_31_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 121 [4/4] (6.43ns)   --->   "%tempMulti_a3 = fadd float %tmp_34_i, %tmp_35_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 122 [4/4] (6.43ns)   --->   "%tempMulti_b1 = fadd float %tmp_38_i, %tmp_39_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 123 [4/4] (6.43ns)   --->   "%tempMulti_b2 = fadd float %tmp_42_i, %tmp_43_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 124 [4/4] (6.43ns)   --->   "%tempMulti_b3 = fadd float %tmp_46_i, %tmp_47_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 125 [4/4] (6.43ns)   --->   "%tempMulti_c1 = fadd float %tmp_50_i, %tmp_51_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 126 [4/4] (6.43ns)   --->   "%tempMulti_c2 = fadd float %tmp_54_i, %tmp_55_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 127 [4/4] (6.43ns)   --->   "%tempMulti_c3 = fadd float %tmp_58_i, %tmp_59_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 6.44ns
+ST_8 : Operation 128 [3/4] (6.43ns)   --->   "%tempMulti_a1 = fadd float %tmp_26_i, %tmp_27_i" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 129 [3/4] (6.43ns)   --->   "%tempMulti_a2 = fadd float %tmp_30_i, %tmp_31_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 130 [3/4] (6.43ns)   --->   "%tempMulti_a3 = fadd float %tmp_34_i, %tmp_35_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 131 [3/4] (6.43ns)   --->   "%tempMulti_b1 = fadd float %tmp_38_i, %tmp_39_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 132 [3/4] (6.43ns)   --->   "%tempMulti_b2 = fadd float %tmp_42_i, %tmp_43_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 133 [3/4] (6.43ns)   --->   "%tempMulti_b3 = fadd float %tmp_46_i, %tmp_47_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 134 [3/4] (6.43ns)   --->   "%tempMulti_c1 = fadd float %tmp_50_i, %tmp_51_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 135 [3/4] (6.43ns)   --->   "%tempMulti_c2 = fadd float %tmp_54_i, %tmp_55_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 136 [3/4] (6.43ns)   --->   "%tempMulti_c3 = fadd float %tmp_58_i, %tmp_59_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 6.44ns
+ST_9 : Operation 137 [2/4] (6.43ns)   --->   "%tempMulti_a1 = fadd float %tmp_26_i, %tmp_27_i" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 138 [2/4] (6.43ns)   --->   "%tempMulti_a2 = fadd float %tmp_30_i, %tmp_31_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 139 [2/4] (6.43ns)   --->   "%tempMulti_a3 = fadd float %tmp_34_i, %tmp_35_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 140 [2/4] (6.43ns)   --->   "%tempMulti_b1 = fadd float %tmp_38_i, %tmp_39_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 141 [2/4] (6.43ns)   --->   "%tempMulti_b2 = fadd float %tmp_42_i, %tmp_43_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 142 [2/4] (6.43ns)   --->   "%tempMulti_b3 = fadd float %tmp_46_i, %tmp_47_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 143 [2/4] (6.43ns)   --->   "%tempMulti_c1 = fadd float %tmp_50_i, %tmp_51_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 144 [2/4] (6.43ns)   --->   "%tempMulti_c2 = fadd float %tmp_54_i, %tmp_55_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 145 [2/4] (6.43ns)   --->   "%tempMulti_c3 = fadd float %tmp_58_i, %tmp_59_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 10> : 6.44ns
+ST_10 : Operation 146 [1/4] (6.43ns)   --->   "%tempMulti_a1 = fadd float %tmp_26_i, %tmp_27_i" [kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 147 [1/4] (6.43ns)   --->   "%tempMulti_a2 = fadd float %tmp_30_i, %tmp_31_i" [kalman_class/mat3.hpp:128->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 148 [1/4] (6.43ns)   --->   "%tempMulti_a3 = fadd float %tmp_34_i, %tmp_35_i" [kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 149 [1/4] (6.43ns)   --->   "%tempMulti_b1 = fadd float %tmp_38_i, %tmp_39_i" [kalman_class/mat3.hpp:132->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 150 [1/4] (6.43ns)   --->   "%tempMulti_b2 = fadd float %tmp_42_i, %tmp_43_i" [kalman_class/mat3.hpp:134->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 151 [1/4] (6.43ns)   --->   "%tempMulti_b3 = fadd float %tmp_46_i, %tmp_47_i" [kalman_class/mat3.hpp:136->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 152 [1/4] (6.43ns)   --->   "%tempMulti_c1 = fadd float %tmp_50_i, %tmp_51_i" [kalman_class/mat3.hpp:139->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 153 [1/4] (6.43ns)   --->   "%tempMulti_c2 = fadd float %tmp_54_i, %tmp_55_i" [kalman_class/mat3.hpp:141->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 154 [1/4] (6.43ns)   --->   "%tempMulti_c3 = fadd float %tmp_58_i, %tmp_59_i" [kalman_class/mat3.hpp:143->kalman_class/mat3.hpp:82]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 155 [1/1] (0.00ns)   --->   "%mrv_i = insertvalue { float, float, float, float, float, float, float, float, float } undef, float %tempMulti_a1, 0" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 156 [1/1] (0.00ns)   --->   "%mrv_1_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_i, float %tempMulti_a2, 1" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 157 [1/1] (0.00ns)   --->   "%mrv_2_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_1_i, float %tempMulti_a3, 2" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 158 [1/1] (0.00ns)   --->   "%mrv_3_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_2_i, float %tempMulti_b1, 3" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 159 [1/1] (0.00ns)   --->   "%mrv_4_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_3_i, float %tempMulti_b2, 4" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 160 [1/1] (0.00ns)   --->   "%mrv_5_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_4_i, float %tempMulti_b3, 5" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 161 [1/1] (0.00ns)   --->   "%mrv_6_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_5_i, float %tempMulti_c1, 6" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 162 [1/1] (0.00ns)   --->   "%mrv_7_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_6_i, float %tempMulti_c2, 7" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 163 [1/1] (0.00ns)   --->   "%mrv_8_i = insertvalue { float, float, float, float, float, float, float, float, float } %mrv_7_i, float %tempMulti_c3, 8" [kalman_class/mat3.hpp:151->kalman_class/mat3.hpp:82]
+ST_10 : Operation 164 [1/1] (0.00ns)   --->   "ret { float, float, float, float, float, float, float, float, float } %mrv_8_i" [kalman_class/mat3.hpp:82]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'other_b3_read' [22]  (0 ns)
+	'fmul' operation ('tmp_33_i', kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82) [48]  (8.42 ns)
+
+ <State 2>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_i', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [37]  (8.42 ns)
+
+ <State 3>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_26_i', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [39]  (6.44 ns)
+
+ <State 4>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_26_i', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [39]  (6.44 ns)
+
+ <State 5>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'other_c3_read' [19]  (0 ns)
+	'fmul' operation ('tmp_35_i', kalman_class/mat3.hpp:130->kalman_class/mat3.hpp:82) [50]  (8.42 ns)
+
+ <State 6>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_27_i', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [40]  (8.42 ns)
+
+ <State 7>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempMulti.a1', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [41]  (6.44 ns)
+
+ <State 8>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempMulti.a1', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [41]  (6.44 ns)
+
+ <State 9>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempMulti.a1', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [41]  (6.44 ns)
+
+ <State 10>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempMulti.a1', kalman_class/mat3.hpp:126->kalman_class/mat3.hpp:82) [41]  (6.44 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

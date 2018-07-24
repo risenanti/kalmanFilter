@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "mat3.hpp"
 #include "mat2.hpp"
-#include "math.h"
+#include "hls_math.h"
 #include "algorithm"
 
 mat3 p(3,0,2,2,0,-2,0,1,1), a(2.66,0,22,2,30,-2,0,1,1), q(22,11,10,15,5,3,2,6,7);
@@ -46,12 +46,12 @@ kf_values filter(kf_values value){
 
 	//task3
 	//MU = M2*sinf(M0);
-	value.MU = value.M2*sinf(value.M0);
+	value.MU = value.M2*hls::cordic::sinf(value.M0);
 
 	//Task4
-	value.H0 = value.M2*cosf(value.M0);
+	value.H0 = value.M2*hls::cordic::cosf(value.M0);
 	value.H1 = 0;
-	value.H2 = sinf(value.M0);
+	value.H2 = hls::cordic::sinf(value.M0);
 
 	//Task5
 	float temp0, temp1, temp2;

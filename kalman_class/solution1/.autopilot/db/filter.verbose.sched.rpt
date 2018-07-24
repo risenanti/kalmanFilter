@@ -1,0 +1,911 @@
+
+
+================================================================
+== Vivado HLS Report for 'filter'
+================================================================
+* Date:           Tue Jul 24 13:54:48 2018
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        kalman_class
+* Solution:       solution1
+* Product family: kintexuplus
+* Target device:  xcku5p-ffvb676-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.42|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   66|  158|   66|  158|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 47
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	13  / true
+13 --> 
+	14  / true
+14 --> 
+	15  / true
+15 --> 
+	16  / true
+16 --> 
+	17  / true
+17 --> 
+	18  / true
+18 --> 
+	19  / true
+19 --> 
+	20  / true
+20 --> 
+	21  / true
+21 --> 
+	22  / true
+22 --> 
+	23  / true
+23 --> 
+	24  / true
+24 --> 
+	25  / true
+25 --> 
+	26  / true
+26 --> 
+	27  / true
+27 --> 
+	28  / true
+28 --> 
+	29  / true
+29 --> 
+	30  / true
+30 --> 
+	31  / true
+31 --> 
+	32  / true
+32 --> 
+	33  / true
+33 --> 
+	34  / true
+34 --> 
+	35  / true
+35 --> 
+	36  / true
+36 --> 
+	37  / true
+37 --> 
+	38  / true
+38 --> 
+	39  / true
+39 --> 
+	40  / true
+40 --> 
+	41  / true
+41 --> 
+	42  / true
+42 --> 
+	43  / true
+43 --> 
+	44  / true
+44 --> 
+	45  / true
+45 --> 
+	46  / true
+46 --> 
+	47  / true
+47 --> 
+
+* FSM state operations: 
+
+ <State 1> : 8.42ns
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%value_A_a2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_a2)"
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%value_A_a1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_a1)"
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%value_M1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_M1)"
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%value_M0_read = call float @_ssdm_op_Read.ap_auto.float(float %value_M0)"
+ST_1 : Operation 52 [2/2] (8.41ns)   --->   "%tmp_s = fmul float %value_A_a1_read, %value_M0_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [2/2] (8.41ns)   --->   "%tmp_8 = fmul float %value_A_a2_read, %value_M1_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 2> : 8.42ns
+ST_2 : Operation 54 [1/2] (8.41ns)   --->   "%tmp_s = fmul float %value_A_a1_read, %value_M0_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 55 [1/2] (8.41ns)   --->   "%tmp_8 = fmul float %value_A_a2_read, %value_M1_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 3> : 6.44ns
+ST_3 : Operation 56 [4/4] (6.43ns)   --->   "%tmp_9 = fadd float %tmp_s, %tmp_8" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 4> : 8.42ns
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%value_A_c2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_c2)"
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%value_A_c1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_c1)"
+ST_4 : Operation 59 [3/4] (6.43ns)   --->   "%tmp_9 = fadd float %tmp_s, %tmp_8" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 60 [2/2] (8.41ns)   --->   "%tmp_11 = fmul float %value_A_c1_read, %value_M0_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 61 [2/2] (8.41ns)   --->   "%tmp_12 = fmul float %value_A_c2_read, %value_M1_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 8.42ns
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%value_A_a3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_a3)"
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%value_M2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_M2)"
+ST_5 : Operation 64 [2/4] (6.43ns)   --->   "%tmp_9 = fadd float %tmp_s, %tmp_8" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 65 [2/2] (8.41ns)   --->   "%tmp_10 = fmul float %value_A_a3_read, %value_M2_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 66 [1/2] (8.41ns)   --->   "%tmp_11 = fmul float %value_A_c1_read, %value_M0_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/2] (8.41ns)   --->   "%tmp_12 = fmul float %value_A_c2_read, %value_M1_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 8.42ns
+ST_6 : Operation 68 [1/4] (6.43ns)   --->   "%tmp_9 = fadd float %tmp_s, %tmp_8" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 69 [1/2] (8.41ns)   --->   "%tmp_10 = fmul float %value_A_a3_read, %value_M2_read" [kalman_class/kf_top.cpp:39]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 70 [4/4] (6.43ns)   --->   "%tmp_13 = fadd float %tmp_11, %tmp_12" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 6.44ns
+ST_7 : Operation 71 [4/4] (6.43ns)   --->   "%x_assign = fadd float %tmp_9, %tmp_10" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 72 [3/4] (6.43ns)   --->   "%tmp_13 = fadd float %tmp_11, %tmp_12" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 8.42ns
+ST_8 : Operation 73 [1/1] (0.00ns)   --->   "%value_A_c3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_c3)"
+ST_8 : Operation 74 [3/4] (6.43ns)   --->   "%x_assign = fadd float %tmp_9, %tmp_10" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 75 [2/4] (6.43ns)   --->   "%tmp_13 = fadd float %tmp_11, %tmp_12" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 76 [2/2] (8.41ns)   --->   "%tmp_14 = fmul float %value_A_c3_read, %value_M2_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 8.42ns
+ST_9 : Operation 77 [1/1] (0.00ns)   --->   "%value_P_c3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_c3)"
+ST_9 : Operation 78 [1/1] (0.00ns)   --->   "%value_P_c2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_c2)"
+ST_9 : Operation 79 [1/1] (0.00ns)   --->   "%value_P_c1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_c1)"
+ST_9 : Operation 80 [1/1] (0.00ns)   --->   "%value_P_b3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_b3)"
+ST_9 : Operation 81 [1/1] (0.00ns)   --->   "%value_P_b2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_b2)"
+ST_9 : Operation 82 [1/1] (0.00ns)   --->   "%value_P_b1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_b1)"
+ST_9 : Operation 83 [1/1] (0.00ns)   --->   "%value_P_a3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_a3)"
+ST_9 : Operation 84 [1/1] (0.00ns)   --->   "%value_P_a2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_a2)"
+ST_9 : Operation 85 [1/1] (0.00ns)   --->   "%value_P_a1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_P_a1)"
+ST_9 : Operation 86 [1/1] (0.00ns)   --->   "%value_A_b3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_b3)"
+ST_9 : Operation 87 [1/1] (0.00ns)   --->   "%value_A_b2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_b2)"
+ST_9 : Operation 88 [1/1] (0.00ns)   --->   "%value_A_b1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_A_b1)"
+ST_9 : Operation 89 [2/4] (6.43ns)   --->   "%x_assign = fadd float %tmp_9, %tmp_10" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 90 [1/4] (6.43ns)   --->   "%tmp_13 = fadd float %tmp_11, %tmp_12" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 91 [1/2] (8.41ns)   --->   "%tmp_14 = fmul float %value_A_c3_read, %value_M2_read" [kalman_class/kf_top.cpp:41]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 92 [2/2] (0.65ns)   --->   "%call_ret7 = call fastcc { float, float, float, float, float, float, float, float, float } @"operator*"(float %value_A_a1_read, float %value_A_a2_read, float %value_A_a3_read, float %value_A_b1_read, float %value_A_b2_read, float %value_A_b3_read, float %value_A_c1_read, float %value_A_c2_read, float %value_A_c3_read, float %value_P_a1_read, float %value_P_a2_read, float %value_P_a3_read, float %value_P_b1_read, float %value_P_b2_read, float %value_P_b3_read, float %value_P_c1_read, float %value_P_c2_read, float %value_P_c3_read)" [kalman_class/kf_top.cpp:45]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+ <State 10> : 8.10ns
+ST_10 : Operation 93 [1/4] (6.43ns)   --->   "%x_assign = fadd float %tmp_9, %tmp_10" [kalman_class/kf_top.cpp:39]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 94 [4/4] (6.43ns)   --->   "%value_M2_buf_assign_2 = fadd float %tmp_13, %tmp_14" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 95 [1/2] (6.43ns)   --->   "%call_ret7 = call fastcc { float, float, float, float, float, float, float, float, float } @"operator*"(float %value_A_a1_read, float %value_A_a2_read, float %value_A_a3_read, float %value_A_b1_read, float %value_A_b2_read, float %value_A_b3_read, float %value_A_c1_read, float %value_A_c2_read, float %value_A_c3_read, float %value_P_a1_read, float %value_P_a2_read, float %value_P_a3_read, float %value_P_b1_read, float %value_P_b2_read, float %value_P_b3_read, float %value_P_c1_read, float %value_P_c2_read, float %value_P_c3_read)" [kalman_class/kf_top.cpp:45]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 96 [1/1] (0.00ns)   --->   "%p_s = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 0" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 97 [1/1] (0.00ns)   --->   "%p_1 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 1" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 98 [1/1] (0.00ns)   --->   "%p_2 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 2" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 99 [1/1] (0.00ns)   --->   "%p_3 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 3" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 100 [1/1] (0.00ns)   --->   "%p_4 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 4" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 101 [1/1] (0.00ns)   --->   "%p_5 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 5" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 102 [1/1] (0.00ns)   --->   "%p_6 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 6" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 103 [1/1] (0.00ns)   --->   "%p_7 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 7" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 104 [1/1] (0.00ns)   --->   "%p_8 = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret7, 8" [kalman_class/kf_top.cpp:45]
+ST_10 : Operation 105 [2/2] (0.65ns)   --->   "%call_ret6 = call fastcc { float, float, float, float, float, float, float, float, float } @"operator*"(float %p_s, float %p_1, float %p_2, float %p_3, float %p_4, float %p_5, float %p_6, float %p_7, float %p_8, float %value_A_a1_read, float %value_A_b1_read, float %value_A_c1_read, float %value_A_a2_read, float %value_A_b2_read, float %value_A_c2_read, float %value_A_a3_read, float %value_A_b3_read, float %value_A_c3_read)" [kalman_class/kf_top.cpp:45]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 106 [2/2] (1.65ns)   --->   "%call_ret_i_i = call fastcc { float, float } @cordic_sincos_generi(float %x_assign) nounwind" [/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:9->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25->kalman_class/kf_top.cpp:49]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 107 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_a1, float %value_A_a1_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 108 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_a2, float %value_A_a2_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 109 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_a3, float %value_A_a3_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 110 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_b1, float %value_A_b1_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 111 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_b2, float %value_A_b2_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 112 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_b3, float %value_A_b3_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 113 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_c1, float %value_A_c1_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 114 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_c2, float %value_A_c2_read)" [kalman_class/kf_top.cpp:83]
+ST_10 : Operation 115 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_A_c3, float %value_A_c3_read)" [kalman_class/kf_top.cpp:83]
+
+ <State 11> : 6.82ns
+ST_11 : Operation 116 [3/4] (6.43ns)   --->   "%value_M2_buf_assign_2 = fadd float %tmp_13, %tmp_14" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 117 [1/2] (6.43ns)   --->   "%call_ret6 = call fastcc { float, float, float, float, float, float, float, float, float } @"operator*"(float %p_s, float %p_1, float %p_2, float %p_3, float %p_4, float %p_5, float %p_6, float %p_7, float %p_8, float %value_A_a1_read, float %value_A_b1_read, float %value_A_c1_read, float %value_A_a2_read, float %value_A_b2_read, float %value_A_c2_read, float %value_A_a3_read, float %value_A_b3_read, float %value_A_c3_read)" [kalman_class/kf_top.cpp:45]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 118 [1/1] (0.00ns)   --->   "%mat3_a1_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 0" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 119 [1/1] (0.00ns)   --->   "%mat3_a2_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 1" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 120 [1/1] (0.00ns)   --->   "%mat3_a3_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 2" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 121 [1/1] (0.00ns)   --->   "%mat3_b1_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 3" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 122 [1/1] (0.00ns)   --->   "%mat3_b2_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 4" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 123 [1/1] (0.00ns)   --->   "%mat3_b3_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 5" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 124 [1/1] (0.00ns)   --->   "%mat3_c1_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 6" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 125 [1/1] (0.00ns)   --->   "%mat3_c2_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 7" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 126 [1/1] (0.00ns)   --->   "%mat3_c3_read_assign = extractvalue { float, float, float, float, float, float, float, float, float } %call_ret6, 8" [kalman_class/kf_top.cpp:45]
+ST_11 : Operation 127 [1/2] (6.82ns)   --->   "%call_ret_i_i = call fastcc { float, float } @cordic_sincos_generi(float %x_assign) nounwind" [/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:9->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25->kalman_class/kf_top.cpp:49]   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_11 : Operation 128 [1/1] (0.00ns)   --->   "%s_out = extractvalue { float, float } %call_ret_i_i, 0" [/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:9->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25->kalman_class/kf_top.cpp:49]
+ST_11 : Operation 129 [1/1] (0.00ns)   --->   "%c_out = extractvalue { float, float } %call_ret_i_i, 1" [/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:15->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:29->kalman_class/kf_top.cpp:52]
+
+ <State 12> : 6.44ns
+ST_12 : Operation 130 [1/1] (0.00ns)   --->   "%value_Q_b2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_b2)"
+ST_12 : Operation 131 [1/1] (0.00ns)   --->   "%value_Q_b1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_b1)"
+ST_12 : Operation 132 [1/1] (0.00ns)   --->   "%value_Q_a2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_a2)"
+ST_12 : Operation 133 [1/1] (0.00ns)   --->   "%value_Q_a1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_a1)"
+ST_12 : Operation 134 [2/4] (6.43ns)   --->   "%value_M2_buf_assign_2 = fadd float %tmp_13, %tmp_14" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 135 [4/4] (6.43ns)   --->   "%tempAdd_a1 = fadd float %mat3_a1_read_assign, %value_Q_a1_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 136 [4/4] (6.43ns)   --->   "%tempAdd_a2 = fadd float %mat3_a2_read_assign, %value_Q_a2_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 137 [4/4] (6.43ns)   --->   "%tempAdd_b1 = fadd float %mat3_b1_read_assign, %value_Q_b1_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 138 [4/4] (6.43ns)   --->   "%tempAdd_b2 = fadd float %mat3_b2_read_assign, %value_Q_b2_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 139 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_a1, float %value_Q_a1_read)" [kalman_class/kf_top.cpp:83]
+ST_12 : Operation 140 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_a2, float %value_Q_a2_read)" [kalman_class/kf_top.cpp:83]
+ST_12 : Operation 141 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_b1, float %value_Q_b1_read)" [kalman_class/kf_top.cpp:83]
+ST_12 : Operation 142 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_b2, float %value_Q_b2_read)" [kalman_class/kf_top.cpp:83]
+
+ <State 13> : 6.44ns
+ST_13 : Operation 143 [1/4] (6.43ns)   --->   "%value_M2_buf_assign_2 = fadd float %tmp_13, %tmp_14" [kalman_class/kf_top.cpp:41]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 144 [3/4] (6.43ns)   --->   "%tempAdd_a1 = fadd float %mat3_a1_read_assign, %value_Q_a1_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 145 [3/4] (6.43ns)   --->   "%tempAdd_a2 = fadd float %mat3_a2_read_assign, %value_Q_a2_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 146 [3/4] (6.43ns)   --->   "%tempAdd_b1 = fadd float %mat3_b1_read_assign, %value_Q_b1_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 147 [3/4] (6.43ns)   --->   "%tempAdd_b2 = fadd float %mat3_b2_read_assign, %value_Q_b2_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 14> : 8.42ns
+ST_14 : Operation 148 [2/4] (6.43ns)   --->   "%tempAdd_a1 = fadd float %mat3_a1_read_assign, %value_Q_a1_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 149 [2/4] (6.43ns)   --->   "%tempAdd_a2 = fadd float %mat3_a2_read_assign, %value_Q_a2_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 150 [2/4] (6.43ns)   --->   "%tempAdd_b1 = fadd float %mat3_b1_read_assign, %value_Q_b1_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 151 [2/4] (6.43ns)   --->   "%tempAdd_b2 = fadd float %mat3_b2_read_assign, %value_Q_b2_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 152 [2/2] (8.41ns)   --->   "%value_H0_buf_assign_7 = fmul float %value_M2_buf_assign_2, %c_out" [kalman_class/kf_top.cpp:52]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 15> : 8.42ns
+ST_15 : Operation 153 [1/4] (6.43ns)   --->   "%tempAdd_a1 = fadd float %mat3_a1_read_assign, %value_Q_a1_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 154 [1/4] (6.43ns)   --->   "%tempAdd_a2 = fadd float %mat3_a2_read_assign, %value_Q_a2_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 155 [1/4] (6.43ns)   --->   "%tempAdd_b1 = fadd float %mat3_b1_read_assign, %value_Q_b1_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 156 [1/4] (6.43ns)   --->   "%tempAdd_b2 = fadd float %mat3_b2_read_assign, %value_Q_b2_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 157 [1/2] (8.41ns)   --->   "%value_H0_buf_assign_7 = fmul float %value_M2_buf_assign_2, %c_out" [kalman_class/kf_top.cpp:52]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 16> : 8.42ns
+ST_16 : Operation 158 [1/1] (0.00ns)   --->   "%value_Q_c2_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_c2)"
+ST_16 : Operation 159 [1/1] (0.00ns)   --->   "%value_Q_c1_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_c1)"
+ST_16 : Operation 160 [1/1] (0.00ns)   --->   "%value_Q_b3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_b3)"
+ST_16 : Operation 161 [1/1] (0.00ns)   --->   "%value_Q_a3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_a3)"
+ST_16 : Operation 162 [4/4] (6.43ns)   --->   "%tempAdd_a3 = fadd float %mat3_a3_read_assign, %value_Q_a3_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 163 [4/4] (6.43ns)   --->   "%tempAdd_b3 = fadd float %mat3_b3_read_assign, %value_Q_b3_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 164 [4/4] (6.43ns)   --->   "%tempAdd_c1 = fadd float %mat3_c1_read_assign, %value_Q_c1_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 165 [4/4] (6.43ns)   --->   "%tempAdd_c2 = fadd float %mat3_c2_read_assign, %value_Q_c2_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 166 [2/2] (8.41ns)   --->   "%tmp_15 = fmul float %value_H0_buf_assign_7, %tempAdd_a1" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 167 [2/2] (8.41ns)   --->   "%tmp_16 = fmul float %tempAdd_b1, 0.000000e+00" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 168 [2/2] (8.41ns)   --->   "%tmp_19 = fmul float %value_H0_buf_assign_7, %tempAdd_a2" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 169 [2/2] (8.41ns)   --->   "%tmp_20 = fmul float %tempAdd_b2, 0.000000e+00" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 170 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_a3, float %value_Q_a3_read)" [kalman_class/kf_top.cpp:83]
+ST_16 : Operation 171 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_b3, float %value_Q_b3_read)" [kalman_class/kf_top.cpp:83]
+ST_16 : Operation 172 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_c1, float %value_Q_c1_read)" [kalman_class/kf_top.cpp:83]
+ST_16 : Operation 173 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_c2, float %value_Q_c2_read)" [kalman_class/kf_top.cpp:83]
+
+ <State 17> : 8.42ns
+ST_17 : Operation 174 [3/4] (6.43ns)   --->   "%tempAdd_a3 = fadd float %mat3_a3_read_assign, %value_Q_a3_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 175 [3/4] (6.43ns)   --->   "%tempAdd_b3 = fadd float %mat3_b3_read_assign, %value_Q_b3_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 176 [3/4] (6.43ns)   --->   "%tempAdd_c1 = fadd float %mat3_c1_read_assign, %value_Q_c1_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 177 [3/4] (6.43ns)   --->   "%tempAdd_c2 = fadd float %mat3_c2_read_assign, %value_Q_c2_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 178 [1/2] (8.41ns)   --->   "%tmp_15 = fmul float %value_H0_buf_assign_7, %tempAdd_a1" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 179 [1/2] (8.41ns)   --->   "%tmp_16 = fmul float %tempAdd_b1, 0.000000e+00" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 180 [1/2] (8.41ns)   --->   "%tmp_19 = fmul float %value_H0_buf_assign_7, %tempAdd_a2" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 181 [1/2] (8.41ns)   --->   "%tmp_20 = fmul float %tempAdd_b2, 0.000000e+00" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 18> : 6.44ns
+ST_18 : Operation 182 [2/4] (6.43ns)   --->   "%tempAdd_a3 = fadd float %mat3_a3_read_assign, %value_Q_a3_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 183 [2/4] (6.43ns)   --->   "%tempAdd_b3 = fadd float %mat3_b3_read_assign, %value_Q_b3_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 184 [2/4] (6.43ns)   --->   "%tempAdd_c1 = fadd float %mat3_c1_read_assign, %value_Q_c1_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 185 [2/4] (6.43ns)   --->   "%tempAdd_c2 = fadd float %mat3_c2_read_assign, %value_Q_c2_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 186 [4/4] (6.43ns)   --->   "%tmp_17 = fadd float %tmp_15, %tmp_16" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 187 [4/4] (6.43ns)   --->   "%tmp_21 = fadd float %tmp_19, %tmp_20" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 19> : 6.44ns
+ST_19 : Operation 188 [1/4] (6.43ns)   --->   "%tempAdd_a3 = fadd float %mat3_a3_read_assign, %value_Q_a3_read" [kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 189 [1/4] (6.43ns)   --->   "%tempAdd_b3 = fadd float %mat3_b3_read_assign, %value_Q_b3_read" [kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 190 [1/4] (6.43ns)   --->   "%tempAdd_c1 = fadd float %mat3_c1_read_assign, %value_Q_c1_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 191 [1/4] (6.43ns)   --->   "%tempAdd_c2 = fadd float %mat3_c2_read_assign, %value_Q_c2_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 192 [3/4] (6.43ns)   --->   "%tmp_17 = fadd float %tmp_15, %tmp_16" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 193 [3/4] (6.43ns)   --->   "%tmp_21 = fadd float %tmp_19, %tmp_20" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 20> : 8.42ns
+ST_20 : Operation 194 [1/1] (0.00ns)   --->   "%value_Q_c3_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Q_c3)"
+ST_20 : Operation 195 [4/4] (6.43ns)   --->   "%tempAdd_c3 = fadd float %mat3_c3_read_assign, %value_Q_c3_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 196 [2/2] (8.41ns)   --->   "%value_MU_buf_assign_1 = fmul float %value_M2_buf_assign_2, %s_out" [kalman_class/kf_top.cpp:49]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 197 [2/4] (6.43ns)   --->   "%tmp_17 = fadd float %tmp_15, %tmp_16" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 198 [2/2] (8.41ns)   --->   "%tmp_18 = fmul float %s_out, %tempAdd_c1" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 199 [2/4] (6.43ns)   --->   "%tmp_21 = fadd float %tmp_19, %tmp_20" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 200 [2/2] (8.41ns)   --->   "%tmp_22 = fmul float %s_out, %tempAdd_c2" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 201 [2/2] (8.41ns)   --->   "%tmp_23 = fmul float %value_H0_buf_assign_7, %tempAdd_a3" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 202 [2/2] (8.41ns)   --->   "%tmp_24 = fmul float %tempAdd_b3, 0.000000e+00" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 203 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Q_c3, float %value_Q_c3_read)" [kalman_class/kf_top.cpp:83]
+
+ <State 21> : 8.42ns
+ST_21 : Operation 204 [3/4] (6.43ns)   --->   "%tempAdd_c3 = fadd float %mat3_c3_read_assign, %value_Q_c3_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 205 [1/2] (8.41ns)   --->   "%value_MU_buf_assign_1 = fmul float %value_M2_buf_assign_2, %s_out" [kalman_class/kf_top.cpp:49]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 206 [1/4] (6.43ns)   --->   "%tmp_17 = fadd float %tmp_15, %tmp_16" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 207 [1/2] (8.41ns)   --->   "%tmp_18 = fmul float %s_out, %tempAdd_c1" [kalman_class/kf_top.cpp:58]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 208 [1/4] (6.43ns)   --->   "%tmp_21 = fadd float %tmp_19, %tmp_20" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 209 [1/2] (8.41ns)   --->   "%tmp_22 = fmul float %s_out, %tempAdd_c2" [kalman_class/kf_top.cpp:59]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 210 [1/2] (8.41ns)   --->   "%tmp_23 = fmul float %value_H0_buf_assign_7, %tempAdd_a3" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 211 [1/2] (8.41ns)   --->   "%tmp_24 = fmul float %tempAdd_b3, 0.000000e+00" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 22> : 6.44ns
+ST_22 : Operation 212 [1/1] (0.00ns)   --->   "%value_Y_read = call float @_ssdm_op_Read.ap_auto.float(float %value_Y)"
+ST_22 : Operation 213 [2/4] (6.43ns)   --->   "%tempAdd_c3 = fadd float %mat3_c3_read_assign, %value_Q_c3_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 214 [4/4] (6.43ns)   --->   "%temp0 = fadd float %tmp_17, %tmp_18" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 215 [4/4] (6.43ns)   --->   "%temp1 = fadd float %tmp_21, %tmp_22" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 216 [4/4] (6.43ns)   --->   "%tmp_25 = fadd float %tmp_23, %tmp_24" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 217 [4/4] (6.43ns)   --->   "%tmp_32 = fsub float %value_Y_read, %value_MU_buf_assign_1" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 218 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_MU, float %value_MU_buf_assign_1)" [kalman_class/kf_top.cpp:83]
+ST_22 : Operation 219 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_Y, float %value_Y_read)" [kalman_class/kf_top.cpp:83]
+
+ <State 23> : 6.44ns
+ST_23 : Operation 220 [1/4] (6.43ns)   --->   "%tempAdd_c3 = fadd float %mat3_c3_read_assign, %value_Q_c3_read" [kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 221 [3/4] (6.43ns)   --->   "%temp0 = fadd float %tmp_17, %tmp_18" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 222 [3/4] (6.43ns)   --->   "%temp1 = fadd float %tmp_21, %tmp_22" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 223 [3/4] (6.43ns)   --->   "%tmp_25 = fadd float %tmp_23, %tmp_24" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_23 : Operation 224 [3/4] (6.43ns)   --->   "%tmp_32 = fsub float %value_Y_read, %value_MU_buf_assign_1" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 24> : 8.42ns
+ST_24 : Operation 225 [2/4] (6.43ns)   --->   "%temp0 = fadd float %tmp_17, %tmp_18" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 226 [2/4] (6.43ns)   --->   "%temp1 = fadd float %tmp_21, %tmp_22" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 227 [2/4] (6.43ns)   --->   "%tmp_25 = fadd float %tmp_23, %tmp_24" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 228 [2/2] (8.41ns)   --->   "%tmp_26 = fmul float %s_out, %tempAdd_c3" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_24 : Operation 229 [2/4] (6.43ns)   --->   "%tmp_32 = fsub float %value_Y_read, %value_MU_buf_assign_1" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 25> : 8.42ns
+ST_25 : Operation 230 [1/4] (6.43ns)   --->   "%temp0 = fadd float %tmp_17, %tmp_18" [kalman_class/kf_top.cpp:58]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 231 [1/4] (6.43ns)   --->   "%temp1 = fadd float %tmp_21, %tmp_22" [kalman_class/kf_top.cpp:59]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 232 [1/4] (6.43ns)   --->   "%tmp_25 = fadd float %tmp_23, %tmp_24" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 233 [1/2] (8.41ns)   --->   "%tmp_26 = fmul float %s_out, %tempAdd_c3" [kalman_class/kf_top.cpp:60]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_25 : Operation 234 [1/4] (6.43ns)   --->   "%tmp_32 = fsub float %value_Y_read, %value_MU_buf_assign_1" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 26> : 8.42ns
+ST_26 : Operation 235 [4/4] (6.43ns)   --->   "%temp2 = fadd float %tmp_25, %tmp_26" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 236 [2/2] (8.41ns)   --->   "%tmp_27 = fmul float %temp0, %value_H0_buf_assign_7" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 237 [2/2] (8.41ns)   --->   "%tmp_28 = fmul float %temp1, 0.000000e+00" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 238 [2/2] (8.41ns)   --->   "%tmp_33 = fmul float %temp0, %tmp_32" [kalman_class/kf_top.cpp:70]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_26 : Operation 239 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_H0, float %value_H0_buf_assign_7)" [kalman_class/kf_top.cpp:83]
+
+ <State 27> : 8.42ns
+ST_27 : Operation 240 [3/4] (6.43ns)   --->   "%temp2 = fadd float %tmp_25, %tmp_26" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 241 [1/2] (8.41ns)   --->   "%tmp_27 = fmul float %temp0, %value_H0_buf_assign_7" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 242 [1/2] (8.41ns)   --->   "%tmp_28 = fmul float %temp1, 0.000000e+00" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_27 : Operation 243 [1/2] (8.41ns)   --->   "%tmp_33 = fmul float %temp0, %tmp_32" [kalman_class/kf_top.cpp:70]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 28> : 6.44ns
+ST_28 : Operation 244 [2/4] (6.43ns)   --->   "%temp2 = fadd float %tmp_25, %tmp_26" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 245 [4/4] (6.43ns)   --->   "%tmp_29 = fadd float %tmp_27, %tmp_28" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_28 : Operation 246 [4/4] (6.43ns)   --->   "%value_M0_buf_assign_5 = fadd float %x_assign, %tmp_33" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 29> : 6.44ns
+ST_29 : Operation 247 [1/4] (6.43ns)   --->   "%temp2 = fadd float %tmp_25, %tmp_26" [kalman_class/kf_top.cpp:60]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 248 [3/4] (6.43ns)   --->   "%tmp_29 = fadd float %tmp_27, %tmp_28" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_29 : Operation 249 [3/4] (6.43ns)   --->   "%value_M0_buf_assign_5 = fadd float %x_assign, %tmp_33" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 30> : 8.42ns
+ST_30 : Operation 250 [2/4] (6.43ns)   --->   "%tmp_29 = fadd float %tmp_27, %tmp_28" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 251 [2/2] (8.41ns)   --->   "%tmp_30 = fmul float %temp2, %s_out" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 252 [2/4] (6.43ns)   --->   "%value_M0_buf_assign_5 = fadd float %x_assign, %tmp_33" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 253 [2/2] (8.41ns)   --->   "%tmp_34 = fmul float %temp1, %tmp_32" [kalman_class/kf_top.cpp:71]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 254 [2/2] (8.41ns)   --->   "%tmp_35 = fmul float %temp2, %tmp_32" [kalman_class/kf_top.cpp:72]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_30 : Operation 255 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_H2, float %s_out)" [kalman_class/kf_top.cpp:83]
+
+ <State 31> : 8.42ns
+ST_31 : Operation 256 [1/4] (6.43ns)   --->   "%tmp_29 = fadd float %tmp_27, %tmp_28" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 257 [1/2] (8.41ns)   --->   "%tmp_30 = fmul float %temp2, %s_out" [kalman_class/kf_top.cpp:61]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 258 [1/4] (6.43ns)   --->   "%value_M0_buf_assign_5 = fadd float %x_assign, %tmp_33" [kalman_class/kf_top.cpp:70]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 259 [1/2] (8.41ns)   --->   "%tmp_34 = fmul float %temp1, %tmp_32" [kalman_class/kf_top.cpp:71]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_31 : Operation 260 [1/2] (8.41ns)   --->   "%tmp_35 = fmul float %temp2, %tmp_32" [kalman_class/kf_top.cpp:72]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 32> : 6.44ns
+ST_32 : Operation 261 [4/4] (6.43ns)   --->   "%tmp_31 = fadd float %tmp_29, %tmp_30" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 262 [4/4] (6.43ns)   --->   "%value_M1_buf_assign_1 = fadd float %value_M0_buf_assign_5, %tmp_34" [kalman_class/kf_top.cpp:71]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 263 [4/4] (6.43ns)   --->   "%value_M2_buf_assign_3 = fadd float %value_M0_buf_assign_5, %tmp_35" [kalman_class/kf_top.cpp:72]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_32 : Operation 264 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_M0, float %value_M0_buf_assign_5)" [kalman_class/kf_top.cpp:83]
+
+ <State 33> : 6.44ns
+ST_33 : Operation 265 [3/4] (6.43ns)   --->   "%tmp_31 = fadd float %tmp_29, %tmp_30" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 266 [3/4] (6.43ns)   --->   "%value_M1_buf_assign_1 = fadd float %value_M0_buf_assign_5, %tmp_34" [kalman_class/kf_top.cpp:71]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_33 : Operation 267 [3/4] (6.43ns)   --->   "%value_M2_buf_assign_3 = fadd float %value_M0_buf_assign_5, %tmp_35" [kalman_class/kf_top.cpp:72]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 34> : 6.44ns
+ST_34 : Operation 268 [2/4] (6.43ns)   --->   "%tmp_31 = fadd float %tmp_29, %tmp_30" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 269 [2/4] (6.43ns)   --->   "%value_M1_buf_assign_1 = fadd float %value_M0_buf_assign_5, %tmp_34" [kalman_class/kf_top.cpp:71]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_34 : Operation 270 [2/4] (6.43ns)   --->   "%value_M2_buf_assign_3 = fadd float %value_M0_buf_assign_5, %tmp_35" [kalman_class/kf_top.cpp:72]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 35> : 6.44ns
+ST_35 : Operation 271 [1/4] (6.43ns)   --->   "%tmp_31 = fadd float %tmp_29, %tmp_30" [kalman_class/kf_top.cpp:61]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 272 [1/4] (6.43ns)   --->   "%value_M1_buf_assign_1 = fadd float %value_M0_buf_assign_5, %tmp_34" [kalman_class/kf_top.cpp:71]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 273 [1/4] (6.43ns)   --->   "%value_M2_buf_assign_3 = fadd float %value_M0_buf_assign_5, %tmp_35" [kalman_class/kf_top.cpp:72]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 274 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_M1, float %value_M1_buf_assign_1)" [kalman_class/kf_top.cpp:83]
+ST_35 : Operation 275 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_M2, float %value_M2_buf_assign_3)" [kalman_class/kf_top.cpp:83]
+
+ <State 36> : 6.44ns
+ST_36 : Operation 276 [4/4] (6.43ns)   --->   "%value_S_buf_assign_1 = fadd float %tmp_31, 1.000000e+00" [kalman_class/kf_top.cpp:62]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 37> : 6.44ns
+ST_37 : Operation 277 [3/4] (6.43ns)   --->   "%value_S_buf_assign_1 = fadd float %tmp_31, 1.000000e+00" [kalman_class/kf_top.cpp:62]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 38> : 6.44ns
+ST_38 : Operation 278 [2/4] (6.43ns)   --->   "%value_S_buf_assign_1 = fadd float %tmp_31, 1.000000e+00" [kalman_class/kf_top.cpp:62]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 39> : 6.44ns
+ST_39 : Operation 279 [1/4] (6.43ns)   --->   "%value_S_buf_assign_1 = fadd float %tmp_31, 1.000000e+00" [kalman_class/kf_top.cpp:62]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 40> : 8.42ns
+ST_40 : Operation 280 [2/2] (8.41ns)   --->   "%temp0_1 = fmul float %temp0, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:75]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 281 [2/2] (8.41ns)   --->   "%temp1_1 = fmul float %temp1, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:76]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 282 [2/2] (8.41ns)   --->   "%temp2_1 = fmul float %temp2, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:77]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_40 : Operation 283 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_S, float %value_S_buf_assign_1)" [kalman_class/kf_top.cpp:83]
+
+ <State 41> : 8.42ns
+ST_41 : Operation 284 [1/2] (8.41ns)   --->   "%temp0_1 = fmul float %temp0, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:75]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 285 [1/2] (8.41ns)   --->   "%temp1_1 = fmul float %temp1, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:76]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_41 : Operation 286 [1/2] (8.41ns)   --->   "%temp2_1 = fmul float %temp2, %value_S_buf_assign_1" [kalman_class/kf_top.cpp:77]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 42> : 8.42ns
+ST_42 : Operation 287 [2/2] (8.41ns)   --->   "%tempMat_a1 = fmul float %temp0_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 288 [2/2] (8.41ns)   --->   "%tempMat_a2 = fmul float %temp0_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 289 [2/2] (8.41ns)   --->   "%tempMat_a3 = fmul float %temp0_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 290 [2/2] (8.41ns)   --->   "%tempMat_b1 = fmul float %temp1_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 291 [2/2] (8.41ns)   --->   "%tempMat_b2 = fmul float %temp1_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 292 [2/2] (8.41ns)   --->   "%tempMat_b3 = fmul float %temp1_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 293 [2/2] (8.41ns)   --->   "%tempMat_c1 = fmul float %temp2_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 294 [2/2] (8.41ns)   --->   "%tempMat_c2 = fmul float %temp2_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 295 [2/2] (8.41ns)   --->   "%tempMat_c3 = fmul float %temp2_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_42 : Operation 296 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_K0, float %temp0)" [kalman_class/kf_top.cpp:83]
+ST_42 : Operation 297 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_K1, float %temp1)" [kalman_class/kf_top.cpp:83]
+ST_42 : Operation 298 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_K2, float %temp2)" [kalman_class/kf_top.cpp:83]
+
+ <State 43> : 8.42ns
+ST_43 : Operation 299 [1/2] (8.41ns)   --->   "%tempMat_a1 = fmul float %temp0_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 300 [1/2] (8.41ns)   --->   "%tempMat_a2 = fmul float %temp0_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 301 [1/2] (8.41ns)   --->   "%tempMat_a3 = fmul float %temp0_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 302 [1/2] (8.41ns)   --->   "%tempMat_b1 = fmul float %temp1_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 303 [1/2] (8.41ns)   --->   "%tempMat_b2 = fmul float %temp1_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 304 [1/2] (8.41ns)   --->   "%tempMat_b3 = fmul float %temp1_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 305 [1/2] (8.41ns)   --->   "%tempMat_c1 = fmul float %temp2_1, %temp0" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 306 [1/2] (8.41ns)   --->   "%tempMat_c2 = fmul float %temp2_1, %temp1" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_43 : Operation 307 [1/2] (8.41ns)   --->   "%tempMat_c3 = fmul float %temp2_1, %temp2" [kalman_class/kf_top.cpp:80]   --->   Core 100 'FMul' <Latency = 1> <II = 1> <Delay = 8.41> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 44> : 6.44ns
+ST_44 : Operation 308 [4/4] (6.43ns)   --->   "%tempSub_a1 = fsub float %tempAdd_a1, %tempMat_a1" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 309 [4/4] (6.43ns)   --->   "%tempSub_a2 = fsub float %tempAdd_a2, %tempMat_a2" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 310 [4/4] (6.43ns)   --->   "%tempSub_a3 = fsub float %tempAdd_a3, %tempMat_a3" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 311 [4/4] (6.43ns)   --->   "%tempSub_b1 = fsub float %tempAdd_b1, %tempMat_b1" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 312 [4/4] (6.43ns)   --->   "%tempSub_b2 = fsub float %tempAdd_b2, %tempMat_b2" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 313 [4/4] (6.43ns)   --->   "%tempSub_b3 = fsub float %tempAdd_b3, %tempMat_b3" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 314 [4/4] (6.43ns)   --->   "%tempSub_c1 = fsub float %tempAdd_c1, %tempMat_c1" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 315 [4/4] (6.43ns)   --->   "%tempSub_c2 = fsub float %tempAdd_c2, %tempMat_c2" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_44 : Operation 316 [4/4] (6.43ns)   --->   "%tempSub_c3 = fsub float %tempAdd_c3, %tempMat_c3" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 45> : 6.44ns
+ST_45 : Operation 317 [3/4] (6.43ns)   --->   "%tempSub_a1 = fsub float %tempAdd_a1, %tempMat_a1" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 318 [3/4] (6.43ns)   --->   "%tempSub_a2 = fsub float %tempAdd_a2, %tempMat_a2" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 319 [3/4] (6.43ns)   --->   "%tempSub_a3 = fsub float %tempAdd_a3, %tempMat_a3" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 320 [3/4] (6.43ns)   --->   "%tempSub_b1 = fsub float %tempAdd_b1, %tempMat_b1" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 321 [3/4] (6.43ns)   --->   "%tempSub_b2 = fsub float %tempAdd_b2, %tempMat_b2" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 322 [3/4] (6.43ns)   --->   "%tempSub_b3 = fsub float %tempAdd_b3, %tempMat_b3" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 323 [3/4] (6.43ns)   --->   "%tempSub_c1 = fsub float %tempAdd_c1, %tempMat_c1" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 324 [3/4] (6.43ns)   --->   "%tempSub_c2 = fsub float %tempAdd_c2, %tempMat_c2" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_45 : Operation 325 [3/4] (6.43ns)   --->   "%tempSub_c3 = fsub float %tempAdd_c3, %tempMat_c3" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 46> : 6.44ns
+ST_46 : Operation 326 [2/4] (6.43ns)   --->   "%tempSub_a1 = fsub float %tempAdd_a1, %tempMat_a1" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 327 [2/4] (6.43ns)   --->   "%tempSub_a2 = fsub float %tempAdd_a2, %tempMat_a2" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 328 [2/4] (6.43ns)   --->   "%tempSub_a3 = fsub float %tempAdd_a3, %tempMat_a3" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 329 [2/4] (6.43ns)   --->   "%tempSub_b1 = fsub float %tempAdd_b1, %tempMat_b1" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 330 [2/4] (6.43ns)   --->   "%tempSub_b2 = fsub float %tempAdd_b2, %tempMat_b2" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 331 [2/4] (6.43ns)   --->   "%tempSub_b3 = fsub float %tempAdd_b3, %tempMat_b3" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 332 [2/4] (6.43ns)   --->   "%tempSub_c1 = fsub float %tempAdd_c1, %tempMat_c1" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 333 [2/4] (6.43ns)   --->   "%tempSub_c2 = fsub float %tempAdd_c2, %tempMat_c2" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_46 : Operation 334 [2/4] (6.43ns)   --->   "%tempSub_c3 = fsub float %tempAdd_c3, %tempMat_c3" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 47> : 6.44ns
+ST_47 : Operation 335 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_M0), !map !80"
+ST_47 : Operation 336 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_M1), !map !84"
+ST_47 : Operation 337 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_M2), !map !88"
+ST_47 : Operation 338 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_a1), !map !92"
+ST_47 : Operation 339 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_a2), !map !96"
+ST_47 : Operation 340 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_a3), !map !100"
+ST_47 : Operation 341 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_b1), !map !104"
+ST_47 : Operation 342 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_b2), !map !108"
+ST_47 : Operation 343 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_b3), !map !112"
+ST_47 : Operation 344 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_c1), !map !116"
+ST_47 : Operation 345 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_c2), !map !120"
+ST_47 : Operation 346 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_A_c3), !map !124"
+ST_47 : Operation 347 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_a1), !map !128"
+ST_47 : Operation 348 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_a2), !map !132"
+ST_47 : Operation 349 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_a3), !map !136"
+ST_47 : Operation 350 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_b1), !map !140"
+ST_47 : Operation 351 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_b2), !map !144"
+ST_47 : Operation 352 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_b3), !map !148"
+ST_47 : Operation 353 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_c1), !map !152"
+ST_47 : Operation 354 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_c2), !map !156"
+ST_47 : Operation 355 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_P_c3), !map !160"
+ST_47 : Operation 356 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_a1), !map !164"
+ST_47 : Operation 357 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_a2), !map !168"
+ST_47 : Operation 358 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_a3), !map !172"
+ST_47 : Operation 359 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_b1), !map !176"
+ST_47 : Operation 360 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_b2), !map !180"
+ST_47 : Operation 361 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_b3), !map !184"
+ST_47 : Operation 362 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_c1), !map !188"
+ST_47 : Operation 363 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_c2), !map !192"
+ST_47 : Operation 364 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Q_c3), !map !196"
+ST_47 : Operation 365 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_MU), !map !200"
+ST_47 : Operation 366 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_H0), !map !204"
+ST_47 : Operation 367 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_H1), !map !208"
+ST_47 : Operation 368 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_H2), !map !212"
+ST_47 : Operation 369 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_S), !map !216"
+ST_47 : Operation 370 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_K0), !map !220"
+ST_47 : Operation 371 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_K1), !map !224"
+ST_47 : Operation 372 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_K2), !map !228"
+ST_47 : Operation 373 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float* %agg_result_Y), !map !232"
+ST_47 : Operation 374 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_M0), !map !236"
+ST_47 : Operation 375 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_M1), !map !242"
+ST_47 : Operation 376 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_M2), !map !246"
+ST_47 : Operation 377 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_a1), !map !250"
+ST_47 : Operation 378 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_a2), !map !254"
+ST_47 : Operation 379 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_a3), !map !258"
+ST_47 : Operation 380 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_b1), !map !262"
+ST_47 : Operation 381 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_b2), !map !266"
+ST_47 : Operation 382 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_b3), !map !270"
+ST_47 : Operation 383 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_c1), !map !274"
+ST_47 : Operation 384 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_c2), !map !278"
+ST_47 : Operation 385 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_A_c3), !map !282"
+ST_47 : Operation 386 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_a1), !map !286"
+ST_47 : Operation 387 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_a2), !map !290"
+ST_47 : Operation 388 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_a3), !map !294"
+ST_47 : Operation 389 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_b1), !map !298"
+ST_47 : Operation 390 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_b2), !map !302"
+ST_47 : Operation 391 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_b3), !map !306"
+ST_47 : Operation 392 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_c1), !map !310"
+ST_47 : Operation 393 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_c2), !map !314"
+ST_47 : Operation 394 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_P_c3), !map !318"
+ST_47 : Operation 395 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_a1), !map !322"
+ST_47 : Operation 396 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_a2), !map !326"
+ST_47 : Operation 397 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_a3), !map !330"
+ST_47 : Operation 398 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_b1), !map !334"
+ST_47 : Operation 399 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_b2), !map !338"
+ST_47 : Operation 400 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_b3), !map !342"
+ST_47 : Operation 401 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_c1), !map !346"
+ST_47 : Operation 402 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_c2), !map !350"
+ST_47 : Operation 403 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Q_c3), !map !354"
+ST_47 : Operation 404 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_MU), !map !358"
+ST_47 : Operation 405 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_H0), !map !362"
+ST_47 : Operation 406 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_H1), !map !366"
+ST_47 : Operation 407 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_H2), !map !370"
+ST_47 : Operation 408 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_S), !map !374"
+ST_47 : Operation 409 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_K0), !map !378"
+ST_47 : Operation 410 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_K1), !map !382"
+ST_47 : Operation 411 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_K2), !map !386"
+ST_47 : Operation 412 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(float %value_Y), !map !390"
+ST_47 : Operation 413 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([7 x i8]* @filter_str) nounwind"
+ST_47 : Operation 414 [1/4] (6.43ns)   --->   "%tempSub_a1 = fsub float %tempAdd_a1, %tempMat_a1" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 415 [1/4] (6.43ns)   --->   "%tempSub_a2 = fsub float %tempAdd_a2, %tempMat_a2" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 416 [1/4] (6.43ns)   --->   "%tempSub_a3 = fsub float %tempAdd_a3, %tempMat_a3" [kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 417 [1/4] (6.43ns)   --->   "%tempSub_b1 = fsub float %tempAdd_b1, %tempMat_b1" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 418 [1/4] (6.43ns)   --->   "%tempSub_b2 = fsub float %tempAdd_b2, %tempMat_b2" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 419 [1/4] (6.43ns)   --->   "%tempSub_b3 = fsub float %tempAdd_b3, %tempMat_b3" [kalman_class/mat3.hpp:176->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 420 [1/4] (6.43ns)   --->   "%tempSub_c1 = fsub float %tempAdd_c1, %tempMat_c1" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 421 [1/4] (6.43ns)   --->   "%tempSub_c2 = fsub float %tempAdd_c2, %tempMat_c2" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 422 [1/4] (6.43ns)   --->   "%tempSub_c3 = fsub float %tempAdd_c3, %tempMat_c3" [kalman_class/mat3.hpp:177->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81]   --->   Core 99 'FAddSub' <Latency = 3> <II = 1> <Delay = 6.43> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_47 : Operation 423 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_a1, float %tempSub_a1)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 424 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_a2, float %tempSub_a2)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 425 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_a3, float %tempSub_a3)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 426 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_b1, float %tempSub_b1)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 427 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_b2, float %tempSub_b2)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 428 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_b3, float %tempSub_b3)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 429 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_c1, float %tempSub_c1)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 430 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_c2, float %tempSub_c2)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 431 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_P_c3, float %tempSub_c3)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 432 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.floatP(float* %agg_result_H1, float 0.000000e+00)" [kalman_class/kf_top.cpp:83]
+ST_47 : Operation 433 [1/1] (0.00ns)   --->   "ret void" [kalman_class/kf_top.cpp:83]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'value_A_a2' [185]  (0 ns)
+	'fmul' operation ('tmp_8', kalman_class/kf_top.cpp:39) [192]  (8.42 ns)
+
+ <State 2>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_s', kalman_class/kf_top.cpp:39) [191]  (8.42 ns)
+
+ <State 3>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_9', kalman_class/kf_top.cpp:39) [193]  (6.44 ns)
+
+ <State 4>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'value_A_c2' [179]  (0 ns)
+	'fmul' operation ('tmp_12', kalman_class/kf_top.cpp:41) [197]  (8.42 ns)
+
+ <State 5>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'value_A_a3' [184]  (0 ns)
+	'fmul' operation ('tmp_10', kalman_class/kf_top.cpp:39) [194]  (8.42 ns)
+
+ <State 6>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_10', kalman_class/kf_top.cpp:39) [194]  (8.42 ns)
+
+ <State 7>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('x', kalman_class/kf_top.cpp:39) [195]  (6.44 ns)
+
+ <State 8>: 8.42ns
+The critical path consists of the following:
+	wire read on port 'value_A_c3' [178]  (0 ns)
+	'fmul' operation ('tmp_14', kalman_class/kf_top.cpp:41) [199]  (8.42 ns)
+
+ <State 9>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_14', kalman_class/kf_top.cpp:41) [199]  (8.42 ns)
+
+ <State 10>: 8.1ns
+The critical path consists of the following:
+	'fadd' operation ('x', kalman_class/kf_top.cpp:39) [195]  (6.44 ns)
+	'call' operation ('call_ret_i_i', /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:9->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25->kalman_class/kf_top.cpp:49) to 'cordic_sincos_generi' [230]  (1.66 ns)
+
+ <State 11>: 6.82ns
+The critical path consists of the following:
+	'call' operation ('call_ret_i_i', /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:9->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25->kalman_class/kf_top.cpp:49) to 'cordic_sincos_generi' [230]  (6.82 ns)
+
+ <State 12>: 6.44ns
+The critical path consists of the following:
+	wire read on port 'value_Q_b2' [164]  (0 ns)
+	'fadd' operation ('tempAdd.b2', kalman_class/mat3.hpp:166->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45) [225]  (6.44 ns)
+
+ <State 13>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('value_M2_buf_assign_2', kalman_class/kf_top.cpp:41) [200]  (6.44 ns)
+
+ <State 14>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('value_H0_buf_assign_7', kalman_class/kf_top.cpp:52) [234]  (8.42 ns)
+
+ <State 15>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('value_H0_buf_assign_7', kalman_class/kf_top.cpp:52) [234]  (8.42 ns)
+
+ <State 16>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_15', kalman_class/kf_top.cpp:58) [235]  (8.42 ns)
+
+ <State 17>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_15', kalman_class/kf_top.cpp:58) [235]  (8.42 ns)
+
+ <State 18>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempAdd.a3', kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45) [223]  (6.44 ns)
+
+ <State 19>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempAdd.a3', kalman_class/mat3.hpp:165->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45) [223]  (6.44 ns)
+
+ <State 20>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('value_MU_buf_assign_1', kalman_class/kf_top.cpp:49) [232]  (8.42 ns)
+
+ <State 21>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('value_MU_buf_assign_1', kalman_class/kf_top.cpp:49) [232]  (8.42 ns)
+
+ <State 22>: 6.44ns
+The critical path consists of the following:
+	wire read on port 'value_Y' [159]  (0 ns)
+	'fsub' operation ('tmp_32', kalman_class/kf_top.cpp:70) [256]  (6.44 ns)
+
+ <State 23>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tempAdd.c3', kalman_class/mat3.hpp:167->kalman_class/mat3.hpp:67->kalman_class/kf_top.cpp:45) [229]  (6.44 ns)
+
+ <State 24>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_26', kalman_class/kf_top.cpp:60) [248]  (8.42 ns)
+
+ <State 25>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_26', kalman_class/kf_top.cpp:60) [248]  (8.42 ns)
+
+ <State 26>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_27', kalman_class/kf_top.cpp:61) [250]  (8.42 ns)
+
+ <State 27>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_27', kalman_class/kf_top.cpp:61) [250]  (8.42 ns)
+
+ <State 28>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('temp2', kalman_class/kf_top.cpp:60) [249]  (6.44 ns)
+
+ <State 29>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('temp2', kalman_class/kf_top.cpp:60) [249]  (6.44 ns)
+
+ <State 30>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_30', kalman_class/kf_top.cpp:61) [253]  (8.42 ns)
+
+ <State 31>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('tmp_30', kalman_class/kf_top.cpp:61) [253]  (8.42 ns)
+
+ <State 32>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_31', kalman_class/kf_top.cpp:61) [254]  (6.44 ns)
+
+ <State 33>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_31', kalman_class/kf_top.cpp:61) [254]  (6.44 ns)
+
+ <State 34>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_31', kalman_class/kf_top.cpp:61) [254]  (6.44 ns)
+
+ <State 35>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('tmp_31', kalman_class/kf_top.cpp:61) [254]  (6.44 ns)
+
+ <State 36>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('value_S_buf_assign_1', kalman_class/kf_top.cpp:62) [255]  (6.44 ns)
+
+ <State 37>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('value_S_buf_assign_1', kalman_class/kf_top.cpp:62) [255]  (6.44 ns)
+
+ <State 38>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('value_S_buf_assign_1', kalman_class/kf_top.cpp:62) [255]  (6.44 ns)
+
+ <State 39>: 6.44ns
+The critical path consists of the following:
+	'fadd' operation ('value_S_buf_assign_1', kalman_class/kf_top.cpp:62) [255]  (6.44 ns)
+
+ <State 40>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('temp0', kalman_class/kf_top.cpp:75) [263]  (8.42 ns)
+
+ <State 41>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('temp0', kalman_class/kf_top.cpp:75) [263]  (8.42 ns)
+
+ <State 42>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('a1', kalman_class/kf_top.cpp:80) [266]  (8.42 ns)
+
+ <State 43>: 8.42ns
+The critical path consists of the following:
+	'fmul' operation ('a1', kalman_class/kf_top.cpp:80) [266]  (8.42 ns)
+
+ <State 44>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tempSub.a1', kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81) [275]  (6.44 ns)
+
+ <State 45>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tempSub.a1', kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81) [275]  (6.44 ns)
+
+ <State 46>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tempSub.a1', kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81) [275]  (6.44 ns)
+
+ <State 47>: 6.44ns
+The critical path consists of the following:
+	'fsub' operation ('tempSub.a1', kalman_class/mat3.hpp:175->kalman_class/mat3.hpp:72->kalman_class/kf_top.cpp:81) [275]  (6.44 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

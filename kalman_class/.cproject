@@ -27,10 +27,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.908018193" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/systemc/include"/>
-									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
+									<listOptionValue builtIn="false" value="/home/keith/Documents/github/kalmanFilter"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.35478029" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -45,10 +46,11 @@
 								<option id="gnu.c.compiler.option.include.paths.301000259" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/systemc/include"/>
-									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
+									<listOptionValue builtIn="false" value="/home/keith/Documents/github/kalmanFilter"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.2036672498" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -113,10 +115,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1603182093" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/systemc/include"/>
-									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
+									<listOptionValue builtIn="false" value="/home/keith/Documents/github/kalmanFilter"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.149973937" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -126,10 +129,11 @@
 								<option id="gnu.c.compiler.option.include.paths.1850106893" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/auto_cc/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/lnx64/tools/systemc/include"/>
-									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
+									<listOptionValue builtIn="false" value="/home/keith/Documents/github/kalmanFilter"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado/2018.1/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/risen/Documents/hls_ws"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1015157693" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>

@@ -1,0 +1,1279 @@
+INFO: [HLS 200-0] Workspace /home/keith/Documents/github/kalmanFilter/kalman_class/solution1 opened at Tue Jul 24 13:54:07 CDT 2018
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Command     config_clock returned 0; 0 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus 
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/plb46.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/fsl.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/axi4.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.lib 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.lib 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfir.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfft.lib 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/dds_compiler.lib 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_old.lib 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_vivado.lib 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/dsp48e2.hlp 
+Command       ap_source returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 34260} {LUT 274080}    {FF 548160} {DSP48E 2520}  {BRAM 1824}    {URAM 0}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/target_info.tcl 
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.hlp 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Command     import_lib returned 0; 0.01 sec.
+Execute     source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus.gen 
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/virtex.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.gen 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/plb46.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/fsl.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/axi4.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command           ap_source returned 0; 0.01 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/dds_compiler.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source returned 0; 0.08 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/util.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.11 sec.
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0.11 sec.
+Command     ap_source returned 0; 0.11 sec.
+Execute     open_platform DefaultPlatform 
+Command     open_platform returned 0; 0 sec.
+Execute     import_lib /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus_fpv7 
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_hp.lib 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/target_info.tcl 
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.hlp 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.hlp 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.hlp 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus_hp.hlp 
+Command       ap_source returned 0; 0 sec.
+Command     import_lib returned 0; 0.02 sec.
+Execute     source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus_fpv7.gen 
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command       ap_source returned 0; 0 sec.
+Command     ap_source returned 0; 0 sec.
+Execute     set_part xcku5p-ffvb676-2-e 
+Execute       add_library xilinx/kintexuplus/kintexuplus:xcku5p:-ffvb676:-2-e 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         license_isbetapart xcku5p 
+Command         license_isbetapart returned 1; 0 sec.
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Execute         config_chip_info -quiet -resource  {SLICE 27120} {LUT 216960}    {FF 433920} {DSP48E 1824}  {BRAM 960}    {URAM 64}  
+Command         config_chip_info returned 0; 0 sec.
+Execute         config_chip_info -quiet -speed medium 
+Command         config_chip_info returned 0; 0 sec.
+Command       add_library returned 0; 0.01 sec.
+Execute       add_library xilinx/kintexuplus/kintexuplus_fpv7 
+Execute         get_default_platform 
+Command         get_default_platform returned 0; 0 sec.
+Command       add_library returned 0; 0 sec.
+INFO: [HLS 200-10] Setting target device to 'xcku5p-ffvb676-2-e'
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     set_part returned 0; 0.06 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Execute     config_chip_info -quiet -resource  {SLICE 27120} {LUT 216960}    {FF 433920} {DSP48E 1824}  {BRAM 960}    {URAM 64}  
+Command     config_chip_info returned 0; 0 sec.
+Execute     config_chip_info -quiet -speed medium 
+Command     config_chip_info returned 0; 0 sec.
+Command   open_solution returned 0; 0.21 sec.
+Execute   set_part xcku5p-ffvb676-2-e -tool vivado 
+Execute     add_library xilinx/kintexuplus/kintexuplus:xcku5p:-ffvb676:-2-e 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       license_isbetapart xcku5p 
+Command       license_isbetapart returned 1; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       config_chip_info -quiet -resource  {SLICE 27120} {LUT 216960}    {FF 433920} {DSP48E 1824}  {BRAM 960}    {URAM 64}  
+Command       config_chip_info returned 0; 0 sec.
+Execute       config_chip_info -quiet -speed medium 
+Command       config_chip_info returned 0; 0 sec.
+Command     add_library returned 0; 0 sec.
+Execute     add_library xilinx/kintexuplus/kintexuplus_fpv7 
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Command     add_library returned 0; 0.01 sec.
+Execute     get_default_platform 
+Command     get_default_platform returned 0; 0 sec.
+Command   set_part returned 0; 0.05 sec.
+Execute   create_clock -period 10 -name default 
+Command   create_clock returned 0; 0 sec.
+Execute   csynth_design 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -enable_clang39=0 
+INFO: [HLS 200-10] Analyzing design file 'kalman_class/kf_top.cpp' ...
+INFO: [HLS 200-0] Compiling one TU...
+Execute       is_m_axi_addr64 
+Command       is_m_axi_addr64 returned 0; 0 sec.
+INFO: [HLS 200-0] Handling kalman_class/kf_top.cpp as C++
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+Execute       is_encrypted kalman_class/kf_top.cpp 
+Command       is_encrypted returned 0; 0 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "kalman_class/kf_top.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E kalman_class/kf_top.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp
+Command       clang returned 0; 1.3 sec.
+INFO: [HLS 200-0] Syntax Checking before pre-processing...
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp"  -o "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/useless.bc"  
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/useless.bc
+Command       clang returned 0; 3.73 sec.
+INFO: [HLS 200-0] GCC PP time: 5 seconds per iteration
+Execute       list_core -type functional_unit 
+Command       list_core returned 0; 0 sec.
+INFO: [HLS 200-0] CDT Preprocessing...
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp.ap-line.cpp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp.ap-line.cpp.CXX 1
+INFO: [HLS 200-0] Converting Markers to Pragmas...
+Execute       cdt  "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp.ap-line.cpp"  -m "filter" -o "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp.ap-cdt.cpp" --pp --directive /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/solution1.directive --source /home/keith/Documents/github/kalmanFilter/kalman_class/kf_top.cpp --error /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSP_Macro DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt HAddSub_fulldsp HAddSub_meddsp HAddSub_nodsp HDiv HMul_fulldsp HMul_maxdsp HMul_nodsp HSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S Mul_LUT MulnS MuxnS" --ve --vetcl /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db --ca --es --gf --pd --p2d /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db --sd --scff /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/.systemc_flag --ad 
+INFO: [HLS 200-0] Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __value;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __tmp;
+Error:Syntax error in source:for (__decltype(__n + 0) __niter = __n;
+Error:Missing ; in source:t
+Error:Syntax error in source:)
+ *__first = __gen();
+Command       cdt returned 0; 11.16 sec.
+INFO: [HLS 200-0] Marker-Pragma convertor: /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pp.0.cpp.ap-cdt.cpp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.0.cpp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.0.cpp.ap-line.CXX 0
+INFO: [HLS 200-0] Converting Pragmas to Markers...
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Pragma Handling...
+INFO: [HLS 200-0] Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.1.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__  -o "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.2.cpp" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.1.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.2.cpp
+Command       clang returned 0; 1.28 sec.
+Execute       get_default_platform 
+Command       get_default_platform returned 0; 0 sec.
+INFO: [HLS 200-0] Processing labels
+Execute       clang  -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot" -I "/opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o "/home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.g.bc" 
+INFO: [HLS 200-0] exec clang -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vivado/2018.1/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot -I /opt/Xilinx/Vivado/2018.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.g.bc
+Command       clang returned 0; 3.72 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/ve_warning.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-10] Validating synthesis directives ...
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/pragma.status.tcl 
+Command       ap_source returned 0; 0.01 sec.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:36 ; elapsed = 00:00:23 . Memory (MB): peak = 351.750 ; gain = 0.289 ; free physical = 2713 ; free virtual = 26673
+INFO: [HLS 200-0] Linking Release ...
+Execute       llvm-ld /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.bc -hls-opt -except-internalize filter -L/opt/Xilinx/Vivado/2018.1/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o 
+Command       llvm-ld returned 0; 1.92 sec.
+Execute       disassemble /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o 
+Execute         is_encrypted /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.bc 
+Command         is_encrypted returned 0; 0 sec.
+Command       disassemble returned 0; 1.3 sec.
+INFO: [HLS 200-0] Disassemble time: 1 seconds per iteration
+INFO: [HLS 200-0] Linking Debug ...
+Execute       llvm-ld /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/kf_top.g.bc -hls-opt -except-internalize filter -L/opt/Xilinx/Vivado/2018.1/lnx64/lib -lm_basic -lhlsmc++ -lhlsm -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g 
+Command       llvm-ld returned 0; 1.87 sec.
+INFO: [HLS 200-0] Disassemble time: 0 seconds per iteration
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 351.750 ; gain = 0.289 ; free physical = 2674 ; free virtual = 26671
+Execute       ::config_rtl 
+Command       config_rtl returned 0; 0.01 sec.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 -enable_clang39=0 
+Execute         cleanup_all_models 
+Command         cleanup_all_models returned 0; 0 sec.
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.pp.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform returned 0; 0.48 sec.
+Execute         llvm-ld /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/opt/Xilinx/Vivado/2018.1/lnx64/lib -lfloatconversion -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld returned 0; 1.72 sec.
+INFO: [HLS 200-0] Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top filter -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.0.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<69, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:529).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<40, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:531).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<43, 3, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'cordic_::cordic_circ_v1<43, 0, 0, 0, 43, 3, 43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:185).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<43, 3, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'cordic_::cordic_circ_v1<43, 0, 0, 0, 43, 3, 43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:183).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<43, 3, true, (ap_q_mode)0, (ap_o_mode)3, 0>::quantization_adjust' into 'ap_fixed_base<43, 3, true, (ap_q_mode)0, (ap_o_mode)3, 0>::ap_fixed_base<128, 2, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+INFO: [XFORM 203-603] Inlining function 'cordic_::cordic_circ_v1<43, 0, 0, 0, 43, 3, 43, 3>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<43, 3, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:245).
+Command         transform returned 0; 1.06 sec.
+Execute         disassemble /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1 /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1 
+Execute           is_encrypted /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 1.13 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:45 ; elapsed = 00:00:33 . Memory (MB): peak = 549.168 ; gain = 197.707 ; free physical = 2502 ; free virtual = 26537
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-0] Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kalman_class/mat3.hpp:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kalman_class/mat3.hpp:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:311) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:332) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<23, 29>' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz<29, 69, 0>' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::set_mantissa' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:274) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:318) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:184->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:186->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)0, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:188->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:384) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sin' into 'hls::cordic::sinf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cos' into 'hls::cordic::cosf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kalman_class/mat3.hpp:72) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'filter' (kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'filter' (kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'filter' (kalman_class/mat3.hpp:62->kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sinf' into 'filter' (kalman_class/kf_top.cpp:49) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cosf' into 'filter' (kalman_class/kf_top.cpp:52) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'filter' (kalman_class/kf_top.cpp:81) automatically.
+Command         transform returned 0; 0.6 sec.
+INFO: [HLS 200-0] Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+WARNING: [SYNCHK 200-23] /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:227: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+Command         transform returned 0; 0.24 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:46 ; elapsed = 00:00:34 . Memory (MB): peak = 609.828 ; gain = 258.367 ; free physical = 2459 ; free virtual = 26499
+INFO: [HLS 200-0] Compiler optimizing ...
+INFO: [HLS 200-0] Share syncheck's 1.bc for syn flow: copy /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.g.1.bc to /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.bc
+INFO: [HLS 200-0] Presyn 1...
+Execute         transform -hls -tmp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-102] Automatically partitioning small array 'out_bits.V' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:224) completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'c' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:235) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'out_bits.V' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:224) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'c' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:235) in dimension 1 completely.
+INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kalman_class/mat3.hpp:82) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kalman_class/mat3.hpp:67) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:311) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:332) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::expv' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<23, 29>' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz<29, 69, 0>' into 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:214) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::set_mantissa' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:274) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'scaled_fixed2ieee<43, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:276) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:318) automatically.
+INFO: [XFORM 203-602] Inlining function 'range_redux_payne_hanek_hotbm<29, float, 40, 40>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:336) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:184->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:186->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<43, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<43, 3, (ap_q_mode)0, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:188->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::__signbit' into 'cordic_::cordic_sincos_generic<float>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:384) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sin' into 'hls::cordic::sinf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:25) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cos' into 'hls::cordic::cosf' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/src/c++/sincoscordicfloat.cpp:29) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kalman_class/mat3.hpp:72) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'filter' (kalman_class/kf_top.cpp:39) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'filter' (kalman_class/kf_top.cpp:40) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'filter' (kalman_class/kf_top.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'filter' (kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'filter' (kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'filter' (kalman_class/mat3.hpp:62->kalman_class/kf_top.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sinf' into 'filter' (kalman_class/kf_top.cpp:49) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cosf' into 'filter' (kalman_class/kf_top.cpp:52) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'filter' (kalman_class/kf_top.cpp:81) automatically.
+Command         transform returned 0; 1.34 sec.
+Execute         disassemble /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.tmp /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.tmp 
+Execute           is_encrypted /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.tmp.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.91 sec.
+INFO: [HLS 200-0] Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:226:35) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:225:39) in function 'scaled_fixed2ieee<43, 3>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:258:51) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:277:1) in function 'scaled_fixed2ieee<43, 3>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:457:7) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:340:8) in function 'cordic_::cordic_sincos_generic<float>'... converting 5 basic blocks.
+Command         transform returned 0; 0.49 sec.
+Execute         disassemble /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.2 /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.2 
+Execute           is_encrypted /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.2.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.9 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:50 ; elapsed = 00:00:38 . Memory (MB): peak = 673.828 ; gain = 322.367 ; free physical = 2328 ; free virtual = 26410
+INFO: [HLS 200-0] Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -read-loop-dep -dce -bitwidth -loop-dep -check-stream -norm-name -legalize -validate-dataflow -cdfg-build /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.2.bc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee<43, 3>' to 'scaled_fixed2ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:109:37)
+WARNING: [XFORM 203-631] Renaming function 'mat3::operator*' to 'operator*' (kalman_class/mat3.hpp:80)
+WARNING: [XFORM 203-631] Renaming function 'cordic_::cordic_sincos_generic<float>' to 'cordic_sincos_generi' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:100:17)
+Command         transform returned 0; 0.71 sec.
+Execute         disassemble /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.3 /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.3 
+Execute           is_encrypted /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.o.3.bc 
+Command           is_encrypted returned 0; 0 sec.
+Command         disassemble returned 0; 0.83 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:51 ; elapsed = 00:00:39 . Memory (MB): peak = 687.465 ; gain = 336.004 ; free physical = 2281 ; free virtual = 26372
+INFO: [HLS 200-0] Finish building internal data model.
+Command       opt_and_import_c returned 0; 10.46 sec.
+Command     elaborate returned 0; 38.51 sec.
+Execute     autosyn 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-0] Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'filter' ...
+Execute       ap_set_top_model filter 
+WARNING: [SYN 201-103] Legalizing function name 'operator*' to 'operator_mul'.
+Command       ap_set_top_model returned 0; 0 sec.
+Execute       get_model_list filter -filter all-wo-channel -topdown 
+Command       get_model_list returned 0; 0.01 sec.
+Execute       preproc_iomode -model filter 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model cordic_sincos_generi 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model scaled_fixed2ieee 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       preproc_iomode -model operator* 
+Command       preproc_iomode returned 0; 0 sec.
+Execute       get_model_list filter -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for configure: operator* scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-0] Configuring Module : operator* ...
+Execute       set_default_model operator* 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit operator* 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : scaled_fixed2ieee ...
+Execute       set_default_model scaled_fixed2ieee 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit scaled_fixed2ieee 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : cordic_sincos_generi ...
+Execute       set_default_model cordic_sincos_generi 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit cordic_sincos_generi 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Configuring Module : filter ...
+Execute       set_default_model filter 
+Command       set_default_model returned 0; 0 sec.
+Execute       apply_spec_resource_limit filter 
+Command       apply_spec_resource_limit returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for preprocess: operator* scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-0] Preprocessing Module: operator* ...
+Execute       set_default_model operator* 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model operator* 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess operator* 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: scaled_fixed2ieee ...
+Execute       set_default_model scaled_fixed2ieee 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model scaled_fixed2ieee 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess scaled_fixed2ieee 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: cordic_sincos_generi ...
+Execute       set_default_model cordic_sincos_generi 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model cordic_sincos_generi 
+Command       cdfg_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess cordic_sincos_generi 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing Module: filter ...
+Execute       set_default_model filter 
+Command       set_default_model returned 0; 0 sec.
+Execute       cdfg_preprocess -model filter 
+Command       cdfg_preprocess returned 0; 0.01 sec.
+Execute       rtl_gen_preprocess filter 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for synthesis: operator* scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'operator_mul'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model operator* 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model operator* 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.54 sec.
+INFO: [HLS 200-111]  Elapsed time: 39.61 seconds; current allocated memory: 323.161 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.11 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.sched.adb -f 
+Command       db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish scheduling operator*.
+Execute       set_default_model operator* 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model operator* 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=operator*
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.07 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 323.716 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.28 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.bind.adb -f 
+Command       db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish binding operator*.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'scaled_fixed2ieee'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model scaled_fixed2ieee 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model scaled_fixed2ieee 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.39 seconds; current allocated memory: 324.103 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.03 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.sched.adb -f 
+Command       db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish scheduling scaled_fixed2ieee.
+Execute       set_default_model scaled_fixed2ieee 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model scaled_fixed2ieee 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=scaled_fixed2ieee
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.04 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 324.537 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.1 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.bind.adb -f 
+Command       db_write returned 0; 0.01 sec.
+INFO: [HLS 200-0] Finish binding scaled_fixed2ieee.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cordic_sincos_generi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cordic_sincos_generi 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model cordic_sincos_generi 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 325.277 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.03 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.sched.adb -f 
+Command       db_write returned 0; 0.03 sec.
+INFO: [HLS 200-0] Finish scheduling cordic_sincos_generi.
+Execute       set_default_model cordic_sincos_generi 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model cordic_sincos_generi 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=cordic_sincos_generi
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.09 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 325.952 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.26 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.bind.adb -f 
+Command       db_write returned 0; 0.02 sec.
+INFO: [HLS 200-0] Finish binding cordic_sincos_generi.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'filter'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model filter 
+Command       set_default_model returned 0; 0 sec.
+Execute       schedule -model filter 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule returned 0; 0.79 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.08 seconds; current allocated memory: 326.881 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.verbose.sched.rpt -verbose -f 
+Command       report returned 0; 0.2 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.sched.adb -f 
+Command       db_write returned 0; 0.04 sec.
+INFO: [HLS 200-0] Finish scheduling filter.
+Execute       set_default_model filter 
+Command       set_default_model returned 0; 0 sec.
+Execute       bind -model filter 
+INFO: [BIND 205-110] clear=
+INFO: [BIND 205-110] debug=
+INFO: [BIND 205-110] drf=
+INFO: [BIND 205-110] effort=
+INFO: [BIND 205-110] fast_refine=
+INFO: [BIND 205-110] fu_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] global_opt=
+INFO: [BIND 205-110] gsearch=
+INFO: [BIND 205-110] help=
+INFO: [BIND 205-110] help-hidden=
+INFO: [BIND 205-110] min_mem_port=
+INFO: [BIND 205-110] min_op=
+INFO: [BIND 205-110] minreg=
+INFO: [BIND 205-110] ml=
+INFO: [BIND 205-110] model=filter
+INFO: [BIND 205-110] no_false_path=
+INFO: [BIND 205-110] no_min_op=
+INFO: [BIND 205-110] normalize=
+INFO: [BIND 205-110] quiet=
+INFO: [BIND 205-110] refine=
+INFO: [BIND 205-110] reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-110] search=
+INFO: [BIND 205-110] tight_delay=
+INFO: [BIND 205-110] verbose=
+INFO: [BIND 205-110] wFF=
+INFO: [BIND 205-110] wFU=
+INFO: [BIND 205-110] wMUX=
+INFO: [BIND 205-110] wNET=
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind returned 0; 0.34 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.58 seconds; current allocated memory: 328.088 MB.
+Execute       report -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.verbose.bind.rpt -verbose -f 
+Command       report returned 0; 0.74 sec.
+Execute       db_write -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.bind.adb -f 
+Command       db_write returned 0; 0.05 sec.
+INFO: [HLS 200-0] Finish binding filter.
+Execute       get_model_list filter -filter all-wo-channel 
+Command       get_model_list returned 0; 0 sec.
+INFO: [HLS 200-0] Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess operator* 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess scaled_fixed2ieee 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess cordic_sincos_generi 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+Execute       rtl_gen_preprocess filter 
+Command       rtl_gen_preprocess returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL generation: operator* scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'operator_mul'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model operator* -vendor xilinx -mg_file /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'filter_fadd_32ns_32ns_32_4_full_dsp_1' to 'filter_fadd_32ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'filter_fmul_32ns_32ns_32_2_max_dsp_1' to 'filter_fmul_32ns_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'filter_fadd_32ns_bkb': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_fmul_32ns_cud': 18 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'operator_mul'.
+Command       create_rtl_model returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.83 seconds; current allocated memory: 329.258 MB.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl operator* -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/systemc/operator_mul -synmodules operator* scaled_fixed2ieee cordic_sincos_generi filter 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl operator* -style xilinx -f -lang vhdl -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/vhdl/operator_mul 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl operator* -style xilinx -f -lang vlog -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/verilog/operator_mul 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_tb_info operator* -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul -p /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.06 sec.
+Execute       report -model operator* -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/operator_mul_csynth.rpt -f 
+Command       report returned 0; 0.06 sec.
+Execute       report -model operator* -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/operator_mul_csynth.xml -f -x 
+Command       report returned 0; 0.06 sec.
+Execute       report -model operator* -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.verbose.rpt -verbose -f 
+Command       report returned 0; 0.34 sec.
+Execute       db_write -model operator* -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.adb -f 
+Command       db_write returned 0; 0.09 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'scaled_fixed2ieee'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model scaled_fixed2ieee -vendor xilinx -mg_file /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'filter_mux_32_32_1_1' to 'filter_mux_32_32_dEe' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'filter_mux_32_32_dEe': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'scaled_fixed2ieee'.
+Command       create_rtl_model returned 0; 0.03 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.69 seconds; current allocated memory: 331.692 MB.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl scaled_fixed2ieee -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/systemc/scaled_fixed2ieee -synmodules operator* scaled_fixed2ieee cordic_sincos_generi filter 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl scaled_fixed2ieee -style xilinx -f -lang vhdl -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/vhdl/scaled_fixed2ieee 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl scaled_fixed2ieee -style xilinx -f -lang vlog -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/verilog/scaled_fixed2ieee 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info scaled_fixed2ieee -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee -p /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.03 sec.
+Execute       report -model scaled_fixed2ieee -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/scaled_fixed2ieee_csynth.rpt -f 
+Command       report returned 0; 0.03 sec.
+Execute       report -model scaled_fixed2ieee -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/scaled_fixed2ieee_csynth.xml -f -x 
+Command       report returned 0; 0.02 sec.
+Execute       report -model scaled_fixed2ieee -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.verbose.rpt -verbose -f 
+Command       report returned 0; 0.12 sec.
+Execute       db_write -model scaled_fixed2ieee -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.adb -f 
+Command       db_write returned 0; 0.08 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cordic_sincos_generi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cordic_sincos_generi -vendor xilinx -mg_file /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'cordic_sincos_generi_ref_4oPi_table_100_V' to 'cordic_sincos_geneOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cordic_sincos_generi_cordic_ctab_table_12_1' to 'cordic_sincos_genfYi' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cordic_sincos_generi'.
+Command       create_rtl_model returned 0; 0.04 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 334.275 MB.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       gen_rtl cordic_sincos_generi -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/systemc/cordic_sincos_generi -synmodules operator* scaled_fixed2ieee cordic_sincos_generi filter 
+Command       gen_rtl returned 0; 0.01 sec.
+Execute       gen_rtl cordic_sincos_generi -style xilinx -f -lang vhdl -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/vhdl/cordic_sincos_generi 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl cordic_sincos_generi -style xilinx -f -lang vlog -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/verilog/cordic_sincos_generi 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_tb_info cordic_sincos_generi -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi -p /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0.04 sec.
+Execute       report -model cordic_sincos_generi -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/cordic_sincos_generi_csynth.rpt -f 
+Command       report returned 0; 0.04 sec.
+Execute       report -model cordic_sincos_generi -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/cordic_sincos_generi_csynth.xml -f -x 
+Command       report returned 0; 0.04 sec.
+Execute       report -model cordic_sincos_generi -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.verbose.rpt -verbose -f 
+Command       report returned 0; 0.3 sec.
+Execute       db_write -model cordic_sincos_generi -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.adb -f 
+Command       db_write returned 0; 0.12 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'filter'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model filter -vendor xilinx -mg_file /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_MU' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_S' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Y' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_MU' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_S' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'filter' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'cordic_ctab_table_12_1' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'filter_faddfsub_32ns_32ns_32_4_full_dsp_1' to 'filter_faddfsub_3g8j' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'filter_fsub_32ns_32ns_32_4_full_dsp_1' to 'filter_fsub_32ns_hbi' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'filter/value_MU' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_S' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'filter_faddfsub_3g8j': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_fmul_32ns_cud': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_fsub_32ns_hbi': 5 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'filter'.
+Command       create_rtl_model returned 0; 0.35 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.96 seconds; current allocated memory: 338.382 MB.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       gen_rtl filter -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/systemc/filter -synmodules operator* scaled_fixed2ieee cordic_sincos_generi filter 
+Command       gen_rtl returned 0; 0 sec.
+Execute       gen_rtl filter -istop -style xilinx -f -lang vhdl -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/vhdl/filter 
+Command       gen_rtl returned 0; 0.1 sec.
+Execute       gen_rtl filter -istop -style xilinx -f -lang vlog -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/verilog/filter 
+Command       gen_rtl returned 0; 0.05 sec.
+Execute       export_constraint_db -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.constraint.tcl -f -tool general 
+Command       export_constraint_db returned 0; 0 sec.
+Execute       report -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.design.xml -verbose -f -dv 
+Command       report returned 0; 0.33 sec.
+Execute       report -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.sdaccel.xml -verbose -f -sdaccel 
+Command       report returned 0; 0.14 sec.
+Execute       gen_tb_info filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter -p /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db 
+Command       gen_tb_info returned 0; 0 sec.
+Execute       report -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/filter_csynth.rpt -f 
+Command       report returned 0; 0.05 sec.
+Execute       report -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/syn/report/filter_csynth.xml -f -x 
+Command       report returned 0; 0.05 sec.
+Execute       report -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.verbose.rpt -verbose -f 
+Command       report returned 0; 0.78 sec.
+Execute       db_write -model filter -o /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.adb -f 
+Command       db_write returned 0; 0.16 sec.
+Execute       sc_get_clocks filter 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       sc_get_portdomain filter 
+Command       sc_get_portdomain returned 0; 0 sec.
+INFO: [HLS 200-0] Model list for RTL component generation: operator* scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-0] Handling components in module [operator_mul] ... 
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+INFO: [HLS 200-0] Found component filter_fadd_32ns_bkb.
+INFO: [HLS 200-0] Append model filter_fadd_32ns_bkb
+INFO: [HLS 200-0] Found component filter_fmul_32ns_cud.
+INFO: [HLS 200-0] Append model filter_fmul_32ns_cud
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [scaled_fixed2ieee] ... 
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+INFO: [HLS 200-0] Found component filter_mux_32_32_dEe.
+INFO: [HLS 200-0] Append model filter_mux_32_32_dEe
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [cordic_sincos_generi] ... 
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+INFO: [HLS 200-0] Found component cordic_sincos_geneOg.
+INFO: [HLS 200-0] Append model cordic_sincos_geneOg
+INFO: [HLS 200-0] Found component cordic_sincos_genfYi.
+INFO: [HLS 200-0] Append model cordic_sincos_genfYi
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Handling components in module [filter] ... 
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+INFO: [HLS 200-0] Found component filter_faddfsub_3g8j.
+INFO: [HLS 200-0] Append model filter_faddfsub_3g8j
+INFO: [HLS 200-0] Found component filter_fsub_32ns_hbi.
+INFO: [HLS 200-0] Append model filter_fsub_32ns_hbi
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-0] Append model operator_mul
+INFO: [HLS 200-0] Append model scaled_fixed2ieee
+INFO: [HLS 200-0] Append model cordic_sincos_generi
+INFO: [HLS 200-0] Append model filter
+INFO: [HLS 200-0] Generating RTL model list ...
+INFO: [HLS 200-0] All models in this session: filter_fadd_32ns_bkb filter_fmul_32ns_cud filter_mux_32_32_dEe cordic_sincos_geneOg cordic_sincos_genfYi filter_faddfsub_3g8j filter_fsub_32ns_hbi operator_mul scaled_fixed2ieee cordic_sincos_generi filter
+INFO: [HLS 200-0] To file: write model filter_fadd_32ns_bkb
+INFO: [HLS 200-0] To file: write model filter_fmul_32ns_cud
+INFO: [HLS 200-0] To file: write model filter_mux_32_32_dEe
+INFO: [HLS 200-0] To file: write model cordic_sincos_geneOg
+INFO: [HLS 200-0] To file: write model cordic_sincos_genfYi
+INFO: [HLS 200-0] To file: write model filter_faddfsub_3g8j
+INFO: [HLS 200-0] To file: write model filter_fsub_32ns_hbi
+INFO: [HLS 200-0] To file: write model operator_mul
+INFO: [HLS 200-0] To file: write model scaled_fixed2ieee
+INFO: [HLS 200-0] To file: write model cordic_sincos_generi
+INFO: [HLS 200-0] To file: write model filter
+INFO: [HLS 200-0] Finished generating RTL model list.
+
+
+INFO: [HLS 200-0] RTL Generation done.
+INFO: [HLS 200-0] CAS Generation done.
+INFO: [HLS 200-0] CBC Generation done.
+Execute       export_ssdm /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/a.export.ll 
+Command       export_ssdm returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.08 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.11 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.11 sec.
+Command       ap_source returned 0; 0.11 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus_fpv7.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+Command       ap_source returned 0; 0.06 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'cordic_sincos_geneOg_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cordic_sincos_genfYi_rom' using auto ROMs.
+Command       ap_source returned 0; 0.05 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+Command       ap_source returned 0; 0.05 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/common.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/APCoreGen.gen 
+Command         ap_source returned 0; 0 sec.
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/op.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/op_simcore.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/generic/autopilot/interface.gen 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/virtex.gen 
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx.gen 
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/plb46.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/fsl.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/axi4.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/saxilite.gen 
+Command               ap_source returned 0; 0.01 sec.
+Execute               source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/maxi.gen 
+Command               ap_source returned 0; 0 sec.
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command             ap_source returned 0; 0.01 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/dds_compiler.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfir.gen 
+Command             ap_source returned 0; 0 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source returned 0; 0.08 sec.
+Execute             source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/ip/util.gen 
+Command             ap_source returned 0; 0 sec.
+Command           ap_source returned 0; 0.11 sec.
+Execute           source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/dsp48.gen 
+Command           ap_source returned 0; 0 sec.
+Command         ap_source returned 0; 0.11 sec.
+Command       ap_source returned 0; 0.11 sec.
+Execute       source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/kintexuplus/kintexuplus_fpv7.gen 
+Execute         source /opt/Xilinx/Vivado/2018.1/common/technology/xilinx/common/xilinx_fpv6.gen 
+Command         ap_source returned 0; 0.01 sec.
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.rtl_wrap.cfg.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+Command       ap_source returned 0; 0.05 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+Command       ap_source returned 0; 0.04 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+Command       ap_source returned 0; 0.02 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/operator_mul.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/scaled_fixed2ieee.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/cordic_sincos_generi.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.compgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0.01 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.tbgen.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/filter.constraint.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       sc_get_clocks filter 
+Command       sc_get_clocks returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/.autopilot/db/global.setting.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/impl/misc/filter_ap_fadd_2_full_dsp_32_ip.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/impl/misc/filter_ap_faddfsub_2_full_dsp_32_ip.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/impl/misc/filter_ap_fmul_0_max_dsp_32_ip.tcl 
+Command       ap_source returned 0; 0 sec.
+Execute       source /home/keith/Documents/github/kalmanFilter/kalman_class/solution1/impl/misc/filter_ap_fsub_2_full_dsp_32_ip.tcl 
+Command       ap_source returned 0; 0 sec.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:59 ; elapsed = 00:00:48 . Memory (MB): peak = 687.465 ; gain = 336.004 ; free physical = 2246 ; free virtual = 26347
+INFO: [SYSC 207-301] Generating SystemC RTL for filter.
+INFO: [VHDL 208-304] Generating VHDL RTL for filter.
+INFO: [VLOG 209-307] Generating Verilog RTL for filter.
+Command     autosyn returned 0; 9.33 sec.
+Command   csynth_design returned 0; 47.84 sec.
+Command ap_source returned 0; 48.11 sec.
+Execute cleanup_all 
+Command cleanup_all returned 0; 0.03 sec.

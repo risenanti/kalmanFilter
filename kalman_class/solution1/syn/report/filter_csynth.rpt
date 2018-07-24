@@ -1,0 +1,350 @@
+
+
+================================================================
+== Vivado HLS Report for 'filter'
+================================================================
+* Date:           Tue Jul 24 13:54:53 2018
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        kalman_class
+* Solution:       solution1
+* Product family: kintexuplus
+* Target device:  xcku5p-ffvb676-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|      8.86|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   66|  158|   66|  158|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |                                 |                      |  Latency  |  Interval | Pipeline|
+        |             Instance            |        Module        | min | max | min | max |   Type  |
+        +---------------------------------+----------------------+-----+-----+-----+-----+---------+
+        |grp_operator_mul_fu_648          |operator_mul          |   10|   10|   10|   10|   none  |
+        |grp_cordic_sincos_generi_fu_682  |cordic_sincos_generi  |    1|  102|    1|  102|   none  |
+        +---------------------------------+----------------------+-----+-----+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|       2|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        4|    140|   10530|   13982|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|    1117|    -|
+|Register         |        -|      -|    1265|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        4|    140|   11795|   15101|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |      960|   1824|  433920|  216960|   64|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |    ~0   |      7|       2|       6|    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------+----------------------+---------+-------+------+------+
+    |             Instance            |        Module        | BRAM_18K| DSP48E|  FF  |  LUT |
+    +---------------------------------+----------------------+---------+-------+------+------+
+    |grp_cordic_sincos_generi_fu_682  |cordic_sincos_generi  |        4|     23|  1538|  5814|
+    |filter_faddfsub_3g8j_U56         |filter_faddfsub_3g8j  |        0|      2|   227|   214|
+    |filter_faddfsub_3g8j_U57         |filter_faddfsub_3g8j  |        0|      2|   227|   214|
+    |filter_faddfsub_3g8j_U58         |filter_faddfsub_3g8j  |        0|      2|   227|   214|
+    |filter_faddfsub_3g8j_U59         |filter_faddfsub_3g8j  |        0|      2|   227|   214|
+    |filter_fmul_32ns_cud_U65         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U66         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U67         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U68         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U69         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U70         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U71         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U72         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fmul_32ns_cud_U73         |filter_fmul_32ns_cud  |        0|      3|   128|   135|
+    |filter_fsub_32ns_hbi_U60         |filter_fsub_32ns_hbi  |        0|      2|   227|   214|
+    |filter_fsub_32ns_hbi_U61         |filter_fsub_32ns_hbi  |        0|      2|   227|   214|
+    |filter_fsub_32ns_hbi_U62         |filter_fsub_32ns_hbi  |        0|      2|   227|   214|
+    |filter_fsub_32ns_hbi_U63         |filter_fsub_32ns_hbi  |        0|      2|   227|   214|
+    |filter_fsub_32ns_hbi_U64         |filter_fsub_32ns_hbi  |        0|      2|   227|   214|
+    |grp_operator_mul_fu_648          |operator_mul          |        0|     72|  5797|  5027|
+    +---------------------------------+----------------------+---------+-------+------+------+
+    |Total                            |                      |        4|    140| 10530| 13982|
+    +---------------------------------+----------------------+---------+-------+------+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |           Variable Name          | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |ap_block_state11_on_subcall_done  |    or    |      0|  0|   2|           1|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+    |Total                             |          |      0|  0|   2|           1|           1|
+    +----------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------+-----+-----------+-----+-----------+
+    |                  Name                 | LUT | Input Size| Bits| Total Bits|
+    +---------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                              |  209|         48|    1|         48|
+    |grp_fu_691_opcode                      |   15|          3|    2|          6|
+    |grp_fu_691_p0                          |   47|         10|   32|        320|
+    |grp_fu_691_p1                          |   44|          9|   32|        288|
+    |grp_fu_697_opcode                      |   15|          3|    2|          6|
+    |grp_fu_697_p0                          |   41|          8|   32|        256|
+    |grp_fu_697_p1                          |   33|          6|   32|        192|
+    |grp_fu_702_opcode                      |   15|          3|    2|          6|
+    |grp_fu_702_p0                          |   33|          6|   32|        192|
+    |grp_fu_702_p1                          |   27|          5|   32|        160|
+    |grp_fu_707_opcode                      |   15|          3|    2|          6|
+    |grp_fu_707_p0                          |   27|          5|   32|        160|
+    |grp_fu_707_p1                          |   27|          5|   32|        160|
+    |grp_fu_750_p0                          |   44|          9|   32|        288|
+    |grp_fu_750_p1                          |   47|         10|   32|        320|
+    |grp_fu_756_p0                          |   38|          7|   32|        224|
+    |grp_fu_756_p1                          |   38|          7|   32|        224|
+    |grp_fu_768_p0                          |   27|          5|   32|        160|
+    |grp_fu_768_p1                          |   33|          6|   32|        192|
+    |grp_fu_772_p0                          |   21|          4|   32|        128|
+    |grp_fu_772_p1                          |   21|          4|   32|        128|
+    |grp_fu_777_p0                          |   15|          3|   32|         96|
+    |grp_fu_777_p1                          |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_a1_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_a2_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_a3_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_b1_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_b2_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_b3_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_c1_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_c2_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_mat3_c3_read   |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_a1_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_a2_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_a3_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_b1_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_b2_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_b3_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_c1_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_c2_read  |   15|          3|   32|         96|
+    |grp_operator_mul_fu_648_other_c3_read  |   15|          3|   32|         96|
+    +---------------------------------------+-----+-----------+-----+-----------+
+    |Total                                  | 1117|        226| 1161|       5384|
+    +---------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------+----+----+-----+-----------+
+    |                     Name                     | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                     |  47|   0|   47|          0|
+    |c_out_reg_1132                                |  32|   0|   32|          0|
+    |grp_cordic_sincos_generi_fu_682_ap_start_reg  |   1|   0|    1|          0|
+    |grp_operator_mul_fu_648_ap_start_reg          |   1|   0|    1|          0|
+    |reg_843                                       |  32|   0|   32|          0|
+    |reg_855                                       |  32|   0|   32|          0|
+    |reg_864                                       |  32|   0|   32|          0|
+    |reg_872                                       |  32|   0|   32|          0|
+    |reg_883                                       |  32|   0|   32|          0|
+    |reg_894                                       |  32|   0|   32|          0|
+    |reg_900                                       |  32|   0|   32|          0|
+    |reg_906                                       |  32|   0|   32|          0|
+    |reg_912                                       |  32|   0|   32|          0|
+    |reg_918                                       |  32|   0|   32|          0|
+    |reg_924                                       |  32|   0|   32|          0|
+    |reg_930                                       |  32|   0|   32|          0|
+    |reg_936                                       |  32|   0|   32|          0|
+    |reg_942                                       |  32|   0|   32|          0|
+    |reg_948                                       |  32|   0|   32|          0|
+    |reg_958                                       |  32|   0|   32|          0|
+    |reg_965                                       |  32|   0|   32|          0|
+    |reg_975                                       |  32|   0|   32|          0|
+    |s_out_reg_1123                                |  32|   0|   32|          0|
+    |temp2_reg_1252                                |  32|   0|   32|          0|
+    |tempAdd_a1_reg_1157                           |  32|   0|   32|          0|
+    |tempAdd_a2_reg_1163                           |  32|   0|   32|          0|
+    |tempAdd_a3_reg_1201                           |  32|   0|   32|          0|
+    |tempAdd_b1_reg_1169                           |  32|   0|   32|          0|
+    |tempAdd_b2_reg_1175                           |  32|   0|   32|          0|
+    |tempAdd_b3_reg_1207                           |  32|   0|   32|          0|
+    |tempAdd_c1_reg_1213                           |  32|   0|   32|          0|
+    |tempAdd_c2_reg_1219                           |  32|   0|   32|          0|
+    |tempAdd_c3_reg_1235                           |  32|   0|   32|          0|
+    |tempMat_b3_reg_1269                           |  32|   0|   32|          0|
+    |tempMat_c1_reg_1274                           |  32|   0|   32|          0|
+    |tempMat_c2_reg_1279                           |  32|   0|   32|          0|
+    |tempMat_c3_reg_1284                           |  32|   0|   32|          0|
+    |tmp_12_reg_1044                               |  32|   0|   32|          0|
+    |tmp_25_reg_1241                               |  32|   0|   32|          0|
+    |tmp_32_reg_1246                               |  32|   0|   32|          0|
+    |value_M0_buf_assign_5_reg_1262                |  32|   0|   32|          0|
+    +----------------------------------------------+----+----+-----+-----------+
+    |Total                                         |1265|   0| 1265|          0|
+    +----------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-----------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++------------------------+-----+-----+------------+-----------------+--------------+
+|ap_clk                  |  in |    1| ap_ctrl_hs |      filter     | return value |
+|ap_rst                  |  in |    1| ap_ctrl_hs |      filter     | return value |
+|ap_start                |  in |    1| ap_ctrl_hs |      filter     | return value |
+|ap_done                 | out |    1| ap_ctrl_hs |      filter     | return value |
+|ap_idle                 | out |    1| ap_ctrl_hs |      filter     | return value |
+|ap_ready                | out |    1| ap_ctrl_hs |      filter     | return value |
+|agg_result_M0           | out |   32|   ap_vld   |  agg_result_M0  |    pointer   |
+|agg_result_M0_ap_vld    | out |    1|   ap_vld   |  agg_result_M0  |    pointer   |
+|agg_result_M1           | out |   32|   ap_vld   |  agg_result_M1  |    pointer   |
+|agg_result_M1_ap_vld    | out |    1|   ap_vld   |  agg_result_M1  |    pointer   |
+|agg_result_M2           | out |   32|   ap_vld   |  agg_result_M2  |    pointer   |
+|agg_result_M2_ap_vld    | out |    1|   ap_vld   |  agg_result_M2  |    pointer   |
+|agg_result_A_a1         | out |   32|   ap_vld   | agg_result_A_a1 |    pointer   |
+|agg_result_A_a1_ap_vld  | out |    1|   ap_vld   | agg_result_A_a1 |    pointer   |
+|agg_result_A_a2         | out |   32|   ap_vld   | agg_result_A_a2 |    pointer   |
+|agg_result_A_a2_ap_vld  | out |    1|   ap_vld   | agg_result_A_a2 |    pointer   |
+|agg_result_A_a3         | out |   32|   ap_vld   | agg_result_A_a3 |    pointer   |
+|agg_result_A_a3_ap_vld  | out |    1|   ap_vld   | agg_result_A_a3 |    pointer   |
+|agg_result_A_b1         | out |   32|   ap_vld   | agg_result_A_b1 |    pointer   |
+|agg_result_A_b1_ap_vld  | out |    1|   ap_vld   | agg_result_A_b1 |    pointer   |
+|agg_result_A_b2         | out |   32|   ap_vld   | agg_result_A_b2 |    pointer   |
+|agg_result_A_b2_ap_vld  | out |    1|   ap_vld   | agg_result_A_b2 |    pointer   |
+|agg_result_A_b3         | out |   32|   ap_vld   | agg_result_A_b3 |    pointer   |
+|agg_result_A_b3_ap_vld  | out |    1|   ap_vld   | agg_result_A_b3 |    pointer   |
+|agg_result_A_c1         | out |   32|   ap_vld   | agg_result_A_c1 |    pointer   |
+|agg_result_A_c1_ap_vld  | out |    1|   ap_vld   | agg_result_A_c1 |    pointer   |
+|agg_result_A_c2         | out |   32|   ap_vld   | agg_result_A_c2 |    pointer   |
+|agg_result_A_c2_ap_vld  | out |    1|   ap_vld   | agg_result_A_c2 |    pointer   |
+|agg_result_A_c3         | out |   32|   ap_vld   | agg_result_A_c3 |    pointer   |
+|agg_result_A_c3_ap_vld  | out |    1|   ap_vld   | agg_result_A_c3 |    pointer   |
+|agg_result_P_a1         | out |   32|   ap_vld   | agg_result_P_a1 |    pointer   |
+|agg_result_P_a1_ap_vld  | out |    1|   ap_vld   | agg_result_P_a1 |    pointer   |
+|agg_result_P_a2         | out |   32|   ap_vld   | agg_result_P_a2 |    pointer   |
+|agg_result_P_a2_ap_vld  | out |    1|   ap_vld   | agg_result_P_a2 |    pointer   |
+|agg_result_P_a3         | out |   32|   ap_vld   | agg_result_P_a3 |    pointer   |
+|agg_result_P_a3_ap_vld  | out |    1|   ap_vld   | agg_result_P_a3 |    pointer   |
+|agg_result_P_b1         | out |   32|   ap_vld   | agg_result_P_b1 |    pointer   |
+|agg_result_P_b1_ap_vld  | out |    1|   ap_vld   | agg_result_P_b1 |    pointer   |
+|agg_result_P_b2         | out |   32|   ap_vld   | agg_result_P_b2 |    pointer   |
+|agg_result_P_b2_ap_vld  | out |    1|   ap_vld   | agg_result_P_b2 |    pointer   |
+|agg_result_P_b3         | out |   32|   ap_vld   | agg_result_P_b3 |    pointer   |
+|agg_result_P_b3_ap_vld  | out |    1|   ap_vld   | agg_result_P_b3 |    pointer   |
+|agg_result_P_c1         | out |   32|   ap_vld   | agg_result_P_c1 |    pointer   |
+|agg_result_P_c1_ap_vld  | out |    1|   ap_vld   | agg_result_P_c1 |    pointer   |
+|agg_result_P_c2         | out |   32|   ap_vld   | agg_result_P_c2 |    pointer   |
+|agg_result_P_c2_ap_vld  | out |    1|   ap_vld   | agg_result_P_c2 |    pointer   |
+|agg_result_P_c3         | out |   32|   ap_vld   | agg_result_P_c3 |    pointer   |
+|agg_result_P_c3_ap_vld  | out |    1|   ap_vld   | agg_result_P_c3 |    pointer   |
+|agg_result_Q_a1         | out |   32|   ap_vld   | agg_result_Q_a1 |    pointer   |
+|agg_result_Q_a1_ap_vld  | out |    1|   ap_vld   | agg_result_Q_a1 |    pointer   |
+|agg_result_Q_a2         | out |   32|   ap_vld   | agg_result_Q_a2 |    pointer   |
+|agg_result_Q_a2_ap_vld  | out |    1|   ap_vld   | agg_result_Q_a2 |    pointer   |
+|agg_result_Q_a3         | out |   32|   ap_vld   | agg_result_Q_a3 |    pointer   |
+|agg_result_Q_a3_ap_vld  | out |    1|   ap_vld   | agg_result_Q_a3 |    pointer   |
+|agg_result_Q_b1         | out |   32|   ap_vld   | agg_result_Q_b1 |    pointer   |
+|agg_result_Q_b1_ap_vld  | out |    1|   ap_vld   | agg_result_Q_b1 |    pointer   |
+|agg_result_Q_b2         | out |   32|   ap_vld   | agg_result_Q_b2 |    pointer   |
+|agg_result_Q_b2_ap_vld  | out |    1|   ap_vld   | agg_result_Q_b2 |    pointer   |
+|agg_result_Q_b3         | out |   32|   ap_vld   | agg_result_Q_b3 |    pointer   |
+|agg_result_Q_b3_ap_vld  | out |    1|   ap_vld   | agg_result_Q_b3 |    pointer   |
+|agg_result_Q_c1         | out |   32|   ap_vld   | agg_result_Q_c1 |    pointer   |
+|agg_result_Q_c1_ap_vld  | out |    1|   ap_vld   | agg_result_Q_c1 |    pointer   |
+|agg_result_Q_c2         | out |   32|   ap_vld   | agg_result_Q_c2 |    pointer   |
+|agg_result_Q_c2_ap_vld  | out |    1|   ap_vld   | agg_result_Q_c2 |    pointer   |
+|agg_result_Q_c3         | out |   32|   ap_vld   | agg_result_Q_c3 |    pointer   |
+|agg_result_Q_c3_ap_vld  | out |    1|   ap_vld   | agg_result_Q_c3 |    pointer   |
+|agg_result_MU           | out |   32|   ap_vld   |  agg_result_MU  |    pointer   |
+|agg_result_MU_ap_vld    | out |    1|   ap_vld   |  agg_result_MU  |    pointer   |
+|agg_result_H0           | out |   32|   ap_vld   |  agg_result_H0  |    pointer   |
+|agg_result_H0_ap_vld    | out |    1|   ap_vld   |  agg_result_H0  |    pointer   |
+|agg_result_H1           | out |   32|   ap_vld   |  agg_result_H1  |    pointer   |
+|agg_result_H1_ap_vld    | out |    1|   ap_vld   |  agg_result_H1  |    pointer   |
+|agg_result_H2           | out |   32|   ap_vld   |  agg_result_H2  |    pointer   |
+|agg_result_H2_ap_vld    | out |    1|   ap_vld   |  agg_result_H2  |    pointer   |
+|agg_result_S            | out |   32|   ap_vld   |   agg_result_S  |    pointer   |
+|agg_result_S_ap_vld     | out |    1|   ap_vld   |   agg_result_S  |    pointer   |
+|agg_result_K0           | out |   32|   ap_vld   |  agg_result_K0  |    pointer   |
+|agg_result_K0_ap_vld    | out |    1|   ap_vld   |  agg_result_K0  |    pointer   |
+|agg_result_K1           | out |   32|   ap_vld   |  agg_result_K1  |    pointer   |
+|agg_result_K1_ap_vld    | out |    1|   ap_vld   |  agg_result_K1  |    pointer   |
+|agg_result_K2           | out |   32|   ap_vld   |  agg_result_K2  |    pointer   |
+|agg_result_K2_ap_vld    | out |    1|   ap_vld   |  agg_result_K2  |    pointer   |
+|agg_result_Y            | out |   32|   ap_vld   |   agg_result_Y  |    pointer   |
+|agg_result_Y_ap_vld     | out |    1|   ap_vld   |   agg_result_Y  |    pointer   |
+|value_M0                |  in |   32|   ap_none  |     value_M0    |    scalar    |
+|value_M1                |  in |   32|   ap_none  |     value_M1    |    scalar    |
+|value_M2                |  in |   32|   ap_none  |     value_M2    |    scalar    |
+|value_A_a1              |  in |   32|   ap_none  |    value_A_a1   |    scalar    |
+|value_A_a2              |  in |   32|   ap_none  |    value_A_a2   |    scalar    |
+|value_A_a3              |  in |   32|   ap_none  |    value_A_a3   |    scalar    |
+|value_A_b1              |  in |   32|   ap_none  |    value_A_b1   |    scalar    |
+|value_A_b2              |  in |   32|   ap_none  |    value_A_b2   |    scalar    |
+|value_A_b3              |  in |   32|   ap_none  |    value_A_b3   |    scalar    |
+|value_A_c1              |  in |   32|   ap_none  |    value_A_c1   |    scalar    |
+|value_A_c2              |  in |   32|   ap_none  |    value_A_c2   |    scalar    |
+|value_A_c3              |  in |   32|   ap_none  |    value_A_c3   |    scalar    |
+|value_P_a1              |  in |   32|   ap_none  |    value_P_a1   |    scalar    |
+|value_P_a2              |  in |   32|   ap_none  |    value_P_a2   |    scalar    |
+|value_P_a3              |  in |   32|   ap_none  |    value_P_a3   |    scalar    |
+|value_P_b1              |  in |   32|   ap_none  |    value_P_b1   |    scalar    |
+|value_P_b2              |  in |   32|   ap_none  |    value_P_b2   |    scalar    |
+|value_P_b3              |  in |   32|   ap_none  |    value_P_b3   |    scalar    |
+|value_P_c1              |  in |   32|   ap_none  |    value_P_c1   |    scalar    |
+|value_P_c2              |  in |   32|   ap_none  |    value_P_c2   |    scalar    |
+|value_P_c3              |  in |   32|   ap_none  |    value_P_c3   |    scalar    |
+|value_Q_a1              |  in |   32|   ap_none  |    value_Q_a1   |    scalar    |
+|value_Q_a2              |  in |   32|   ap_none  |    value_Q_a2   |    scalar    |
+|value_Q_a3              |  in |   32|   ap_none  |    value_Q_a3   |    scalar    |
+|value_Q_b1              |  in |   32|   ap_none  |    value_Q_b1   |    scalar    |
+|value_Q_b2              |  in |   32|   ap_none  |    value_Q_b2   |    scalar    |
+|value_Q_b3              |  in |   32|   ap_none  |    value_Q_b3   |    scalar    |
+|value_Q_c1              |  in |   32|   ap_none  |    value_Q_c1   |    scalar    |
+|value_Q_c2              |  in |   32|   ap_none  |    value_Q_c2   |    scalar    |
+|value_Q_c3              |  in |   32|   ap_none  |    value_Q_c3   |    scalar    |
+|value_MU                |  in |   32|   ap_none  |     value_MU    |    scalar    |
+|value_H0                |  in |   32|   ap_none  |     value_H0    |    scalar    |
+|value_H1                |  in |   32|   ap_none  |     value_H1    |    scalar    |
+|value_H2                |  in |   32|   ap_none  |     value_H2    |    scalar    |
+|value_S                 |  in |   32|   ap_none  |     value_S     |    scalar    |
+|value_K0                |  in |   32|   ap_none  |     value_K0    |    scalar    |
+|value_K1                |  in |   32|   ap_none  |     value_K1    |    scalar    |
+|value_K2                |  in |   32|   ap_none  |     value_K2    |    scalar    |
+|value_Y                 |  in |   32|   ap_none  |     value_Y     |    scalar    |
++------------------------+-----+-----+------------+-----------------+--------------+
+
