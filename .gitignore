@@ -5,3 +5,9 @@ kalman_filter_sim/kalman_filter_sim.runs
 kalman_filter_sim/kalman_filter_sim.ip_user_files
 kalman_filter_sim/kalman_filter_sim.sim
 kalman_filter_sim/kalman_filter_sim.hw
+
+doubles/kf_double_sim/kf_double_sim_sim.cache
+doubles/kf_double_sim/kf_double_sim_sim.runs
+doubles/kf_double_sim/kf_double_sim_sim.ip_user_files
+doubles/kf_double_sim/kf_double_sim_sim.sim
+doubles/kf_double_sim/kf_double_sim_sim.hw

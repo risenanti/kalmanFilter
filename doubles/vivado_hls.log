@@ -1,0 +1,330 @@
+INFO: [HLS 200-10] Running '/opt/Xilinx/Vivado/2018.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'keith' on host 'keith-OptiPlex-790' (Linux_x86_64 version 4.15.0-24-generic) on Tue Jul 24 14:25:26 CDT 2018
+INFO: [HLS 200-10] On os Ubuntu 16.04.5 LTS
+INFO: [HLS 200-10] In directory '/home/keith/Documents/github/kalmanFilter/doubles'
+INFO: [HLS 200-10] Opening project '/home/keith/Documents/github/kalmanFilter/doubles/kf_filter_double'.
+INFO: [HLS 200-10] Adding design file 'kf_filter_double/kf_granular_double.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'kf_filter_double/mat2.hpp' to the project
+INFO: [HLS 200-10] Adding design file 'kf_filter_double/mat3.hpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/keith/Documents/github/kalmanFilter/doubles/kf_filter_double/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Analyzing design file 'kf_filter_double/kf_granular_double.cpp' ...
+WARNING: [HLS 200-40] In file included from kf_filter_double/kf_granular_double.cpp:1:
+In file included from kf_filter_double/kf_granular_double.cpp:9:
+kf_filter_double/mat3.hpp:5:17: warning: using directive refers to implicitly-defined namespace 'std'
+using namespace std;
+                ^
+In file included from kf_filter_double/kf_granular_double.cpp:1:
+In file included from kf_filter_double/kf_granular_double.cpp:10:
+kf_filter_double/mat2.hpp:4:17: warning: using directive refers to implicitly-defined namespace 'std'
+using namespace std;
+                ^
+2 warnings generated.
+INFO: [HLS 200-10] Validating synthesis directives ...
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'first_order_fixed_16::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K4' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'second_order_float::sin_cos_K0' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_K3' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K2' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::sin_cos_K3' can not be recognized(UNKNOWN VARIABLE) in 'sin_or_cos_approximation'.
+WARNING: [HLS 200-40] Directive 'RESOURCE' for core 'ROM_1P_LUTRAM' cannot be applied: Variable 'fourth_order_double::cos_K1' can not be recognized(UNKNOWN VARIABLE) in 'sincos_approximation'.
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:38 ; elapsed = 00:00:26 . Memory (MB): peak = 351.750 ; gain = 0.289 ; free physical = 1278 ; free virtual = 25533
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:41 ; elapsed = 00:00:29 . Memory (MB): peak = 351.750 ; gain = 0.289 ; free physical = 1182 ; free virtual = 25529
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<145, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:529).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<84, 0, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:531).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<87, 3, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'cordic_::cordic_circ_v1<87, 0, 0, 0, 87, 3, 87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:185).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<87, 3, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator>>' into 'cordic_::cordic_circ_v1<87, 0, 0, 0, 87, 3, 87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:183).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<87, 3, true, (ap_q_mode)0, (ap_o_mode)3, 0>::quantization_adjust' into 'ap_fixed_base<87, 3, true, (ap_q_mode)0, (ap_o_mode)3, 0>::ap_fixed_base<128, 2, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+INFO: [XFORM 203-603] Inlining function 'cordic_::cordic_circ_v1<87, 0, 0, 0, 87, 3, 87, 3>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359).
+INFO: [XFORM 203-603] Inlining function 'ap_fixed_base<87, 3, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:384).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:44 ; elapsed = 00:00:32 . Memory (MB): peak = 481.602 ; gain = 130.141 ; free physical = 1161 ; free virtual = 25419
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kf_filter_double/mat3.hpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kf_filter_double/mat3.hpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:475) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:489) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_nan<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<52, 61>' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz<61, 145, 0>' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:355) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:376) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::set_mantissa' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:404) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:406) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<double>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:318) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:184->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:186->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)0, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:188->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:384) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kf_filter_double/mat3.hpp:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'filter' (kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'filter' (kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'filter' (kf_filter_double/mat3.hpp:58->kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sin' into 'filter' (kf_filter_double/kf_granular_double.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cos' into 'filter' (kf_filter_double/kf_granular_double.cpp:48) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'filter' (kf_filter_double/kf_granular_double.cpp:77) automatically.
+WARNING: [SYNCHK 200-23] /wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:366: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:44 ; elapsed = 00:00:33 . Memory (MB): peak = 481.602 ; gain = 130.141 ; free physical = 1142 ; free virtual = 25399
+INFO: [XFORM 203-602] Inlining function 'mat3::multi' into 'mat3::operator*' (kf_filter_double/mat3.hpp:78) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::add' into 'mat3::operator+' (kf_filter_double/mat3.hpp:63) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:475) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_utils.h:489) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'generic_nan<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_nan.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'table_lookup_4oPi_hotbm<52, 61>' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:492) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz<61, 145, 0>' into 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:520) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:355) automatically.
+INFO: [XFORM 203-602] Inlining function 'clz' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:376) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::set_mantissa' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:404) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'scaled_fixed2ieee<87, 3>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:406) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<double>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:318) automatically.
+INFO: [XFORM 203-602] Inlining function 'range_redux_payne_hanek_hotbm<61, double, 84, 84>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:336) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:184->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, bool>' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:186->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'cordic_::addsub<0, 0, ap_fixed<87, 3, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<87, 3, (ap_q_mode)0, (ap_o_mode)3, 0>, ap_uint<1> >' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:188->/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:359) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::__signbit' into 'cordic_::cordic_sincos_generic<double>' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:384) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::subtract' into 'mat3::operator-' (kf_filter_double/mat3.hpp:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA1' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA2' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getA3' into 'filter' (kf_filter_double/kf_granular_double.cpp:35) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB1' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB2' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getB3' into 'filter' (kf_filter_double/kf_granular_double.cpp:36) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC1' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC2' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::getC3' into 'filter' (kf_filter_double/kf_granular_double.cpp:37) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::transpose' into 'filter' (kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator+' into 'filter' (kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::setElements' into 'filter' (kf_filter_double/mat3.hpp:58->kf_filter_double/kf_granular_double.cpp:41) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::sin' into 'filter' (kf_filter_double/kf_granular_double.cpp:45) automatically.
+INFO: [XFORM 203-602] Inlining function 'hls::cordic::cos' into 'filter' (kf_filter_double/kf_granular_double.cpp:48) automatically.
+INFO: [XFORM 203-602] Inlining function 'mat3::operator-' into 'filter' (kf_filter_double/kf_granular_double.cpp:77) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:393:51) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:407:1) in function 'scaled_fixed2ieee<87, 3>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_range_redux.h:457:7) to (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:340:8) in function 'cordic_::cordic_sincos_generic<double>'... converting 5 basic blocks.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:47 ; elapsed = 00:00:36 . Memory (MB): peak = 545.289 ; gain = 193.828 ; free physical = 1005 ; free virtual = 25320
+WARNING: [XFORM 203-631] Renaming function 'scaled_fixed2ieee<87, 3>' to 'scaled_fixed2ieee' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/src/technology/autopilot/header_files/utils/x_hls_float_utils.h:109:37)
+WARNING: [XFORM 203-631] Renaming function 'mat3::operator*' to 'operator*' (kf_filter_double/mat3.hpp:76)
+WARNING: [XFORM 203-631] Renaming function 'cordic_::cordic_sincos_generic<double>' to 'cordic_sincos_generi' (/wrk/2018.1/nightly/2018_04_04_2188600/src/products/hls/hls_lib/hlsmath/include/internaltmp/hls_cordic.h:100:17)
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:49 ; elapsed = 00:00:37 . Memory (MB): peak = 545.289 ; gain = 193.828 ; free physical = 904 ; free virtual = 25208
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'filter' ...
+WARNING: [SYN 201-103] Legalizing function name 'operator*' to 'operator_mul'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'operator_mul'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 37.75 seconds; current allocated memory: 207.373 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.28 seconds; current allocated memory: 208.183 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'scaled_fixed2ieee'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.47 seconds; current allocated memory: 208.634 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 209.020 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cordic_sincos_generi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.35 seconds; current allocated memory: 209.754 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 210.403 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'filter'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 1.01 seconds; current allocated memory: 211.540 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.71 seconds; current allocated memory: 212.954 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'operator_mul'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'filter_dadd_64ns_64ns_64_5_full_dsp_1' to 'filter_dadd_64ns_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'filter_dmul_64ns_64ns_64_5_max_dsp_1' to 'filter_dmul_64ns_cud' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'filter_dadd_64ns_bkb': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_dmul_64ns_cud': 18 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'operator_mul'.
+INFO: [HLS 200-111]  Elapsed time: 0.96 seconds; current allocated memory: 214.128 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'scaled_fixed2ieee'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'scaled_fixed2ieee_out_bits_V' to 'scaled_fixed2ieeedEe' due to the length limit 20
+INFO: [RTGEN 206-100] Finished creating RTL model for 'scaled_fixed2ieee'.
+INFO: [HLS 200-111]  Elapsed time: 0.79 seconds; current allocated memory: 216.705 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cordic_sincos_generi'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'cordic_sincos_generi_ref_4oPi_table_256_V' to 'cordic_sincos_geneOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'cordic_sincos_generi_cordic_ctab_table_12_1' to 'cordic_sincos_genfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'filter_mul_53ns_170ns_223_2_1' to 'filter_mul_53ns_1g8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'filter_mul_53ns_1g8j': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cordic_sincos_generi'.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 219.212 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'filter'
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_M2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_A_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_P_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_a3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_b3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Q_c3' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_MU' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_H2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_S' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K0' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K1' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_K2' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/agg_result_Y' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_M2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_A_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_P_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_a3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_b3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Q_c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_MU' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_H2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_S' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_K2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'filter/value_Y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'filter' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Global array 'cordic_ctab_table_12_1' will not be exposed as RTL port.
+INFO: [SYN 201-210] Renamed object name 'filter_dadddsub_64ns_64ns_64_5_full_dsp_1' to 'filter_dadddsub_6hbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'filter_dsub_64ns_64ns_64_5_full_dsp_1' to 'filter_dsub_64ns_ibs' due to the length limit 20
+WARNING: [RTGEN 206-101] Port 'filter/value_MU' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_H2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_S' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'filter/value_K2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'filter_dadddsub_6hbi': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_dmul_64ns_cud': 9 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'filter_dsub_64ns_ibs': 5 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'filter'.
+INFO: [HLS 200-111]  Elapsed time: 0.99 seconds; current allocated memory: 223.431 MB.
+INFO: [RTMG 210-278] Implementing memory 'scaled_fixed2ieeedEe_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-282] Generating pipelined core: 'filter_mul_53ns_1g8j_MulnS_0'
+INFO: [RTMG 210-279] Implementing memory 'cordic_sincos_geneOg_rom' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cordic_sincos_genfYi_rom' using auto ROMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:57 ; elapsed = 00:00:47 . Memory (MB): peak = 545.289 ; gain = 193.828 ; free physical = 749 ; free virtual = 25088
+INFO: [SYSC 207-301] Generating SystemC RTL for filter.
+INFO: [VHDL 208-304] Generating VHDL RTL for filter.
+INFO: [VLOG 209-307] Generating Verilog RTL for filter.
+INFO: [HLS 200-112] Total elapsed time: 47.37 seconds; peak allocated memory: 223.431 MB.
