@@ -1,12 +1,14 @@
 //============================================================================
 // Name        : kal_filter_granular.cpp
-// Author      : 
+// Author      :
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <fstream>
+#include <math.h>
 #include "mat3.hpp"
 #include "mat2.hpp"
 
@@ -58,14 +60,14 @@ kf_values filter(kf_values value){
 	value.S+=1;
 
 	//Task6
-	value.K0 = (value.P.getA1()*value.H0+value.P.getB1()*value.H1+value.P.getC1()*value.H2);
-	value.K1 = (value.P.getA2()*value.H0+value.P.getB2()*value.H1+value.P.getC2()*value.H2);
-	value.K2 = (value.P.getA3()*value.H0+value.P.getB3()*value.H1+value.P.getC3()*value.H2);
+	value.K0 = (value.P.getA1()*value.H0 + value.P.getB1()*value.H1 + value.P.getC1()*value.H2) /value.S;
+	value.K1 = (value.P.getB1()*value.H0 + value.P.getB2()*value.H1+ value.P.getB3()*value.H2)  /value.S;
+	value.K2 = (value.P.getC1()*value.H0 + value.P.getC2()*value.H1 + value.P.getC3()*value.H2) /value.S;
 
 	//task7
-	value.M0 = value.M0+value.K0*(value.Y-value.MU);
-	value.M1 = value.M0+value.K1*(value.Y-value.MU);
-	value.M2 = value.M0+value.K2*(value.Y-value.MU);
+	value.M0 = value.M0+value.K0 *(value.Y-value.MU);
+	value.M1 = value.M1+value.K1 *(value.Y-value.MU);
+	value.M2 = value.M2+value.K2 *(value.Y-value.MU);
 
 	//task8
 	temp0 = value.K0*value.S;
@@ -88,18 +90,25 @@ kf_values filter(kf_values value){
  */
 
 int main() {
-	mat3 a(2.66,0,22,2,30,-2,0,1,1);
-	mat3 q(22,11,10, 15,5,3, 2,6,7);
-	mat3 p(3,0,2, 2,0,-2, 0,1,1);
+	mat3 a( 1,   0.01,  0,
+			0,      1,  0,
+			0,      0,  1);
+
+	mat3 q( 0,      0,  0,
+		    0,  0.002,  0,
+		    0,      0,  0.00);
+	mat3 p( 3,      0,  0,
+		    0,      3,  3,
+		    0,      0,  3);
 
 	kf_values value;
 	value.A  = a;
-	value.M0 = 1;
-	value.M1 = 2;
-	value.M2 = 3;
+	value.M0 = 0;
+	value.M1 = 10;
+	value.M2 = 1;
 	value.Q  = q;
 	value.P  = p;
-	value.Y  = 1.564;
+	value.Y  = 1.834366773357689;
 	value.H0 = 0;
 	value.H1 = 0;
 	value.H2 = 0;
@@ -109,7 +118,7 @@ int main() {
 	value.K2 = 0;
 	value.MU = 0;
 
-
+	//mat3 sX = a*p;
 	fstream file;
 	file.open("Kalman Filter Values.txt", fstream::out);
 
