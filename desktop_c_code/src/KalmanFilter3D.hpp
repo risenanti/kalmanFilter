@@ -189,16 +189,17 @@ int KF3D::task7(void)
 {
 	/*M = M + K * (Y-MU) */
 
+	//Y-MU
 	float tempHold[2];
 	tempHold[0] = Y[0] - MU[0];
 	tempHold[1] = Y[1] - MU[1];
 	float tempK[4];
 
-	tempK[0] = K[0]*tempHold[0] + K[1]*tempHold[0];
-
-	tempK[1] = K[2]*tempHold[0] + K[3]*tempHold[0];
-	tempK[2] = K[4]*tempHold[0] + K[5]*tempHold[0];
-	tempK[3] = K[6]*tempHold[0] + K[7]*tempHold[0];
+	//K*()
+	tempK[0] = K[0]*tempHold[0] + K[1]*tempHold[1];
+	tempK[1] = K[2]*tempHold[0] + K[3]*tempHold[1];
+	tempK[2] = K[4]*tempHold[0] + K[5]*tempHold[1];
+	tempK[3] = K[6]*tempHold[0] + K[7]*tempHold[1];
 
 	M[0] = M[0] + tempK[0];
 	M[1] = M[1] + tempK[1];
